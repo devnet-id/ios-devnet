@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import Firebase
 import FBSDKCoreKit
+import FBSDKLoginKit
 
 
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     // Variable
     var appDelegate: AppDelegate!
 
+    @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,9 +30,21 @@ class SignInViewController: UIViewController {
         facebookLoginButton.readPermissions = ["public_profile", "email", "user_friends"]
         facebookLoginButton.delegate = self
         
-    
     }
     
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        guard let error = error else {
+            print("Couldn't logged in from Facebook with error: \(error)" )
+            return
+        }
+
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        print("Successfully logged out from Facebook")
+    }
+    
+    /*
     // Taking out data
     private func signInRequest() -> Void {
         
@@ -40,7 +57,7 @@ class SignInViewController: UIViewController {
         // Login with firebase
         let credentials = FIRFacebookAuthProvider.credential(withAccessToken: stringAccessToken)
         FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
-            
+        
             // Was there any error?
             guard (error == nil) else {
                 print("There was an error occurs")
@@ -90,18 +107,18 @@ class SignInViewController: UIViewController {
                 return
             }
             
-            self.appDelegate.userEmail = userEmail
-            self.appDelegate.userFullName = userName
-            self.appDelegate.userFacebookID = userID
-            
+//            self.appDelegate.userEmail = userEmail
+//            self.appDelegate.userFullName = userName
+//            self.appDelegate.userFacebookID = userID
+    
             performUIUpdatesOnMain {
-                self.showAlert()
+//                self.showAlert()
             }
             
         }
         
     }
-
+*/
     
     
 

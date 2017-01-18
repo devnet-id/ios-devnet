@@ -71,9 +71,9 @@
 		6E6318701E2F5CEA0032B125 /* devnet */ = {
 			isa = PBXGroup;
 			children = (
-				6E4ED7CA1E2F6E6A00B03010 /* GrandCentralDispatchBlackBox.swift */,
 				6E6318711E2F5CEA0032B125 /* AppDelegate.swift */,
 				6E6318731E2F5CEA0032B125 /* SignInViewController.swift */,
+				6E4ED7CA1E2F6E6A00B03010 /* GrandCentralDispatchBlackBox.swift */,
 				6E6318751E2F5CEA0032B125 /* Main.storyboard */,
 				6E6318781E2F5CEA0032B125 /* Assets.xcassets */,
 				6E63187A1E2F5CEA0032B125 /* LaunchScreen.storyboard */,
