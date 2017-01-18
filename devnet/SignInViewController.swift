@@ -15,31 +15,31 @@ import FBSDKLoginKit
 
 class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
     
-    // Variable
+    // VARIABLES
+    
     var appDelegate: AppDelegate!
-
+    
+    // OUTLETS
+    
+    // Facebook Login Button Instance
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
-
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        // For Facebook login button
-        facebookLoginButton.readPermissions = ["public_profile", "email", "user_friends"]
-        facebookLoginButton.delegate = self
-        
-    }
+    // LOGIN AND LOGOUT SETUP FOR FACEBOOK
     
+    // Handling for if login complete
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        guard let error = error else {
-            print("Couldn't logged in from Facebook with error: \(error)" )
+        
+        // Was there any error occurs?
+        guard (error == nil) else {
+            print("Could not sign in to Facebook with error: ", error)
             return
         }
+        
+        print("Successfully logged in from Facebook")
 
     }
     
+    // Handling for if login complete
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("Successfully logged out from Facebook")
     }
@@ -119,8 +119,18 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
         
     }
 */
+    // APP LIFE CYCLE
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        // For Facebook login button
+        facebookLoginButton.readPermissions = ["public_profile", "email", "user_friends"]
+        facebookLoginButton.delegate = self
+        
+    }
 
 
 }

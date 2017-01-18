@@ -119,24 +119,24 @@
                                         <rect key="frame" x="0.0" y="500.5" width="375" height="166.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kmg-DF-NkY">
-                                                <rect key="frame" x="67" y="20.5" width="240" height="125"/>
+                                                <rect key="frame" x="32" y="20.5" width="311" height="125"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bjm-ob-H2s" userLabel="Facebook Sign In Button" customClass="FBSDKLoginButton">
-                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="35"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="35"/>
                                                         <color key="backgroundColor" red="0.40624053999999998" green="0.79589994320000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="pBs-in-R3Z"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Bc-e9-qfp" userLabel="Google Sign In Button">
-                                                        <rect key="frame" x="0.0" y="45" width="240" height="35"/>
+                                                        <rect key="frame" x="0.0" y="45" width="311" height="35"/>
                                                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="MDC-MU-SdF"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7E1-WZ-W7j">
-                                                        <rect key="frame" x="0.0" y="90" width="240" height="35"/>
+                                                        <rect key="frame" x="0.0" y="90" width="311" height="35"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="rvo-NA-eXJ"/>
@@ -155,7 +155,8 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="kmg-DF-NkY" firstAttribute="centerX" secondItem="B3c-OE-JSa" secondAttribute="centerX" id="Iq9-nJ-cT6"/>
+                                            <constraint firstAttribute="trailing" secondItem="kmg-DF-NkY" secondAttribute="trailing" constant="32" id="BKW-vg-ynF"/>
+                                            <constraint firstItem="kmg-DF-NkY" firstAttribute="leading" secondItem="B3c-OE-JSa" secondAttribute="leading" constant="32" id="EZU-n5-FVM"/>
                                             <constraint firstItem="kmg-DF-NkY" firstAttribute="centerY" secondItem="B3c-OE-JSa" secondAttribute="centerY" id="OHJ-3U-aSX"/>
                                         </constraints>
                                     </view>
