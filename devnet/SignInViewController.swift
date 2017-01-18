@@ -7,9 +7,11 @@
 //
 
 import UIKit
-import FBSDKLoginKit
+import Firebase
+import GoogleSignIn
 
-class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
+
+class SignInViewController: UIViewController {
     
     // Variable
     var appDelegate: AppDelegate!
