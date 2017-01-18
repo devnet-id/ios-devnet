@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  devnet
 //
 //  Created by Zulwiyoza Putra on 1/18/17.
