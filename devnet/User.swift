@@ -12,4 +12,5 @@ struct User {
     static var userName: String?
     static var userEmail: String?
     static var userID: String?
+    
 }
