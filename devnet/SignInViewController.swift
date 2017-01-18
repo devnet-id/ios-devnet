@@ -35,6 +35,8 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
             return
         }
         
+        signInRequest()
+        
         print("Successfully logged in from Facebook")
 
     }
@@ -44,7 +46,7 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
         print("Successfully logged out from Facebook")
     }
     
-    /*
+    
     // Taking out data
     private func signInRequest() -> Void {
         
@@ -107,18 +109,32 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
                 return
             }
             
-//            self.appDelegate.userEmail = userEmail
-//            self.appDelegate.userFullName = userName
-//            self.appDelegate.userFacebookID = userID
-    
+            // Perform storing data on model
+            
+            User.userName = userName
+            User.userEmail = userEmail
+            User.userID = userID
+            
             performUIUpdatesOnMain {
-//                self.showAlert()
+                self.showAlert()
             }
             
         }
         
     }
-*/
+    
+    // Presenting UI alert view
+    private func showAlert() -> Void {
+        let alert = UIAlertController(title: "Welcome", message: "Welcome to Devnet, \(User.userName!) with email \(User.userEmail!)", preferredStyle: UIAlertControllerStyle.alert)
+        let Ok = UIAlertAction(title: "Ok", style: .destructive) { (alert: UIAlertAction!) in
+//            performUIUpdatesOnMain {
+//                self.presentNextView()
+//            }
+        }
+        alert.addAction(Ok)
+        present(alert, animated: true, completion: nil)
+    }
+
     // APP LIFE CYCLE
     
     override func viewDidLoad() {
