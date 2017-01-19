@@ -46,6 +46,13 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     // Handling for if login complete
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
+        let firebaseAuth = FIRAuth.auth()
+        do {
+            try firebaseAuth?.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
         print("Successfully logged out from Facebook")
     }
     
@@ -128,6 +135,14 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
         
     }
     
+    
+    // LOGIN AND LOG OUT SETUP FOR GOOGLE SIGN IN
+    
+    
+    
+    
+    // HANDLERS
+    
     // Presenting UI alert view
     private func showAlert() -> Void {
         let alert = UIAlertController(title: "Welcome", message: "Welcome to Devnet, \(User.userName!) with email \(User.userEmail!)", preferredStyle: UIAlertControllerStyle.alert)
@@ -155,11 +170,10 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         // For Facebook login button
-        
         facebookLoginButton.delegate = self
 
         // For Google signin button
-//        GIDSignIn.sharedInstance().delegate = self
+        // GIDSignIn.sharedInstance().delegate = self
 
         
         

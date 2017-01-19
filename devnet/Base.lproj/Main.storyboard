@@ -43,8 +43,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ncu-oO-tWR">
                                         <rect key="frame" x="0.0" y="167" width="375" height="166.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2hi-fd-mga">
-                                                <rect key="frame" x="32" y="0.5" width="311" height="165"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2hi-fd-mga">
+                                                <rect key="frame" x="32" y="5.5" width="311" height="155"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uUR-T7-TYt">
                                                         <rect key="frame" x="0.0" y="0.0" width="311" height="35"/>
@@ -56,7 +56,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ocb-go-fcu">
-                                                        <rect key="frame" x="0.0" y="45" width="311" height="35"/>
+                                                        <rect key="frame" x="0.0" y="40" width="311" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="0bC-EF-B43"/>
                                                         </constraints>
@@ -65,17 +65,17 @@
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsq-DM-ikY" customClass="SignInView">
-                                                        <rect key="frame" x="0.0" y="90" width="311" height="35"/>
+                                                        <rect key="frame" x="0.0" y="80" width="311" height="40"/>
                                                         <color key="backgroundColor" red="0.26572552710000003" green="0.65640806340000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="35" id="Vku-Oi-TUi"/>
+                                                            <constraint firstAttribute="height" constant="40" id="Vku-Oi-TUi"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="Sign In"/>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dy3-kd-Q1j">
-                                                        <rect key="frame" x="52.5" y="135" width="206.5" height="30"/>
+                                                        <rect key="frame" x="52.5" y="125" width="206.5" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VZ-Kq-8dE">
                                                                 <rect key="frame" x="0.0" y="6.5" width="151.5" height="17"/>
@@ -118,28 +118,28 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3c-OE-JSa">
                                         <rect key="frame" x="0.0" y="500.5" width="375" height="166.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kmg-DF-NkY">
-                                                <rect key="frame" x="32" y="20.5" width="311" height="125"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kmg-DF-NkY">
+                                                <rect key="frame" x="32" y="18" width="311" height="130"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bjm-ob-H2s" userLabel="Facebook Sign In Button" customClass="FBSDKLoginButton">
-                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="35"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="40"/>
                                                         <color key="backgroundColor" red="0.40624053999999998" green="0.79589994320000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="35" id="pBs-in-R3Z"/>
+                                                            <constraint firstAttribute="height" constant="40" id="pBs-in-R3Z"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Bc-e9-qfp" userLabel="Google Sign In Button" customClass="GIDSignInButton">
-                                                        <rect key="frame" x="0.0" y="45" width="311" height="35"/>
+                                                        <rect key="frame" x="0.0" y="45" width="311" height="40"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="35" id="MDC-MU-SdF"/>
+                                                            <constraint firstAttribute="height" constant="40" id="MDC-MU-SdF"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7E1-WZ-W7j">
-                                                        <rect key="frame" x="0.0" y="90" width="311" height="35"/>
+                                                        <rect key="frame" x="0.0" y="90" width="311" height="40"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="35" id="rvo-NA-eXJ"/>
+                                                            <constraint firstAttribute="height" constant="40" id="rvo-NA-eXJ"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>

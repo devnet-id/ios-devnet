@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -87,7 +88,18 @@
                     <view key="view" contentMode="scaleToFill" id="ADD-mT-JvU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JS-dJ-TMp">
+                                <rect key="frame" x="16" y="318" width="343" height="30"/>
+                                <state key="normal" title="Sign Out"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4JS-dJ-TMp" firstAttribute="leading" secondItem="ADD-mT-JvU" secondAttribute="leadingMargin" id="4NL-LH-8qN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4JS-dJ-TMp" secondAttribute="trailing" id="aBj-XJ-kcS"/>
+                            <constraint firstItem="4JS-dJ-TMp" firstAttribute="centerY" secondItem="ADD-mT-JvU" secondAttribute="centerY" id="yVP-Lm-lk0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="5OQ-Bq-lF5"/>
                 </viewController>
@@ -106,23 +118,23 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BTG-ec-BCq" kind="relationship" relationship="viewControllers" id="5wt-Ha-xvn"/>
-                        <segue destination="w9C-Sf-N0k" kind="relationship" relationship="viewControllers" id="fUC-eE-8Jg"/>
-                        <segue destination="JbE-2s-VdB" kind="relationship" relationship="viewControllers" id="o4Z-9p-0gx"/>
                         <segue destination="xYh-6c-NXG" kind="relationship" relationship="viewControllers" id="ggp-6e-aMk"/>
+                        <segue destination="JbE-2s-VdB" kind="relationship" relationship="viewControllers" id="o4Z-9p-0gx"/>
+                        <segue destination="w9C-Sf-N0k" kind="relationship" relationship="viewControllers" id="fUC-eE-8Jg"/>
+                        <segue destination="BTG-ec-BCq" kind="relationship" relationship="viewControllers" id="5wt-Ha-xvn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rkZ-0o-14P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1775" y="-2882"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="sH7-9S-3aJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xYh-6c-NXG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="DF1-8A-9Xf"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="DF1-8A-9Xf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ils-80-C4d">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ils-80-C4d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -135,13 +147,13 @@
             </objects>
             <point key="canvasLocation" x="1006" y="-1847"/>
         </scene>
-        <!--Item-->
+        <!--Explore-->
         <scene sceneID="69W-Ey-d8M">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JbE-2s-VdB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="SH8-ly-ZeI"/>
+                    <tabBarItem key="tabBarItem" title="Explore" id="SH8-ly-ZeI"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="h6f-W1-1yY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h6f-W1-1yY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -154,13 +166,13 @@
             </objects>
             <point key="canvasLocation" x="2577" y="-1848"/>
         </scene>
-        <!--Item-->
+        <!--Notification-->
         <scene sceneID="WOk-Sx-rAS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w9C-Sf-N0k" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="2bX-3n-mgV"/>
+                    <tabBarItem key="tabBarItem" title="Notification" id="2bX-3n-mgV"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0pi-bg-u6Y">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0pi-bg-u6Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -173,13 +185,13 @@
             </objects>
             <point key="canvasLocation" x="1517" y="-1848"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="Crb-FE-8wJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BTG-ec-BCq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="1Ty-ZW-9bv"/>
+                    <tabBarItem key="tabBarItem" title="Profile" id="1Ty-ZW-9bv"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="W4O-Vc-o1f">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W4O-Vc-o1f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
