@@ -128,9 +128,9 @@
                                                             <constraint firstAttribute="height" constant="35" id="pBs-in-R3Z"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Bc-e9-qfp" userLabel="Google Sign In Button">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Bc-e9-qfp" userLabel="Google Sign In Button" customClass="GIDSignInButton">
                                                         <rect key="frame" x="0.0" y="45" width="311" height="35"/>
-                                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="MDC-MU-SdF"/>
                                                         </constraints>
@@ -173,6 +173,7 @@
                     </view>
                     <connections>
                         <outlet property="facebookLoginButton" destination="Bjm-ob-H2s" id="ry9-U4-aWi"/>
+                        <outlet property="googleSgnInButton" destination="9Bc-e9-qfp" id="MQx-Mf-NYZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

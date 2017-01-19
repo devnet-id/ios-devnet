@@ -8,12 +8,11 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-
-
-class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
+class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInDelegate {
     
     // VARIABLES
     
@@ -23,6 +22,10 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     // Facebook Login Button Instance
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
+    
+    // Google Sign In Button Instance
+    @IBOutlet weak var googleSgnInButton: GIDSignInButton!
+    
     
     // LOGIN AND LOGOUT SETUP FOR FACEBOOK
     
@@ -75,6 +78,9 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
             print("Successfully login with \(user)")
             
         })
+        
+        
+        
         
         
         // Taking out id name and email information from Facebook SDK Request
@@ -152,6 +158,11 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
         // For Facebook login button
         facebookLoginButton.readPermissions = ["public_profile", "email", "user_friends"]
         facebookLoginButton.delegate = self
+        
+        // For Google signin button
+        GIDSignIn.sharedInstance().delegate = self
+
+        
         
     }
 

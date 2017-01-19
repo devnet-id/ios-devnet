@@ -13,6 +13,7 @@
 		6E6318771E2F5CEA0032B125 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E6318751E2F5CEA0032B125 /* Main.storyboard */; };
 		6E6318791E2F5CEA0032B125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E6318781E2F5CEA0032B125 /* Assets.xcassets */; };
 		6E63187C1E2F5CEA0032B125 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E63187A1E2F5CEA0032B125 /* LaunchScreen.storyboard */; };
+		6EE2F5CF1E30FB8400476475 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EE2F5CE1E30FB8400476475 /* GoogleService-Info.plist */; };
 		6EF6B6D61E2FA6160007733F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6B6D51E2FA6160007733F /* User.swift */; };
 		6EF6B6DE1E2FD1350007733F /* ApplicationView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF6B6DC1E2FD1350007733F /* ApplicationView.storyboard */; };
 		6EF6B6E01E2FD1F40007733F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6B6DF1E2FD1F40007733F /* TabBarController.swift */; };
@@ -29,6 +30,7 @@
 		6E6318781E2F5CEA0032B125 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E63187B1E2F5CEA0032B125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E63187D1E2F5CEA0032B125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EE2F5CE1E30FB8400476475 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6EF6B6D51E2FA6160007733F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6EF6B6DD1E2FD1350007733F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ApplicationView.storyboard; sourceTree = "<group>"; };
 		6EF6B6DF1E2FD1F40007733F /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				6E6318711E2F5CEA0032B125 /* AppDelegate.swift */,
 				6E6318781E2F5CEA0032B125 /* Assets.xcassets */,
 				6E63187D1E2F5CEA0032B125 /* Info.plist */,
+				6EE2F5CE1E30FB8400476475 /* GoogleService-Info.plist */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			files = (
 				6EF6B6DE1E2FD1350007733F /* ApplicationView.storyboard in Resources */,
 				6E63187C1E2F5CEA0032B125 /* LaunchScreen.storyboard in Resources */,
+				6EE2F5CF1E30FB8400476475 /* GoogleService-Info.plist in Resources */,
 				6E6318791E2F5CEA0032B125 /* Assets.xcassets in Resources */,
 				6E6318771E2F5CEA0032B125 /* Main.storyboard in Resources */,
 			);
