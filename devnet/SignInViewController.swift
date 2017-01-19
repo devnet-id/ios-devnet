@@ -127,12 +127,19 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
     private func showAlert() -> Void {
         let alert = UIAlertController(title: "Welcome", message: "Welcome to Devnet, \(User.userName!) with email \(User.userEmail!)", preferredStyle: UIAlertControllerStyle.alert)
         let Ok = UIAlertAction(title: "Ok", style: .destructive) { (alert: UIAlertAction!) in
-//            performUIUpdatesOnMain {
-//                self.presentNextView()
-//            }
+            performUIUpdatesOnMain {
+                self.presentNextView()
+            }
         }
         alert.addAction(Ok)
         present(alert, animated: true, completion: nil)
+    }
+    
+    // Presenting next view controller
+    private func presentNextView() -> Void {
+        let storyBoard = UIStoryboard(name: "ApplicationView", bundle: nil)
+        let homeTabBarController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+        self.present(homeTabBarController, animated: true, completion: nil)
     }
 
     // APP LIFE CYCLE
