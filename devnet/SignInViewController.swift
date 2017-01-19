@@ -12,7 +12,7 @@ import GoogleSignIn
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInDelegate {
+class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     // VARIABLES
     
@@ -38,7 +38,7 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
             return
         }
         
-        signInRequest()
+        facebookSignInRequest()
         
         print("Successfully logged in from Facebook")
 
@@ -51,7 +51,10 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
     
     
     // Taking out data
-    private func signInRequest() -> Void {
+    private func facebookSignInRequest() -> Void {
+        
+        // Setup facebook permission for login button
+        facebookLoginButton.readPermissions = ["public_profile", "email", "user_friends"]
         
         // Do we have access Token?
         guard let accessToken = FBSDKAccessToken.current(), let stringAccessToken = accessToken.tokenString else {
@@ -78,10 +81,6 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
             print("Successfully login with \(user)")
             
         })
-        
-        
-        
-        
         
         // Taking out id name and email information from Facebook SDK Request
         FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, error) in
@@ -156,11 +155,11 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         // For Facebook login button
-        facebookLoginButton.readPermissions = ["public_profile", "email", "user_friends"]
-        facebookLoginButton.delegate = self
         
+        facebookLoginButton.delegate = self
+
         // For Google signin button
-        GIDSignIn.sharedInstance().delegate = self
+//        GIDSignIn.sharedInstance().delegate = self
 
         
         
