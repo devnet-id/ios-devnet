@@ -7,16 +7,26 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class ProfileViewController: UIViewController {
 
     @IBAction func signOutButton(_ sender: Any) {
+        
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut() // this is an instance function
         
         self.dismiss(animated: true, completion: nil)
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
 
         // Do any additional setup after loading the view.
     }
@@ -25,6 +35,9 @@ class ProfileViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
     
 
     /*
