@@ -12,7 +12,7 @@ import GoogleSignIn
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
+class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate, GIDSignInDelegate {
     
     // VARIABLES
     
@@ -25,6 +25,9 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     // Google Sign In Button Instance
     @IBOutlet weak var googleSgnInButton: GIDSignInButton!
+    
+    
+    
     
     
     // LOGIN AND LOGOUT SETUP FOR FACEBOOK
@@ -138,8 +141,51 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     // LOGIN AND LOG OUT SETUP FOR GOOGLE SIGN IN
     
-    
-    
+    // For Google Sign In
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+        guard (error == nil) else {
+            print("Error sign in with google", error)
+            return
+        }
+        
+        guard let idToken = user.authentication.idToken else {
+            print("There was no id token returned")
+            return
+        }
+        
+        guard let accessToken = user.authentication.accessToken else {
+            print("there was no access token returned")
+            return
+        }
+        
+        let credentials = FIRGoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+        
+        FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
+            
+            guard (error == nil) else {
+                print("Failed to create a Firebase user with Google Account ")
+                return
+            }
+            
+            guard let user = user else {
+                print("There was no user returned")
+                return
+            }
+            
+            User.userID = user.uid
+            User.userName = user.displayName
+            User.userEmail = user.email
+            
+            print("successfully logged in with google", User.userID!, User.userName!, User.userEmail!)
+            
+            performUIUpdatesOnMain {
+                self.showAlert()
+            }
+            
+        })
+        
+    }
     
     // HANDLERS
     
@@ -173,7 +219,9 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
         facebookLoginButton.delegate = self
 
         // For Google signin button
-        // GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
+        GIDSignIn.sharedInstance().delegate = self
 
         
         

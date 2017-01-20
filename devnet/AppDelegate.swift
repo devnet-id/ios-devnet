@@ -28,16 +28,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // For Sign In with Google
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         
+        
         // For Sign In with Facebook
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         return true
     }
+
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
         // For Sign In with Facebook SDK
         FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String!, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        
+        // For Sign In with Google Sign In
+        GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String!, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        
         return true
     }
 
