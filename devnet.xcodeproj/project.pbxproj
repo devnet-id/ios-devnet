@@ -14,6 +14,8 @@
 		6E6318791E2F5CEA0032B125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E6318781E2F5CEA0032B125 /* Assets.xcassets */; };
 		6E63187C1E2F5CEA0032B125 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E63187A1E2F5CEA0032B125 /* LaunchScreen.storyboard */; };
 		6EE2F5CF1E30FB8400476475 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EE2F5CE1E30FB8400476475 /* GoogleService-Info.plist */; };
+		6EE2F5D41E31F32200476475 /* SignUpView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EE2F5D21E31F32200476475 /* SignUpView.storyboard */; };
+		6EE2F5D61E31F35A00476475 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE2F5D51E31F35A00476475 /* SignUpViewController.swift */; };
 		6EF6B6D61E2FA6160007733F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6B6D51E2FA6160007733F /* User.swift */; };
 		6EF6B6DE1E2FD1350007733F /* ApplicationView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF6B6DC1E2FD1350007733F /* ApplicationView.storyboard */; };
 		6EF6B6E01E2FD1F40007733F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6B6DF1E2FD1F40007733F /* TabBarController.swift */; };
@@ -31,6 +33,8 @@
 		6E63187B1E2F5CEA0032B125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E63187D1E2F5CEA0032B125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EE2F5CE1E30FB8400476475 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6EE2F5D31E31F32200476475 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignUpView.storyboard; sourceTree = "<group>"; };
+		6EE2F5D51E31F35A00476475 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		6EF6B6D51E2FA6160007733F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6EF6B6DD1E2FD1350007733F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ApplicationView.storyboard; sourceTree = "<group>"; };
 		6EF6B6DF1E2FD1F40007733F /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				6E6318731E2F5CEA0032B125 /* SignInViewController.swift */,
+				6EE2F5D51E31F35A00476475 /* SignUpViewController.swift */,
 				6EF6B6DF1E2FD1F40007733F /* TabBarController.swift */,
 			);
 			name = Controller;
@@ -119,6 +124,7 @@
 				6E63187A1E2F5CEA0032B125 /* LaunchScreen.storyboard */,
 				6E6318751E2F5CEA0032B125 /* Main.storyboard */,
 				6EF6B6DC1E2FD1350007733F /* ApplicationView.storyboard */,
+				6EE2F5D21E31F32200476475 /* SignUpView.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -211,6 +217,7 @@
 				6EE2F5CF1E30FB8400476475 /* GoogleService-Info.plist in Resources */,
 				6E6318791E2F5CEA0032B125 /* Assets.xcassets in Resources */,
 				6E6318771E2F5CEA0032B125 /* Main.storyboard in Resources */,
+				6EE2F5D41E31F32200476475 /* SignUpView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EE2F5D61E31F35A00476475 /* SignUpViewController.swift in Sources */,
 				6EF6B6D61E2FA6160007733F /* User.swift in Sources */,
 				6E6318741E2F5CEA0032B125 /* SignInViewController.swift in Sources */,
 				6E4ED7CB1E2F6E6A00B03010 /* GrandCentralDispatchBlackBox.swift in Sources */,
@@ -294,6 +302,14 @@
 				6E63187B1E2F5CEA0032B125 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6EE2F5D21E31F32200476475 /* SignUpView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EE2F5D31E31F32200476475 /* Base */,
+			);
+			name = SignUpView.storyboard;
 			sourceTree = "<group>";
 		};
 		6EF6B6DC1E2FD1350007733F /* ApplicationView.storyboard */ = {

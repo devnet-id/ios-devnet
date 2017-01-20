@@ -26,8 +26,11 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
     // Google Sign In Button Instance
     @IBOutlet weak var googleSgnInButton: GIDSignInButton!
     
-    
-    
+    @IBAction func signUpButton(_ sender: Any) {
+        
+        presentSignUpView()
+        
+    }
     
     
     // LOGIN AND LOGOUT SETUP FOR FACEBOOK
@@ -205,6 +208,13 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
     private func presentNextView() -> Void {
         let storyBoard = UIStoryboard(name: "ApplicationView", bundle: nil)
         let homeTabBarController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+        self.present(homeTabBarController, animated: true, completion: nil)
+    }
+    
+    // Presenting sign up view controller
+    private func presentSignUpView() -> Void {
+        let storyBoard = UIStoryboard(name: "SignUpView", bundle: nil)
+        let homeTabBarController = storyBoard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
         self.present(homeTabBarController, animated: true, completion: nil)
     }
 
