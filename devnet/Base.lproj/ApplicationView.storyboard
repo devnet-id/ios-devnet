@@ -80,7 +80,7 @@
         <!--Profile-->
         <scene sceneID="3J5-KO-0rs">
             <objects>
-                <viewController id="aoy-ub-CW0" sceneMemberID="viewController">
+                <viewController id="aoy-ub-CW0" customClass="ProfileViewController" customModule="devnet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xz9-Zv-HNV"/>
                         <viewControllerLayoutGuide type="bottom" id="cam-aq-psp"/>
@@ -92,6 +92,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JS-dJ-TMp">
                                 <rect key="frame" x="16" y="318" width="343" height="30"/>
                                 <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOutButton:" destination="aoy-ub-CW0" eventType="touchUpInside" id="zCj-D4-CcP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
