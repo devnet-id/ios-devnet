@@ -58,6 +58,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.8)
   - GTMSessionFetcher/Full (1.1.8):
     - GTMSessionFetcher/Core (= 1.1.8)
+  - OAuthSwift (1.1.0)
 
 DEPENDENCIES:
   - Bolts
@@ -66,6 +67,7 @@ DEPENDENCIES:
   - FBSDKShareKit
   - Firebase/Auth
   - GoogleSignIn
+  - OAuthSwift (~> 1.1.0)
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -84,7 +86,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
+  OAuthSwift: 7ec2c62274f6bdc30b1ba3b799c39a6fdcaea0e5
 
-PODFILE CHECKSUM: ae841905137a93f328ccab2c0e70b427e3fa0c21
+PODFILE CHECKSUM: 02f75d7d4162bd4fd25f48c6b7baf33ea5bcbb60
 
 COCOAPODS: 1.1.1
