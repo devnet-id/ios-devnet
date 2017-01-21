@@ -10,8 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import Firebase
 import GoogleSignIn
-
-
+import OAuthSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -45,6 +44,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // For Sign In with Google Sign In
         GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String!, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        
+        // Github handler
+        if (url.host == "oauth-callback") {
+            OAuthSwift.handle(url: url)
+        }
         
         return true
     }
