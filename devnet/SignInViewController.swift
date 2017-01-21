@@ -26,6 +26,8 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
     // Google Sign In Button Instance
     @IBOutlet weak var googleSgnInButton: GIDSignInButton!
     
+    @IBOutlet weak var githubSignInButton: GIDSignInButton!
+    
     @IBAction func signUpButton(_ sender: Any) {
         
         presentSignUpView()

@@ -176,6 +176,7 @@
                     </view>
                     <connections>
                         <outlet property="facebookLoginButton" destination="Bjm-ob-H2s" id="ry9-U4-aWi"/>
+                        <outlet property="githubSignInButton" destination="7E1-WZ-W7j" id="WdT-pn-CGR"/>
                         <outlet property="googleSgnInButton" destination="9Bc-e9-qfp" id="MQx-Mf-NYZ"/>
                     </connections>
                 </viewController>
