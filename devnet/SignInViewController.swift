@@ -32,7 +32,6 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
         
     }
     
-    
     // LOGIN AND LOGOUT SETUP FOR FACEBOOK
     
     // Handling for if login complete
@@ -54,6 +53,7 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         
         let firebaseAuth = FIRAuth.auth()
+        
         do {
             try firebaseAuth?.signOut()
         } catch let signOutError as NSError {
@@ -189,6 +189,15 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
         })
         
     }
+    
+    
+    // LOGIN AND LOG OUT SETUP FOR GITHUB SIGN IN
+    
+    // For Github Sign In
+    
+    
+    
+    
     
     // HANDLERS
     

@@ -138,7 +138,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="MDC-MU-SdF"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7E1-WZ-W7j">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7E1-WZ-W7j" customClass="GIDSignInButton">
                                                         <rect key="frame" x="0.0" y="90" width="311" height="40"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
