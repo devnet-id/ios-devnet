@@ -14,14 +14,6 @@ import FBSDKLoginKit
 
 class ProfileTableViewController: UITableViewController {
 
-    @IBAction func signOutButton(_ sender: Any) {
-        
-        let loginManager = FBSDKLoginManager()
-        loginManager.logOut() // this is an instance function
-        
-        self.dismiss(animated: true, completion: nil)
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
