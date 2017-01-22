@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -77,38 +76,34 @@
             </objects>
             <point key="canvasLocation" x="1517" y="-743"/>
         </scene>
-        <!--Profile-->
-        <scene sceneID="3J5-KO-0rs">
+        <!--Table View Controller-->
+        <scene sceneID="rzb-qM-RQm">
             <objects>
-                <viewController id="aoy-ub-CW0" customClass="ProfileViewController" customModule="devnet" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xz9-Zv-HNV"/>
-                        <viewControllerLayoutGuide type="bottom" id="cam-aq-psp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ADD-mT-JvU">
+                <tableViewController id="Isj-78-Fch" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="XEZ-mu-gZb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JS-dJ-TMp">
-                                <rect key="frame" x="16" y="318" width="343" height="30"/>
-                                <state key="normal" title="Sign Out"/>
-                                <connections>
-                                    <action selector="signOutButton:" destination="aoy-ub-CW0" eventType="touchUpInside" id="zCj-D4-CcP"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="4JS-dJ-TMp" firstAttribute="leading" secondItem="ADD-mT-JvU" secondAttribute="leadingMargin" id="4NL-LH-8qN"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4JS-dJ-TMp" secondAttribute="trailing" id="aBj-XJ-kcS"/>
-                            <constraint firstItem="4JS-dJ-TMp" firstAttribute="centerY" secondItem="ADD-mT-JvU" secondAttribute="centerY" id="yVP-Lm-lk0"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Profile" id="5OQ-Bq-lF5"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EHz-Gx-N8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="JfR-ee-xcW">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JfR-ee-xcW" id="yd2-CD-lNV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Isj-78-Fch" id="VFg-c8-9gr"/>
+                            <outlet property="delegate" destination="Isj-78-Fch" id="972-HI-4Iy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="HEL-wJ-WUb"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yOv-Mw-6fg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2030" y="-743"/>
+            <point key="canvasLocation" x="2037" y="-744"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="eO4-Dv-8M2">
@@ -200,7 +195,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="aoy-ub-CW0" kind="relationship" relationship="rootViewController" id="P42-xp-w4S"/>
+                        <segue destination="Isj-78-Fch" kind="relationship" relationship="rootViewController" id="DvT-nU-0cD"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j7e-sC-Krg" userLabel="First Responder" sceneMemberID="firstResponder"/>
