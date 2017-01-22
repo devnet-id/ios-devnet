@@ -11,12 +11,15 @@ import Firebase
 import GoogleSignIn
 import FBSDKCoreKit
 import FBSDKLoginKit
+import OAuthSwift
 
 class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate, GIDSignInDelegate {
     
     // VARIABLES
     
     var appDelegate: AppDelegate!
+    
+    var oAuthSwift: OAuthSwift?
     
     // OUTLETS
     
@@ -26,6 +29,7 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
     // Google Sign In Button Instance
     @IBOutlet weak var googleSgnInButton: GIDSignInButton!
     
+    // Github Sign Out Button Instance
     @IBOutlet weak var githubSignInButton: GIDSignInButton!
     
     @IBAction func signUpButton(_ sender: Any) {
@@ -164,7 +168,10 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
             return
         }
         
+        print(accessToken)
+        
         let credentials = FIRGoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+        
         
         FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
             
@@ -196,6 +203,8 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
     // LOGIN AND LOG OUT SETUP FOR GITHUB SIGN IN
     
     // For Github Sign In
+    
+
     
     
     

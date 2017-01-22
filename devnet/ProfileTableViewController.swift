@@ -12,7 +12,7 @@ import GoogleSignIn
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-class ProfileTableViewController: UIViewController {
+class ProfileTableViewController: UITableViewController {
 
     @IBAction func signOutButton(_ sender: Any) {
         

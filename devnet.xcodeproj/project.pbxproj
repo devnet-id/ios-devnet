@@ -10,7 +10,7 @@
 		6E4ED7CB1E2F6E6A00B03010 /* GrandCentralDispatchBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4ED7CA1E2F6E6A00B03010 /* GrandCentralDispatchBlackBox.swift */; };
 		6E6318721E2F5CEA0032B125 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6318711E2F5CEA0032B125 /* AppDelegate.swift */; };
 		6E6318741E2F5CEA0032B125 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6318731E2F5CEA0032B125 /* SignInViewController.swift */; };
-		6E6318771E2F5CEA0032B125 /* SignInView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E6318751E2F5CEA0032B125 /* SignInView.storyboard */; };
+		6E6318771E2F5CEA0032B125 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E6318751E2F5CEA0032B125 /* Main.storyboard */; };
 		6E6318791E2F5CEA0032B125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E6318781E2F5CEA0032B125 /* Assets.xcassets */; };
 		6E63187C1E2F5CEA0032B125 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E63187A1E2F5CEA0032B125 /* LaunchScreen.storyboard */; };
 		6EE2F5CF1E30FB8400476475 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EE2F5CE1E30FB8400476475 /* GoogleService-Info.plist */; };
@@ -29,7 +29,7 @@
 		6E63186E1E2F5CEA0032B125 /* devnet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = devnet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6318711E2F5CEA0032B125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E6318731E2F5CEA0032B125 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		6E6318761E2F5CEA0032B125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignInView.storyboard; sourceTree = "<group>"; };
+		6E6318761E2F5CEA0032B125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E6318781E2F5CEA0032B125 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E63187B1E2F5CEA0032B125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E63187D1E2F5CEA0032B125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				6E63187A1E2F5CEA0032B125 /* LaunchScreen.storyboard */,
-				6E6318751E2F5CEA0032B125 /* SignInView.storyboard */,
+				6E6318751E2F5CEA0032B125 /* Main.storyboard */,
 				6EF6B6DC1E2FD1350007733F /* ApplicationView.storyboard */,
 				6EE2F5D21E31F32200476475 /* SignUpView.storyboard */,
 			);
@@ -219,7 +219,7 @@
 				6E63187C1E2F5CEA0032B125 /* LaunchScreen.storyboard in Resources */,
 				6EE2F5CF1E30FB8400476475 /* GoogleService-Info.plist in Resources */,
 				6E6318791E2F5CEA0032B125 /* Assets.xcassets in Resources */,
-				6E6318771E2F5CEA0032B125 /* SignInView.storyboard in Resources */,
+				6E6318771E2F5CEA0032B125 /* Main.storyboard in Resources */,
 				6EE2F5D41E31F32200476475 /* SignUpView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,12 +292,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6E6318751E2F5CEA0032B125 /* SignInView.storyboard */ = {
+		6E6318751E2F5CEA0032B125 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6E6318761E2F5CEA0032B125 /* Base */,
 			);
-			name = SignInView.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		6E63187A1E2F5CEA0032B125 /* LaunchScreen.storyboard */ = {
