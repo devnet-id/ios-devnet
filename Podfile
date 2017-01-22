@@ -10,5 +10,6 @@ target 'devnet' do
   pod ‘Firebase/Auth’
   pod ‘GoogleSignIn’
   pod 'OAuthSwift’
+  pod ‘Firebase/Database’
 
 end
