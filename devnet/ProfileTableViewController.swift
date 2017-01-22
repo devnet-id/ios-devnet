@@ -14,8 +14,13 @@ import FBSDKLoginKit
 
 class ProfileTableViewController: UITableViewController {
 
+    @IBOutlet weak var userFullNameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        userFullNameLabel.text = User.userName
+        
         
         // Do any additional setup after loading the view.
     }

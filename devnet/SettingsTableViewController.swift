@@ -24,8 +24,15 @@ class SettingsTableViewController: UITableViewController {
         self.dismiss(animated: true, completion: nil)
         
     }
+    @IBOutlet weak var userFullNameLabel: UILabel!
+    
+    @IBOutlet weak var userEmailLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        userFullNameLabel.text = User.userName
+        userEmailLabel.text = User.userEmail
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,31 +41,7 @@ class SettingsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "signOutCell", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
 
     /*
     // Override to support conditional editing of the table view.
