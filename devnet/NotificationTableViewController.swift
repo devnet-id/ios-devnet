@@ -1,5 +1,5 @@
 //
-//  HomeTableTableViewController.swift
+//  NotificationTableViewController.swift
 //  devnet
 //
 //  Created by Zulwiyoza Putra on 1/23/17.
@@ -8,24 +8,8 @@
 
 import UIKit
 
-class HomeTableTableViewController: UITableViewController {
+class NotificationTableViewController: UITableViewController {
 
-    
-    @IBAction func newPostButton(_ sender: Any) {
-        
-        presentNewPost()
-        
-    }
-
-    
-    // Presenting sign up view controller
-    private func presentNewPost() -> Void {
-        let storyBoard = UIStoryboard(name: "NewPost", bundle: nil)
-        let newPostNavigationController = storyBoard.instantiateViewController(withIdentifier: "NewPostNavigationController") as! UINavigationController
-        self.present(newPostNavigationController, animated: true, completion: nil)
-    }
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,8 +19,7 @@ class HomeTableTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,24 +29,21 @@ class HomeTableTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
-        
+        return 12
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        let notification = tableView.dequeueReusableCell(withIdentifier: "Notification")
+        
+        notification?.textLabel?.text = "This is the textLabel"
+        notification?.detailTextLabel?.text = "This is the detail view of notification cell"
+        return notification!
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

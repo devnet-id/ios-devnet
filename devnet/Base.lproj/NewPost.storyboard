@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New Post View Controller-->
+        <!--New Post-->
         <scene sceneID="N0c-rn-3AX">
             <objects>
                 <viewController storyboardIdentifier="NewPost" id="uB6-HK-1Ld" customClass="NewPostViewController" customModule="devnet" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +37,7 @@
                             <constraint firstItem="cAI-DJ-AyE" firstAttribute="leading" secondItem="ZC1-sw-ljX" secondAttribute="leading" constant="8" id="tDJ-3S-5fr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bUZ-mH-xwq">
+                    <navigationItem key="navigationItem" title="New Post" id="bUZ-mH-xwq">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="MhW-Qz-Qg1">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>

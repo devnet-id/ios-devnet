@@ -22,6 +22,7 @@
 		6E91B9B31E364C9900A1ED15 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91B9B21E364C9900A1ED15 /* NewPostViewController.swift */; };
 		6E91B9B51E36549C00A1ED15 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91B9B41E36549C00A1ED15 /* HomeViewController.swift */; };
 		6E91B9B71E36551600A1ED15 /* HomeTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91B9B61E36551600A1ED15 /* HomeTableTableViewController.swift */; };
+		6E91B9B91E36623900A1ED15 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91B9B81E36623900A1ED15 /* NotificationTableViewController.swift */; };
 		6EE2F5CF1E30FB8400476475 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EE2F5CE1E30FB8400476475 /* GoogleService-Info.plist */; };
 		6EE2F5D41E31F32200476475 /* SignUpView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EE2F5D21E31F32200476475 /* SignUpView.storyboard */; };
 		6EE2F5D61E31F35A00476475 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE2F5D51E31F35A00476475 /* SignUpViewController.swift */; };
@@ -51,6 +52,7 @@
 		6E91B9B21E364C9900A1ED15 /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		6E91B9B41E36549C00A1ED15 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6E91B9B61E36551600A1ED15 /* HomeTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableTableViewController.swift; sourceTree = "<group>"; };
+		6E91B9B81E36623900A1ED15 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		6EE2F5CE1E30FB8400476475 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6EE2F5D31E31F32200476475 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignUpView.storyboard; sourceTree = "<group>"; };
 		6EE2F5D51E31F35A00476475 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				6E6318731E2F5CEA0032B125 /* SignInViewController.swift */,
 				6E91B9B41E36549C00A1ED15 /* HomeViewController.swift */,
 				6E91B9B61E36551600A1ED15 /* HomeTableTableViewController.swift */,
+				6E91B9B81E36623900A1ED15 /* NotificationTableViewController.swift */,
 				6E91B9B21E364C9900A1ED15 /* NewPostViewController.swift */,
 				6EE2F5D71E31F84500476475 /* ProfileTableViewController.swift */,
 				6E64489F1E350865006D75DC /* SettingsTableViewController.swift */,
@@ -321,6 +324,7 @@
 				6E1C5E3D1E35F1C400ECBA0B /* Activity.swift in Sources */,
 				6EF6B6E01E2FD1F40007733F /* TabBarController.swift in Sources */,
 				6E1C5E411E35F2C400ECBA0B /* Comment.swift in Sources */,
+				6E91B9B91E36623900A1ED15 /* NotificationTableViewController.swift in Sources */,
 				6E6318721E2F5CEA0032B125 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

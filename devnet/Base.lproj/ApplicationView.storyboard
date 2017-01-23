@@ -44,7 +44,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vef-i3-1ua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1006" y="-742"/>
+            <point key="canvasLocation" x="454" y="-878"/>
         </scene>
         <!--Explore-->
         <scene sceneID="FOV-rY-Wip">
@@ -63,26 +63,52 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjB-Wf-ad2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2577" y="-743"/>
+            <point key="canvasLocation" x="3513" y="-878"/>
         </scene>
         <!--Notification-->
-        <scene sceneID="wh1-6y-NTu">
+        <scene sceneID="oWI-lF-Ltg">
             <objects>
-                <viewController id="73K-sB-1hc" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kKa-TJ-0ea"/>
-                        <viewControllerLayoutGuide type="bottom" id="hzc-8C-X3s"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Fez-N3-Lfn">
+                <tableViewController id="52M-Gt-tOv" customClass="NotificationTableViewController" customModule="devnet" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="euU-fQ-E02">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Notification" id="9dO-PT-ejf"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mAW-4o-s84" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Notification" textLabel="wht-5U-kZZ" detailTextLabel="nCQ-Cs-q1B" rowHeight="80" style="IBUITableViewCellStyleSubtitle" id="HrF-g7-qxc">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HrF-g7-qxc" id="n6l-1s-mGj">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wht-5U-kZZ">
+                                            <rect key="frame" x="15" y="22" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nCQ-Cs-q1B">
+                                            <rect key="frame" x="15" y="43" width="33" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="52M-Gt-tOv" id="xQe-zJ-JZT"/>
+                            <outlet property="delegate" destination="52M-Gt-tOv" id="Msm-F3-g1w"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Notification" id="TzR-PW-j3H"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="75R-ry-HIr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1517" y="-743"/>
+            <point key="canvasLocation" x="1516" y="-878.41079460269873"/>
         </scene>
         <!--Profile-->
         <scene sceneID="rzb-qM-RQm">
@@ -186,7 +212,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOv-Mw-6fg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2036" y="-744.3778110944528"/>
+            <point key="canvasLocation" x="2638" y="-878"/>
         </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="MUm-dO-cTc">
@@ -324,7 +350,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y07-rq-h0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2036" y="29.23538230884558"/>
+            <point key="canvasLocation" x="2638" y="199"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="eO4-Dv-8M2">
@@ -345,7 +371,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rkZ-0o-14P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1775" y="-2882"/>
+            <point key="canvasLocation" x="2004" y="-3282"/>
         </scene>
         <!--Home-->
         <scene sceneID="sH7-9S-3aJ">
@@ -364,7 +390,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXq-0z-0ew" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1006" y="-1847"/>
+            <point key="canvasLocation" x="454" y="-1849"/>
         </scene>
         <!--Explore-->
         <scene sceneID="69W-Ey-d8M">
@@ -383,7 +409,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v5O-H5-89o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2577" y="-1848"/>
+            <point key="canvasLocation" x="3514" y="-1849"/>
         </scene>
         <!--Notification-->
         <scene sceneID="WOk-Sx-rAS">
@@ -397,7 +423,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="73K-sB-1hc" kind="relationship" relationship="rootViewController" id="Z88-97-hPN"/>
+                        <segue destination="52M-Gt-tOv" kind="relationship" relationship="rootViewController" id="AkV-wJ-ICJ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XoO-00-dS9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -421,7 +447,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j7e-sC-Krg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2030" y="-1849"/>
+            <point key="canvasLocation" x="2638" y="-1849"/>
         </scene>
     </scenes>
     <resources>
