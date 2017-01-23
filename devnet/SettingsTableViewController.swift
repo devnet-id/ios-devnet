@@ -45,6 +45,8 @@ class SettingsTableViewController: UITableViewController {
                 let loginManager = FBSDKLoginManager()
                 loginManager.logOut() // this is an instance function
                 
+                GIDSignIn.sharedInstance().signOut()
+                
                 self.dismiss(animated: true, completion: nil)
                 self.dismiss(animated: true, completion: nil)
             }
