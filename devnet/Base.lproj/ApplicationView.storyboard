@@ -131,7 +131,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ycb-aR-GRw">
                                                     <rect key="frame" x="64" y="54" width="247" height="170"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google.png" translatesAutoresizingMaskIntoConstraints="NO" id="tsW-2z-mvk">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-2" translatesAutoresizingMaskIntoConstraints="NO" id="tsW-2z-mvk">
                                                             <rect key="frame" x="64" y="0.0" width="119" height="119"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="tsW-2z-mvk" secondAttribute="height" multiplier="1:1" id="zbU-wF-yYp"/>
@@ -373,11 +373,11 @@
             </objects>
             <point key="canvasLocation" x="2004" y="-3282"/>
         </scene>
-        <!--Home-->
+        <!--Navigation Controller-->
         <scene sceneID="sH7-9S-3aJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xYh-6c-NXG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="DF1-8A-9Xf"/>
+                    <tabBarItem key="tabBarItem" image="home-1" selectedImage="home-1" id="DF1-8A-9Xf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ils-80-C4d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -451,6 +451,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="google.png" width="18" height="18"/>
+        <image name="home-1" width="512" height="512"/>
+        <image name="user-2" width="256" height="256"/>
     </resources>
 </document>
