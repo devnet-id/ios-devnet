@@ -17,11 +17,7 @@ import FBSDKLoginKit
 class SettingsTableViewController: UITableViewController {
 
     @IBAction func signOutButton(_ sender: Any) {
-        
-        let loginManager = FBSDKLoginManager()
-        loginManager.logOut() // this is an instance function
-        
-        self.dismiss(animated: true, completion: nil)
+        showAlert()
         
     }
     @IBOutlet weak var userFullNameLabel: UILabel!
@@ -40,6 +36,30 @@ class SettingsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    // Presenting UI alert view
+    private func showAlert() -> Void {
+        let alert = UIAlertController(title: "Sign Out", message: "Are you sure you want to sign out?", preferredStyle: UIAlertControllerStyle.alert)
+        let Ok = UIAlertAction(title: "Ok", style: .destructive) { (alert: UIAlertAction!) in
+            performUIUpdatesOnMain {
+                let loginManager = FBSDKLoginManager()
+                loginManager.logOut() // this is an instance function
+                
+                self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        
+        let Cancel = UIAlertAction(title: "Cancel", style: .destructive) { (alert: UIAlertAction!) in
+            performUIUpdatesOnMain {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        alert.addAction(Ok)
+        alert.addAction(Cancel)
+        present(alert, animated: true, completion: nil)
+    }
+
 
     // MARK: - Table view data source
 
