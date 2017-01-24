@@ -30,7 +30,9 @@ class HomeTableTableViewController: UITableViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         posts = appDelegate.posts
         
-        tableView.reloadData()
+        DispatchQueue.main.asynchronously() {
+            self.tableView.reloadData()
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
