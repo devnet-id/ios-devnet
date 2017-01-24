@@ -21,7 +21,7 @@
 		6E91B9B11E364C5400A1ED15 /* NewPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E91B9AF1E364C5400A1ED15 /* NewPost.storyboard */; };
 		6E91B9B31E364C9900A1ED15 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91B9B21E364C9900A1ED15 /* NewPostViewController.swift */; };
 		6E91B9B51E36549C00A1ED15 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91B9B41E36549C00A1ED15 /* HomeViewController.swift */; };
-		6E91B9B71E36551600A1ED15 /* HomeTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91B9B61E36551600A1ED15 /* HomeTableTableViewController.swift */; };
+		6E91B9B71E36551600A1ED15 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91B9B61E36551600A1ED15 /* HomeTableViewController.swift */; };
 		6E91B9B91E36623900A1ED15 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91B9B81E36623900A1ED15 /* NotificationTableViewController.swift */; };
 		6EE2F5CF1E30FB8400476475 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EE2F5CE1E30FB8400476475 /* GoogleService-Info.plist */; };
 		6EE2F5D41E31F32200476475 /* SignUpView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EE2F5D21E31F32200476475 /* SignUpView.storyboard */; };
@@ -53,7 +53,7 @@
 		6E91B9B01E364C5400A1ED15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NewPost.storyboard; sourceTree = "<group>"; };
 		6E91B9B21E364C9900A1ED15 /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		6E91B9B41E36549C00A1ED15 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		6E91B9B61E36551600A1ED15 /* HomeTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableTableViewController.swift; sourceTree = "<group>"; };
+		6E91B9B61E36551600A1ED15 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		6E91B9B81E36623900A1ED15 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		6EE2F5CE1E30FB8400476475 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6EE2F5D31E31F32200476475 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignUpView.storyboard; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 				6E91B9B41E36549C00A1ED15 /* HomeViewController.swift */,
 				6EFEC5A31E367233009F8F2E /* ExploreViewController.swift */,
 				6EFEC5A51E367256009F8F2E /* ExploreSearchResultTableViewController.swift */,
-				6E91B9B61E36551600A1ED15 /* HomeTableTableViewController.swift */,
+				6E91B9B61E36551600A1ED15 /* HomeTableViewController.swift */,
 				6E91B9B81E36623900A1ED15 /* NotificationTableViewController.swift */,
 				6E91B9B21E364C9900A1ED15 /* NewPostViewController.swift */,
 				6EE2F5D71E31F84500476475 /* ProfileTableViewController.swift */,
@@ -317,7 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EE2F5D61E31F35A00476475 /* SignUpViewController.swift in Sources */,
-				6E91B9B71E36551600A1ED15 /* HomeTableTableViewController.swift in Sources */,
+				6E91B9B71E36551600A1ED15 /* HomeTableViewController.swift in Sources */,
 				6EF6B6D61E2FA6160007733F /* User.swift in Sources */,
 				6E6318741E2F5CEA0032B125 /* SignInViewController.swift in Sources */,
 				6E91B9AE1E364A8000A1ED15 /* Post.swift in Sources */,

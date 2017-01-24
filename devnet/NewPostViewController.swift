@@ -26,6 +26,9 @@ class NewPostViewController: UIViewController {
         appDelegate.posts.append(post)
         
         print(appDelegate.posts)
+        let storyBoard = UIStoryboard(name: "ApplicationView", bundle: nil)
+        let homeTableViewController = storyBoard.instantiateViewController(withIdentifier: "HomeTableViewController") as! HomeTableViewController
+        homeTableViewController.tableView.reloadData()
         
         self.dismiss(animated: true, completion: nil)
     }

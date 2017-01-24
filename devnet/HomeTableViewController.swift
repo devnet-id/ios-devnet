@@ -1,5 +1,5 @@
 //
-//  HomeTableTableViewController.swift
+//  HomeTableViewController.swift
 //  devnet
 //
 //  Created by Zulwiyoza Putra on 1/23/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeTableTableViewController: UITableViewController {
+class HomeTableViewController: UITableViewController {
 
     var posts: [Post]!
     
@@ -30,7 +30,7 @@ class HomeTableTableViewController: UITableViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         posts = appDelegate.posts
         
-        DispatchQueue.main.asynchronously() {
+        performUIUpdatesOnMain {
             self.tableView.reloadData()
         }
 
@@ -41,9 +41,7 @@ class HomeTableTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
-    }
+
     
 
     // MARK: - Table view data source
