@@ -19,11 +19,7 @@ class NewPostViewController: UIViewController {
     
     @IBAction func saveButton(_ sender: Any) {
         
-        var post = Post()
-        
-       
-        
-        post.postContent = newPostTextView.text!
+        let post = Post(postTitle: nil, postContent: newPostTextView.text, postResponse: nil)
         
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
@@ -31,13 +27,12 @@ class NewPostViewController: UIViewController {
         
         print(appDelegate.posts)
         
-        let homeTableview = HomeTableTableViewController()
-
-        
         self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
 }

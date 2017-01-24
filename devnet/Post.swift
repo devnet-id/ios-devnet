@@ -10,6 +10,6 @@ import Foundation
 
 struct Post {
     var postTitle: String?
-    var postContent: String?
+    var postContent: String = ""
     var postResponse: Response?
 }

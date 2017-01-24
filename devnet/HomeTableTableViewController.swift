@@ -39,11 +39,10 @@ class HomeTableTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
+    
 
     // MARK: - Table view data source
 
@@ -54,6 +53,7 @@ class HomeTableTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        
         return posts.count
         
     }
@@ -66,7 +66,9 @@ class HomeTableTableViewController: UITableViewController {
         
         let post = posts[indexPath.row]
         
-        cell.detailTextLabel?.text = post.postContent
+        cell.detailTextLabel?.text = "detail view"
+        
+        cell.textLabel?.text = post.postContent
 
         return cell
     }
