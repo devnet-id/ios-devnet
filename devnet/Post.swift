@@ -9,8 +9,7 @@
 import Foundation
 
 struct Post {
-    static var postTitle: String?
-    static var postModificationDate: NSDate?
-    static var postContent: String?
-    static var postResponse: Response?
+    var postTitle: String?
+    var postContent: String?
+    var postResponse: Response?
 }

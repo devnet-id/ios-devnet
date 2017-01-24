@@ -15,6 +15,8 @@ import OAuthSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var posts = [Post]()
+    
     var window: UIWindow?
 
 

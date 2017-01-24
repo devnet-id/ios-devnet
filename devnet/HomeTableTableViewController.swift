@@ -10,13 +10,11 @@ import UIKit
 
 class HomeTableTableViewController: UITableViewController {
 
+    var posts: [Post]!
     
     @IBAction func newPostButton(_ sender: Any) {
-        
         presentNewPost()
-        
     }
-
     
     // Presenting sign up view controller
     private func presentNewPost() -> Void {
@@ -28,6 +26,11 @@ class HomeTableTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        posts = appDelegate.posts
+        
+        tableView.reloadData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -46,24 +49,28 @@ class HomeTableTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return posts.count
         
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
+        
+        let post = posts[indexPath.row]
+        
+        cell.detailTextLabel?.text = post.postContent
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
