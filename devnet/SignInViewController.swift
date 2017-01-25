@@ -16,7 +16,6 @@ import OAuthSwift
 class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate, GIDSignInDelegate {
     
     // VARIABLES
-    
     var appDelegate: AppDelegate!
     
     var oAuthSwift: OAuthSwift?
