@@ -36,5 +36,25 @@ class NewPostViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let homeTableViewController = segue.destination as! HomeTableViewController
+        if segue.identifier == "Save" {
+            if let note = note {
+                // 1
+                note.title = noteTitleTextField.text ?? ""
+                note.content = noteContentTextView.text ?? ""
+                // 2
+                listNotesTableViewController.tableView.reloadData()
+            } else {
+                // 3
+                let newNote = Note()
+                newNote.title = noteTitleTextField.text ?? ""
+                newNote.content = noteContentTextView.text ?? ""
+                newNote.modificationTime = Date()
+                listNotesTableViewController.notes.append(newNote)
+            }
+        }
+    }
+    
     
 }
