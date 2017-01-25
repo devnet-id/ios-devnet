@@ -23,6 +23,7 @@
 		6E91B9B71E36551600A1ED15 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91B9B61E36551600A1ED15 /* HomeTableViewController.swift */; };
 		6E91B9B91E36623900A1ED15 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91B9B81E36623900A1ED15 /* NotificationTableViewController.swift */; };
 		6EC1BCFC1E392D2200212E72 /* NewPostView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EC1BCFA1E392D2200212E72 /* NewPostView.storyboard */; };
+		6EC1BCFF1E39431F00212E72 /* SettingsTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EC1BCFD1E39431F00212E72 /* SettingsTableView.storyboard */; };
 		6EE2F5CF1E30FB8400476475 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EE2F5CE1E30FB8400476475 /* GoogleService-Info.plist */; };
 		6EE2F5D41E31F32200476475 /* SignUpView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EE2F5D21E31F32200476475 /* SignUpView.storyboard */; };
 		6EE2F5D61E31F35A00476475 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE2F5D51E31F35A00476475 /* SignUpViewController.swift */; };
@@ -55,6 +56,7 @@
 		6E91B9B61E36551600A1ED15 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		6E91B9B81E36623900A1ED15 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		6EC1BCFB1E392D2200212E72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NewPostView.storyboard; sourceTree = "<group>"; };
+		6EC1BCFE1E39431F00212E72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SettingsTableView.storyboard; sourceTree = "<group>"; };
 		6EE2F5CE1E30FB8400476475 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6EE2F5D31E31F32200476475 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignUpView.storyboard; sourceTree = "<group>"; };
 		6EE2F5D51E31F35A00476475 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				6E63187A1E2F5CEA0032B125 /* LaunchScreen.storyboard */,
 				6E6318751E2F5CEA0032B125 /* Main.storyboard */,
 				6EF6B6DC1E2FD1350007733F /* ApplicationView.storyboard */,
+				6EC1BCFD1E39431F00212E72 /* SettingsTableView.storyboard */,
 				6EC1BCFA1E392D2200212E72 /* NewPostView.storyboard */,
 				6EE2F5D21E31F32200476475 /* SignUpView.storyboard */,
 			);
@@ -258,6 +261,7 @@
 				6E6318791E2F5CEA0032B125 /* Assets.xcassets in Resources */,
 				6E6318771E2F5CEA0032B125 /* Main.storyboard in Resources */,
 				6EE2F5D41E31F32200476475 /* SignUpView.storyboard in Resources */,
+				6EC1BCFF1E39431F00212E72 /* SettingsTableView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +366,14 @@
 				6EC1BCFB1E392D2200212E72 /* Base */,
 			);
 			name = NewPostView.storyboard;
+			sourceTree = "<group>";
+		};
+		6EC1BCFD1E39431F00212E72 /* SettingsTableView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EC1BCFE1E39431F00212E72 /* Base */,
+			);
+			name = SettingsTableView.storyboard;
 			sourceTree = "<group>";
 		};
 		6EE2F5D21E31F32200476475 /* SignUpView.storyboard */ = {
