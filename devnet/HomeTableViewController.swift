@@ -10,7 +10,7 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
 
-    var posts: [Post]!
+    var posts: [Post] = []
     
     @IBAction func newPostButton(_ sender: Any) {
         presentNewPost()
@@ -23,7 +23,6 @@ class HomeTableViewController: UITableViewController {
         self.present(newPostNavigationController, animated: true, completion: nil)
     }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
