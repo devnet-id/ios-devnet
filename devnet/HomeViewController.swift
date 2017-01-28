@@ -3,7 +3,7 @@
 //  devnet
 //
 //  Created by Zulwiyoza Putra on 1/23/17.
-//  Copyright © 2017 zulwiyozaputra. All rights reserved.
+//  Copyright © 2017 Kibar. All rights reserved.
 //
 
 import UIKit
