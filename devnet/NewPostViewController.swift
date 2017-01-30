@@ -8,8 +8,11 @@
 
 import UIKit
 import Foundation
+import FirebaseDatabase
 
 class NewPostViewController: UIViewController {
+    
+    var reference: FIRDatabaseReference?
     
     @IBOutlet weak var newPostTextView: UITextView!
     
@@ -34,8 +37,10 @@ class NewPostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        reference = FIRDatabase.database().reference()
     }
     
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let homeTableViewController = segue.destination as! HomeTableViewController
         if segue.identifier == "Save" {
@@ -55,6 +60,6 @@ class NewPostViewController: UIViewController {
             }
         }
     }
-    
+    */
     
 }

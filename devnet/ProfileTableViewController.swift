@@ -21,8 +21,6 @@ class ProfileTableViewController: UITableViewController {
         
         userFullNameLabel.text = User.userName
         
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
