@@ -71,6 +71,7 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - FBSDKShareKit
   - Firebase/Auth
+  - Firebase/Core
   - Firebase/Database
   - GoogleSignIn
   - OAuthSwift
@@ -95,6 +96,6 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
   OAuthSwift: 7ec2c62274f6bdc30b1ba3b799c39a6fdcaea0e5
 
-PODFILE CHECKSUM: c77b95ba4a77960b2f55f628a48f66eb2b7fed3c
+PODFILE CHECKSUM: 62f29eaf6e5cf31e58897caf169bacf3cf78bdb0
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0

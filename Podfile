@@ -7,6 +7,7 @@ target 'devnet' do
   pod 'FBSDKCoreKit'
   pod 'FBSDKShareKit'
   pod 'FBSDKLoginKit'
+  pod ‘Firebase/Core’
   pod ‘Firebase/Auth’
   pod ‘GoogleSignIn’
   pod 'OAuthSwift’
