@@ -10,7 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import Firebase
 import GoogleSignIn
-import OAuthSwift
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
