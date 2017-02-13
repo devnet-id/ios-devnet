@@ -13,6 +13,7 @@ import FirebaseDatabase
 class NewPostViewController: UIViewController {
     
     var reference: FIRDatabaseReference?
+    var post: Post?
     
     @IBOutlet weak var newPostTextView: UITextView!
     
@@ -40,26 +41,22 @@ class NewPostViewController: UIViewController {
         reference = FIRDatabase.database().reference()
     }
     
-    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let homeTableViewController = segue.destination as! HomeTableViewController
-        if segue.identifier == "Save" {
-            if let note = note {
-                // 1
-                note.title = noteTitleTextField.text ?? ""
-                note.content = noteContentTextView.text ?? ""
+        if segue.identifier == "save" {
+            if let post = post {
+                
+                post.postTitle = newPostTextView.text ?? ""
                 // 2
-                listNotesTableViewController.tableView.reloadData()
+                homeTableViewController.tableView.reloadData()
             } else {
                 // 3
-                let newNote = Note()
-                newNote.title = noteTitleTextField.text ?? ""
-                newNote.content = noteContentTextView.text ?? ""
-                newNote.modificationTime = Date()
-                listNotesTableViewController.notes.append(newNote)
+                let newPost = Post()
+                newPost.postTitle = newPostTextView.text ?? ""
+                newPost.postModificationDate = Date()
+                homeTableViewController.posts.append(newPost)
             }
         }
     }
-    */
     
 }

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="8fg-hm-N03"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pxA-bB-vEW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VOj-Nl-iZb">
@@ -38,22 +42,24 @@
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="cancelButton:" destination="SU6-qx-5op" id="oR4-eJ-sUa"/>
+                                <segue destination="Q3t-kP-7qM" kind="unwind" identifier="cancel" unwindAction="unwindToHomeTableViewController:" id="oQA-ps-AlE"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="658-TL-tH1">
                             <connections>
                                 <action selector="saveButton:" destination="SU6-qx-5op" id="1Qn-XW-VJX"/>
+                                <segue destination="Q3t-kP-7qM" kind="unwind" identifier="save" unwindAction="unwindToHomeTableViewController:" id="Ixf-sL-4tt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4_7.fullscreen"/>
                     <connections>
                         <outlet property="newPostTextView" destination="VOj-Nl-iZb" id="Mrx-eI-DV0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xf9-g8-Yrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Q3t-kP-7qM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="454" y="45"/>
         </scene>

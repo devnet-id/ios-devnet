@@ -65,5 +65,12 @@ class HomeTableViewController: UITableViewController {
 
         return cell
     }
+    
+    @IBAction func unwindToHomeTableViewController(_ segue: UIStoryboardSegue) {
+        
+        tableView.reloadData()
+        
+        
+    }
 
 }
