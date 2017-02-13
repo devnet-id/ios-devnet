@@ -41,13 +41,11 @@
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="CRR-Ah-gHp">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="cancelButton:" destination="SU6-qx-5op" id="oR4-eJ-sUa"/>
                                 <segue destination="Q3t-kP-7qM" kind="unwind" identifier="cancel" unwindAction="unwindToHomeTableViewController:" id="oQA-ps-AlE"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="658-TL-tH1">
                             <connections>
-                                <action selector="saveButton:" destination="SU6-qx-5op" id="1Qn-XW-VJX"/>
                                 <segue destination="Q3t-kP-7qM" kind="unwind" identifier="save" unwindAction="unwindToHomeTableViewController:" id="Ixf-sL-4tt"/>
                             </connections>
                         </barButtonItem>

@@ -53,15 +53,14 @@ class HomeTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
 
         // Configure the cell...
         
         let post = posts[indexPath.row]
         
-        cell.detailTextLabel?.text = "detail view"
-        
-        cell.textLabel?.text = post.postContent
+        cell.content.text = post.postContent
+        cell.modificationDate.text = post.postModificationDate?.description
 
         return cell
     }

@@ -17,25 +17,6 @@ class NewPostViewController: UIViewController {
     
     @IBOutlet weak var newPostTextView: UITextView!
     
-    @IBAction func cancelButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func saveButton(_ sender: Any) {
-        
-        let post = Post(postTitle: nil, postContent: newPostTextView.text, postResponse: nil)
-        
-        let object = UIApplication.shared.delegate
-        let appDelegate = object as! AppDelegate
-        appDelegate.posts.append(post)
-        
-        print(appDelegate.posts)
-        let homeTableViewController = HomeTableViewController()
-        homeTableViewController.tableView.reloadData()
-        
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         reference = FIRDatabase.database().reference()
@@ -44,14 +25,13 @@ class NewPostViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let homeTableViewController = segue.destination as! HomeTableViewController
         if segue.identifier == "save" {
-            if let post = post {
+            if var post = post {
                 
                 post.postTitle = newPostTextView.text ?? ""
-                // 2
                 homeTableViewController.tableView.reloadData()
             } else {
                 // 3
-                let newPost = Post()
+                var newPost = Post()
                 newPost.postTitle = newPostTextView.text ?? ""
                 newPost.postModificationDate = Date()
                 homeTableViewController.posts.append(newPost)
