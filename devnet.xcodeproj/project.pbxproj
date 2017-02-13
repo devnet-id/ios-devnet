@@ -121,7 +121,7 @@
 				6EF6B6D91E2FBE760007733F /* Controller */,
 				6E71552F1E518B5400A9C20B /* Extension */,
 				6EF6B6D81E2FBE6A0007733F /* Helper */,
-				6EF6B6DB1E2FBEA30007733F /* Assets */,
+				6EF6B6DB1E2FBEA30007733F /* Asset */,
 			);
 			path = devnet;
 			sourceTree = "<group>";
@@ -186,7 +186,7 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		6EF6B6DB1E2FBEA30007733F /* Assets */ = {
+		6EF6B6DB1E2FBEA30007733F /* Asset */ = {
 			isa = PBXGroup;
 			children = (
 				6E6318711E2F5CEA0032B125 /* AppDelegate.swift */,
@@ -194,7 +194,7 @@
 				6E63187D1E2F5CEA0032B125 /* Info.plist */,
 				6EE2F5CE1E30FB8400476475 /* GoogleService-Info.plist */,
 			);
-			name = Assets;
+			name = Asset;
 			sourceTree = "<group>";
 		};
 		88C069A93BBEA2E1DFAC0694 /* Frameworks */ = {
