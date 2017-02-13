@@ -19,6 +19,7 @@
 		6E63187C1E2F5CEA0032B125 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E63187A1E2F5CEA0032B125 /* LaunchScreen.storyboard */; };
 		6E6448A01E350865006D75DC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E64489F1E350865006D75DC /* SettingsTableViewController.swift */; };
 		6E71552C1E51867A00A9C20B /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E71552B1E51867A00A9C20B /* PostTableViewCell.swift */; };
+		6E71552E1E518B4B00A9C20B /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E71552D1E518B4B00A9C20B /* DateExtension.swift */; };
 		6E91B9AE1E364A8000A1ED15 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91B9AD1E364A8000A1ED15 /* Post.swift */; };
 		6E91B9B31E364C9900A1ED15 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91B9B21E364C9900A1ED15 /* NewPostViewController.swift */; };
 		6E91B9B51E36549C00A1ED15 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91B9B41E36549C00A1ED15 /* HomeViewController.swift */; };
@@ -51,6 +52,7 @@
 		6E63187D1E2F5CEA0032B125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E64489F1E350865006D75DC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		6E71552B1E51867A00A9C20B /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		6E71552D1E518B4B00A9C20B /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		6E91B9AD1E364A8000A1ED15 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		6E91B9B21E364C9900A1ED15 /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		6E91B9B41E36549C00A1ED15 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -117,10 +119,19 @@
 				6EF6B6D71E2FBE630007733F /* Model */,
 				6EF6B6DA1E2FBE800007733F /* View */,
 				6EF6B6D91E2FBE760007733F /* Controller */,
+				6E71552F1E518B5400A9C20B /* Extension */,
 				6EF6B6D81E2FBE6A0007733F /* Helper */,
 				6EF6B6DB1E2FBEA30007733F /* Assets */,
 			);
 			path = devnet;
+			sourceTree = "<group>";
+		};
+		6E71552F1E518B5400A9C20B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6E71552D1E518B4B00A9C20B /* DateExtension.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 		6EF6B6D71E2FBE630007733F /* Model */ = {
@@ -324,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EE2F5D61E31F35A00476475 /* SignUpViewController.swift in Sources */,
+				6E71552E1E518B4B00A9C20B /* DateExtension.swift in Sources */,
 				6E91B9B71E36551600A1ED15 /* HomeTableViewController.swift in Sources */,
 				6EF6B6D61E2FA6160007733F /* User.swift in Sources */,
 				6E6318741E2F5CEA0032B125 /* SignInViewController.swift in Sources */,

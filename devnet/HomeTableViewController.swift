@@ -60,7 +60,7 @@ class HomeTableViewController: UITableViewController {
         let post = posts[indexPath.row]
         
         cell.content.text = post.postContent
-        cell.modificationDate.text = post.postModificationDate?.description
+        cell.modificationDate.text = post.postModificationDate?.dateToStringConverterHour()
 
         return cell
     }

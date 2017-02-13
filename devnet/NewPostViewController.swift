@@ -26,13 +26,13 @@ class NewPostViewController: UIViewController {
         let homeTableViewController = segue.destination as! HomeTableViewController
         if segue.identifier == "save" {
             if var post = post {
-                
-                post.postTitle = newPostTextView.text ?? ""
+                post.postModificationDate = Date()
+                post.postContent = newPostTextView.text ?? ""
                 homeTableViewController.tableView.reloadData()
             } else {
                 // 3
                 var newPost = Post()
-                newPost.postTitle = newPostTextView.text ?? ""
+                newPost.postContent = newPostTextView.text ?? ""
                 newPost.postModificationDate = Date()
                 homeTableViewController.posts.append(newPost)
             }
