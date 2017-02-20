@@ -28,9 +28,19 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
     // Google Sign In Button Instance
     @IBOutlet weak var googleSgnInButton: GIDSignInButton!
     
-    // Github Sign Out Button Instance
-    @IBOutlet weak var githubSignInButton: GIDSignInButton!
-    
+    @IBAction func connectWithFacebook(_ sender: Any) {
+        
+        FBSDKLoginManager().logIn(withReadPermissions: ["public_profile", "email", "user_friends"], from: self) { (result, error) in
+            if error != nil {
+                print("Custom FB Login Failed:", error!)
+            } else {
+                print(result!.token.tokenString)
+            }
+            
+        }
+        
+    }
+        
     @IBAction func signUpButton(_ sender: Any) {
         
         presentSignUpView()
