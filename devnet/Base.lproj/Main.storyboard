@@ -67,7 +67,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsq-DM-ikY" customClass="SignInView">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsq-DM-ikY">
                                                         <rect key="frame" x="0.0" y="80" width="311" height="40"/>
                                                         <color key="backgroundColor" red="0.26572552710000003" green="0.65640806340000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -76,6 +76,9 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="Sign In"/>
+                                                        <connections>
+                                                            <action selector="signInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cQq-i2-pQN"/>
+                                                        </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dy3-kd-Q1j">
                                                         <rect key="frame" x="52.5" y="125" width="206.5" height="30"/>
@@ -174,7 +177,9 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="BYu-yM-cbD" id="ptK-mJ-cr7"/>
+                        <outlet property="email" destination="uUR-T7-TYt" id="wyo-VB-Nts"/>
                         <outlet property="googleSgnInButton" destination="9Bc-e9-qfp" id="MQx-Mf-NYZ"/>
+                        <outlet property="password" destination="Ocb-go-fcu" id="IYE-TM-TPU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

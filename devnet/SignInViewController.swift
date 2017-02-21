@@ -21,6 +21,9 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
     var oAuthSwift: OAuthSwift?
     
     // OUTLETS
+    @IBOutlet weak var email: UITextField!
+    
+    @IBOutlet weak var password: UITextField!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     // Google Sign In Button Instance
@@ -39,10 +42,44 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
         
     }
         
+    @IBAction func signInButton(_ sender: Any) {
+        
+        performUIUpdatesOnMain {
+            self.activityIndicator.startAnimating()
+        }
+        
+        signIn()
+        
+    }
+    
     @IBAction func signUpButton(_ sender: Any) {
         
         presentSignUpView()
         
+    }
+    
+    // SIGN IN with email
+    private func signIn() -> Void {
+        if let email = email.text, let password = password.text {
+            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+                if error != nil {
+                    print("There was an error occured \(error.debugDescription)")
+                    
+                    performUIUpdatesOnMain {
+                        self.activityIndicator.stopAnimating()
+                    }
+                    
+                } else {
+                    print("Logged in")
+                    print(user!)
+                    
+                    performUIUpdatesOnMain {
+                        self.activityIndicator.stopAnimating()
+                        self.presentNextView()
+                    }
+                }
+            })
+        }
     }
     
     // LOGIN AND LOGOUT SETUP FOR FACEBOOK
