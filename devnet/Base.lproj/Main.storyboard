@@ -21,6 +21,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="BYu-yM-cbD">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hYF-op-M9s">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
@@ -34,7 +38,6 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="xT5-uO-lch" firstAttribute="centerX" secondItem="6mX-Ea-RYD" secondAttribute="centerX" id="bKY-o8-TsI"/>
                                             <constraint firstItem="xT5-uO-lch" firstAttribute="centerY" secondItem="6mX-Ea-RYD" secondAttribute="centerY" id="u6j-Xo-t8c"/>
@@ -107,7 +110,6 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="2hi-fd-mga" firstAttribute="centerY" secondItem="Ncu-oO-tWR" secondAttribute="centerY" id="1ZC-dR-8ty"/>
                                             <constraint firstItem="2hi-fd-mga" firstAttribute="leading" secondItem="Ncu-oO-tWR" secondAttribute="leading" constant="32" id="Pdv-Ax-S0N"/>
@@ -116,30 +118,22 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I06-c1-Qst">
                                         <rect key="frame" x="0.0" y="333.5" width="375" height="167"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3c-OE-JSa">
                                         <rect key="frame" x="0.0" y="500.5" width="375" height="166.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kmg-DF-NkY">
-                                                <rect key="frame" x="32" y="18" width="311" height="130"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kmg-DF-NkY">
+                                                <rect key="frame" x="32" y="38" width="311" height="90"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bjm-ob-H2s" userLabel="Facebook Sign In Button" customClass="FBSDKLoginButton">
-                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="40"/>
-                                                        <color key="backgroundColor" red="0.40624053999999998" green="0.79589994320000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="pBs-in-R3Z"/>
-                                                        </constraints>
-                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Bc-e9-qfp" userLabel="Google Sign In Button" customClass="GIDSignInButton">
-                                                        <rect key="frame" x="0.0" y="45" width="311" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="40"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="MDC-MU-SdF"/>
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPL-LO-OS2">
-                                                        <rect key="frame" x="0.0" y="90" width="311" height="40"/>
+                                                        <rect key="frame" x="0.0" y="50" width="311" height="40"/>
                                                         <color key="backgroundColor" red="0.25011119246482849" green="0.50406491756439209" blue="0.9985392689704895" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="hjx-Re-CU8"/>
@@ -153,15 +147,12 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="9Bc-e9-qfp" firstAttribute="leading" secondItem="kmg-DF-NkY" secondAttribute="leading" id="Bkb-kb-IFc"/>
-                                                    <constraint firstItem="Bjm-ob-H2s" firstAttribute="leading" secondItem="kmg-DF-NkY" secondAttribute="leading" id="CZI-xU-FYg"/>
                                                     <constraint firstAttribute="trailing" secondItem="9Bc-e9-qfp" secondAttribute="trailing" id="CpB-WR-tX1"/>
                                                     <constraint firstItem="CPL-LO-OS2" firstAttribute="leading" secondItem="kmg-DF-NkY" secondAttribute="leading" id="Pz9-R9-gg5"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Bjm-ob-H2s" secondAttribute="trailing" id="WMf-kw-T8v"/>
                                                     <constraint firstAttribute="trailing" secondItem="CPL-LO-OS2" secondAttribute="trailing" id="pYk-4T-LtY"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="kmg-DF-NkY" secondAttribute="trailing" constant="32" id="BKW-vg-ynF"/>
                                             <constraint firstItem="kmg-DF-NkY" firstAttribute="leading" secondItem="B3c-OE-JSa" secondAttribute="leading" constant="32" id="EZU-n5-FVM"/>
@@ -175,12 +166,14 @@
                         <constraints>
                             <constraint firstItem="hYF-op-M9s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8yG-41-aaf"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hYF-op-M9s" secondAttribute="bottom" id="B3v-cd-hrS"/>
+                            <constraint firstItem="BYu-yM-cbD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E7n-Sa-2m2"/>
+                            <constraint firstItem="BYu-yM-cbD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="N1x-92-Z8J"/>
                             <constraint firstItem="hYF-op-M9s" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="i9L-f9-lQK"/>
                             <constraint firstAttribute="trailing" secondItem="hYF-op-M9s" secondAttribute="trailing" id="kEC-eE-M91"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="facebookLoginButton" destination="Bjm-ob-H2s" id="ry9-U4-aWi"/>
+                        <outlet property="activityIndicator" destination="BYu-yM-cbD" id="ptK-mJ-cr7"/>
                         <outlet property="googleSgnInButton" destination="9Bc-e9-qfp" id="MQx-Mf-NYZ"/>
                     </connections>
                 </viewController>

@@ -22,9 +22,7 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
     
     // OUTLETS
     
-    // Facebook Login Button Instance
-    @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
-    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     // Google Sign In Button Instance
     @IBOutlet weak var googleSgnInButton: GIDSignInButton!
     
@@ -34,7 +32,7 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
             if error != nil {
                 print("Custom FB Login Failed:", error!)
             } else {
-                print(result!.token.tokenString)
+                self.facebookSignInRequest()
             }
             
         }
@@ -52,6 +50,10 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
     // Handling for if login complete
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         
+        performUIUpdatesOnMain {
+            self.activityIndicator.startAnimating()
+        }
+        
         // Was there any error occurs?
         guard (error == nil) else {
             print("Could not sign in to Facebook with error: ", error)
@@ -61,6 +63,10 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
         facebookSignInRequest()
         
         print("Successfully logged in from Facebook")
+        
+        performUIUpdatesOnMain {
+            self.activityIndicator.stopAnimating()
+        }
 
     }
     
@@ -81,9 +87,6 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
     // Taking out data
     private func facebookSignInRequest() -> Void {
         
-        // Setup facebook permission for login button
-        facebookLoginButton.readPermissions = ["public_profile", "email", "user_friends"]
-        
         // Do we have access Token?
         guard let accessToken = FBSDKAccessToken.current(), let stringAccessToken = accessToken.tokenString else {
             print("No access token")
@@ -96,7 +99,7 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
         
             // Was there any error?
             guard (error == nil) else {
-                print("There was an error occurs")
+                print("There was an error occurs: ", error!)
                 return
             }
             
@@ -148,11 +151,12 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
             User.userEmail = userEmail
             User.userID = userID
             
-            performUIUpdatesOnMain {
-                self.showAlert()
+            if User.userID != nil {
+                self.presentNextView()
             }
             
         }
+
         
     }
     
@@ -200,11 +204,14 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
             
             print("successfully logged in with google", User.userID!, User.userName!, User.userEmail!)
             
-            performUIUpdatesOnMain {
-                self.showAlert()
-            }
+            
             
         })
+        
+        if User.userID != nil {
+            self.presentNextView()
+        }
+
         
     }
     
@@ -214,10 +221,6 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
     // For Github Sign In
     
 
-    
-    
-    
-    
     
     // HANDLERS
     
@@ -253,9 +256,6 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignI
         super.viewDidLoad()
         
         appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        // For Facebook login button
-        facebookLoginButton.delegate = self
 
         // For Google signin button
         GIDSignIn.sharedInstance().uiDelegate = self
