@@ -14,9 +14,30 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBAction func signUpAction(_ sender: Any) {
+        
+        self.navigationController?.pushViewController(self.setupSignUpView(), animated: true)
+
+        
+    }
+    
+    func hideNavigationBar() {
+        let blank = UIImage()
+        self.navigationController?.navigationBar.setBackgroundImage(blank, for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = blank
+    }
+    
+    func setupSignUpView() -> UIViewController {
+        let signUpStoryboard = UIStoryboard(name: "SignUp", bundle: nil)
+        let signUpView = signUpStoryboard.instantiateViewController(withIdentifier: "SignUp") as! SignUpViewController
+        return signUpView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        hideNavigationBar()
+        
     }
 
     override func didReceiveMemoryWarning() {

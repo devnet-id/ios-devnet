@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oTB-Uc-Lnm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -96,18 +96,32 @@
                                     <constraint firstAttribute="trailing" secondItem="4fH-g0-FrB" secondAttribute="trailing" id="5Pf-KD-3e2"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrC-Nz-z9c">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.25011119250000002" green="0.50406491760000005" blue="0.99853926900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="b0b-Ey-oYi"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="znw-7O-vhW" firstAttribute="top" secondItem="IrC-Nz-z9c" secondAttribute="bottom" id="Cbl-MF-5mw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZxN-Dj-cro" secondAttribute="trailing" id="LBa-32-3jg"/>
+                            <constraint firstItem="IrC-Nz-z9c" firstAttribute="leading" secondItem="mDI-IR-Kfv" secondAttribute="leading" id="LyW-g7-3bD"/>
                             <constraint firstItem="ZxN-Dj-cro" firstAttribute="leading" secondItem="mDI-IR-Kfv" secondAttribute="leadingMargin" id="hPd-sv-TDb"/>
+                            <constraint firstAttribute="trailing" secondItem="IrC-Nz-z9c" secondAttribute="trailing" id="i6R-dC-reA"/>
                             <constraint firstItem="ZxN-Dj-cro" firstAttribute="centerY" secondItem="mDI-IR-Kfv" secondAttribute="centerY" id="kdz-OT-tcW"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="BjX-FR-Kvv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2V-qE-KG8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-103" y="25"/>
+            <point key="canvasLocation" x="836" y="24.7376311844078"/>
         </scene>
     </scenes>
 </document>
