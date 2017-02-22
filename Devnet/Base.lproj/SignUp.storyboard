@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="VPl-FO-bE8">
             <objects>
-                <viewController storyboardIdentifier="SignUp" id="oTB-Uc-Lnm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUp" id="oTB-Uc-Lnm" customClass="SignUpViewController" customModule="Devnet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z4L-Vi-kXu"/>
                         <viewControllerLayoutGuide type="bottom" id="znw-7O-vhW"/>
@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZxN-Dj-cro">
-                                <rect key="frame" x="16" y="197" width="343" height="274.5"/>
+                                <rect key="frame" x="16" y="196.5" width="343" height="274.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4fH-g0-FrB" userLabel="Text Field Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="232"/>
@@ -71,7 +71,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hYD-hI-UdC">
                                                 <rect key="frame" x="0.0" y="200" width="343" height="32"/>
@@ -80,7 +80,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -102,22 +102,42 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="b0b-Ey-oYi"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpAction:" destination="oTB-Uc-Lnm" eventType="touchUpInside" id="0rO-Se-bca"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="RMR-IR-x6U">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="RMR-IR-x6U" firstAttribute="centerX" secondItem="mDI-IR-Kfv" secondAttribute="centerX" id="5ni-Sl-Duc"/>
                             <constraint firstItem="znw-7O-vhW" firstAttribute="top" secondItem="IrC-Nz-z9c" secondAttribute="bottom" id="Cbl-MF-5mw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZxN-Dj-cro" secondAttribute="trailing" id="LBa-32-3jg"/>
                             <constraint firstItem="IrC-Nz-z9c" firstAttribute="leading" secondItem="mDI-IR-Kfv" secondAttribute="leading" id="LyW-g7-3bD"/>
                             <constraint firstItem="ZxN-Dj-cro" firstAttribute="leading" secondItem="mDI-IR-Kfv" secondAttribute="leadingMargin" id="hPd-sv-TDb"/>
                             <constraint firstAttribute="trailing" secondItem="IrC-Nz-z9c" secondAttribute="trailing" id="i6R-dC-reA"/>
                             <constraint firstItem="ZxN-Dj-cro" firstAttribute="centerY" secondItem="mDI-IR-Kfv" secondAttribute="centerY" id="kdz-OT-tcW"/>
+                            <constraint firstItem="RMR-IR-x6U" firstAttribute="centerY" secondItem="mDI-IR-Kfv" secondAttribute="centerY" id="y8p-bv-IMJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BjX-FR-Kvv"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="RMR-IR-x6U" id="lPc-iw-kx5"/>
+                        <outlet property="emailTextField" destination="6ol-q3-a7w" id="EmD-TB-hOY"/>
+                        <outlet property="firstNameTextField" destination="dlQ-n6-XYO" id="Zjl-if-aiW"/>
+                        <outlet property="lastNameTextField" destination="4bg-L7-zzf" id="9OU-Jw-xqi"/>
+                        <outlet property="passwordTextField" destination="lVC-Qq-yNv" id="v2z-xH-gLE"/>
+                        <outlet property="repeatPasswordTextField" destination="hYD-hI-UdC" id="wTc-mT-0jh"/>
+                        <outlet property="signUpButton" destination="IrC-Nz-z9c" id="3Ip-3e-z4Y"/>
+                        <outlet property="userNameTextField" destination="g1k-CB-hoh" id="4Ko-gj-H5I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2V-qE-KG8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sign In View Controller-->
+        <!--Sign In-->
         <scene sceneID="Z9B-YS-HgH">
             <objects>
-                <viewController storyboardIdentifier="SignIn" id="KVU-RL-mRf" customClass="SignInViewController" customModule="Devnet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Sign In" id="KVU-RL-mRf" customClass="SignInViewController" customModule="Devnet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G1L-jT-Kep"/>
                         <viewControllerLayoutGuide type="bottom" id="cia-7o-LeB"/>
@@ -22,17 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="128" translatesAutoresizingMaskIntoConstraints="NO" id="Wru-ZZ-EpV" userLabel="Main Stack View">
-                                <rect key="frame" x="16" y="175" width="343" height="317.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Wru-ZZ-EpV" userLabel="Main Stack View">
+                                <rect key="frame" x="16" y="253" width="343" height="162"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Devnet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJX-BC-pgO">
-                                        <rect key="frame" x="128" y="0.0" width="87" height="33.5"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="anZ-dB-oqg" userLabel="Input Stack View">
-                                        <rect key="frame" x="0.0" y="161.5" width="343" height="156"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="162"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="blA-Oe-PKl" userLabel="Text Field Stack View">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="78"/>
@@ -53,7 +47,7 @@
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -64,20 +58,20 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="neV-O6-pBV" userLabel="Options Stack View">
-                                                <rect key="frame" x="81" y="94" width="181.5" height="62"/>
+                                                <rect key="frame" x="62" y="94" width="219.5" height="68"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="8gj-aV-rqG" userLabel="Sign Up Stack View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="181.5" height="27"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="219.5" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sez-8T-dQd">
-                                                                <rect key="frame" x="0.0" y="6.5" width="132.5" height="14.5"/>
-                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                                <rect key="frame" x="0.0" y="6" width="160.5" height="18"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJf-Nr-tR3">
-                                                                <rect key="frame" x="136.5" y="0.0" width="45" height="27"/>
-                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                                <rect key="frame" x="164.5" y="0.0" width="55" height="30"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                 <state key="normal" title="Sign Up"/>
                                                                 <connections>
                                                                     <action selector="signUpAction:" destination="KVU-RL-mRf" eventType="touchUpInside" id="qGU-bA-9Ay"/>
@@ -86,8 +80,8 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkB-Tr-btd">
-                                                        <rect key="frame" x="43" y="35" width="95" height="27"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <rect key="frame" x="52" y="38" width="115" height="30"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                         <state key="normal" title="Forgot Password"/>
                                                     </button>
                                                 </subviews>
@@ -110,6 +104,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="API-sA-agY"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -125,7 +120,7 @@
                             <constraint firstItem="OPG-hC-Htl" firstAttribute="leading" secondItem="Zpg-CG-UFe" secondAttribute="leading" id="py3-mV-blD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="cfV-hB-8gG"/>
+                    <navigationItem key="navigationItem" title="Sign In" id="cfV-hB-8gG"/>
                     <connections>
                         <outlet property="emailTextField" destination="oEr-IC-8qn" id="OLT-in-gWh"/>
                         <outlet property="passwordTextField" destination="qg7-aJ-SxA" id="hle-rv-5AU"/>
@@ -138,7 +133,7 @@
         <!--Navigation Controller-->
         <scene sceneID="wzc-fg-j3D">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QvQ-60-yc1" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SignIn" automaticallyAdjustsScrollViewInsets="NO" id="QvQ-60-yc1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="l4D-gj-cbR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

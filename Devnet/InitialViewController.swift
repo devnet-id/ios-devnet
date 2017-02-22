@@ -30,9 +30,9 @@ class InitialViewController: UIViewController {
         }
     }
     
-    func SignInView() -> UIViewController {
+    func SignInView() -> UINavigationController {
         let signInViewStoryboard = UIStoryboard(name: "SignIn", bundle: nil)
-        let signInView = signInViewStoryboard.instantiateViewController(withIdentifier: "SignIn") as! SignInViewController
+        let signInView = signInViewStoryboard.instantiateViewController(withIdentifier: "SignIn") as! UINavigationController
         return signInView
     }
     

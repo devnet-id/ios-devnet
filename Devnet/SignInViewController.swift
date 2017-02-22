@@ -16,7 +16,8 @@ class SignInViewController: UIViewController {
     
     @IBAction func signUpAction(_ sender: Any) {
         
-        self.navigationController?.pushViewController(self.setupSignUpView(), animated: true)
+        let signUpView = setupSignUpView()
+        self.navigationController?.pushViewController(signUpView, animated: true)
 
         
     }
