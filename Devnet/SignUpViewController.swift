@@ -36,7 +36,15 @@ class SignUpViewController: UIViewController {
             
             if success == true {
                 
-                self.handleSignUp()
+                self.handleSignUp(dictionary, completionForSignUp: { (errorMessage) in
+                    
+                    if errorMessage != nil {
+                      self.endLoading(error: errorMessage!)
+                    } else {
+                        self.dismiss(animated: true, completion: nil)
+                        
+                    }
+                })
                 
             } else {
                 
@@ -104,20 +112,46 @@ class SignUpViewController: UIViewController {
         
     }
     
-    func handleSignUp() {
+    func handleSignUp(_ dictionary: [String: String], completionForSignUp: @escaping (_ errorMessage: String?) -> Void) {
         if passwordTextField.text == repeatPasswordTextField.text {
             
-            guard let firstName = firstNameTextField.text, let lastName = lastNameTextField.text else {
-                endLoading(error: "First Name and Last name are nil")
-                return
-            }
+            let firstName = dictionary["firstName"]!
+            let lastName = dictionary["lastName"]!
             
             let name = firstName + " " + lastName
             
-            guard let email = emailTextField.text, let password = passwordTextField.text, let username = userNameTextField.text else {
-                endLoading(error: "Email and password are nil")
-                return
-            }
+            let userName = dictionary["userName"]!
+            let email = dictionary["email"]!
+            
+            let password = dictionary["password"]!
+            
+            Firebase.firebaseSignUp(email: email, password: password, completion: { (success, userID, errorMessage) in
+                
+                guard errorMessage != nil else {
+                    completionForSignUp(errorMessage)
+                    return
+                }
+                
+                Firebase.shared().uid = userID!
+                
+                var userToPost = [String: String]()
+                
+                userToPost["name"] = name
+                userToPost["userName"] = userName
+                userToPost["email"] = email
+                
+                Firebase.postUser(dictionary: userToPost as [String : AnyObject], { (success, errorString) in
+                    
+                    if errorMessage != nil {
+                        
+                        completionForSignUp(errorString)
+                        
+                    }
+                    
+                })
+                
+            })
+            
             
             
         } else {
@@ -145,6 +179,8 @@ class SignUpViewController: UIViewController {
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

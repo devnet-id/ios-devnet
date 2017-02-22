@@ -42,8 +42,7 @@ class InitialViewController: UIViewController {
         return mainView
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func handleView() {
         
         beginLoading()
         
@@ -73,6 +72,16 @@ class InitialViewController: UIViewController {
             }
             
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        handleView()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
     }
 
     override func didReceiveMemoryWarning() {

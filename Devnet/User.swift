@@ -13,6 +13,7 @@ struct User {
     
     var firstName: String?
     var lastName: String?
+    var name: String?
     var username: String?
     var email: String?
     var profileImageURL: String?
