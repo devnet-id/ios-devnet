@@ -31,6 +31,9 @@
                             <constraint firstItem="MMY-Xq-vfL" firstAttribute="centerY" secondItem="v90-AO-nqY" secondAttribute="centerY" id="wdX-gT-hDO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="MMY-Xq-vfL" id="BaX-cZ-6va"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nyM-n8-a4D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

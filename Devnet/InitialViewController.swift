@@ -10,10 +10,22 @@ import UIKit
 
 class InitialViewController: UIViewController {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    
+    func beginLoading() -> Void {
+        activityIndicator.startAnimating()
+    }
+    
+    func endLoading() -> Void {
+        activityIndicator.stopAnimating()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        beginLoading()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
