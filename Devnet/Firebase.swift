@@ -58,6 +58,40 @@ class Firebase: NSObject {
         })
     }
     
+    class func getUser(_ completion: @escaping (_ success: Bool,_ dictionary: [String: AnyObject]?,_ errorString: String?) -> Void) {
+
+        let ref = Firebase.shared().databaseRef
+        let uid = Firebase.shared().uid
+        
+        ref.child("users").child(uid!).observe(.value, with: { (dataSnapshot) in
+            
+            guard let dictionary = dataSnapshot.value as? [String: AnyObject] else {
+                completion(false, nil, "There was no dictionary returned")
+                return
+            }
+            
+            completion(true, dictionary, nil)
+        })
+
+    }
+    
+    class func postUser(dictionary: [String: AnyObject], _ completion: @escaping (_ success: Bool,_ errorString: String?) -> Void) {
+        
+        let ref = Firebase.shared().databaseRef
+        let uid = Firebase.shared().uid
+        
+        ref.child("users").child(uid!).updateChildValues(dictionary) { (firebaseDatabaseError, firebaseDatabaseRef) in
+            
+            guard firebaseDatabaseError != nil else {
+                completion(false, firebaseDatabaseError.debugDescription)
+                return
+            }
+            
+            completion(true, nil)
+            
+        }
+    }
+    
     class func shared() -> Firebase {
         struct Singleton {
             static var sharedInstance = Firebase()

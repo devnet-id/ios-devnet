@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KVU-RL-mRf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,8 +21,55 @@
                     <view key="view" contentMode="scaleToFill" id="Zpg-CG-UFe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="blA-Oe-PKl">
+                                <rect key="frame" x="16" y="294.5" width="343" height="78"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oEr-IC-8qn">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="EL0-SH-7QU"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qg7-aJ-SxA">
+                                        <rect key="frame" x="0.0" y="43" width="343" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Mh9-6U-3dU"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPG-hC-Htl">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.25011119250000002" green="0.50406491760000005" blue="0.99853926900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="API-sA-agY"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="blA-Oe-PKl" firstAttribute="leading" secondItem="Zpg-CG-UFe" secondAttribute="leadingMargin" id="Pv3-7L-wPV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="blA-Oe-PKl" secondAttribute="trailing" id="Se2-mr-gWr"/>
+                            <constraint firstItem="cia-7o-LeB" firstAttribute="top" secondItem="OPG-hC-Htl" secondAttribute="bottom" id="XNX-pb-Kdt"/>
+                            <constraint firstItem="blA-Oe-PKl" firstAttribute="centerY" secondItem="Zpg-CG-UFe" secondAttribute="centerY" id="cbQ-9H-BcW"/>
+                            <constraint firstAttribute="trailing" secondItem="OPG-hC-Htl" secondAttribute="trailing" id="ggT-hJ-1sR"/>
+                            <constraint firstItem="OPG-hC-Htl" firstAttribute="leading" secondItem="Zpg-CG-UFe" secondAttribute="leading" id="py3-mV-blD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="oEr-IC-8qn" id="OLT-in-gWh"/>
+                        <outlet property="passwordTextField" destination="qg7-aJ-SxA" id="hle-rv-5AU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zzr-UI-8pT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

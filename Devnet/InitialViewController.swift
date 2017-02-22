@@ -30,6 +30,18 @@ class InitialViewController: UIViewController {
         }
     }
     
+    func SignInView() -> UIViewController {
+        let signInViewStoryboard = UIStoryboard(name: "SignIn", bundle: nil)
+        let signInView = signInViewStoryboard.instantiateViewController(withIdentifier: "SignIn") as! SignInViewController
+        return signInView
+    }
+    
+    func MainView() -> UITabBarController {
+        let mainViewStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainView = mainViewStoryboard.instantiateViewController(withIdentifier: "Main") as! UITabBarController
+        return mainView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,13 +55,20 @@ class InitialViewController: UIViewController {
                 
                 print("User is signed in with uid: ", uid)
                 
-                self.endLoading()
+                DispatchQueue.main.async {
+                    self.endLoading()
+                    self.present(self.MainView(), animated: true, completion: nil)
+                    
+                }
                 
             } else {
                 
                 print("User is not signed in")
                 
-                self.endLoading()
+                DispatchQueue.main.async {
+                    self.endLoading()
+                    self.present(self.SignInView(), animated: true, completion: nil)
+                }
                 
             }
             
