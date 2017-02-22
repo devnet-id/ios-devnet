@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class InitialViewController: UIViewController {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -21,10 +22,16 @@ class InitialViewController: UIViewController {
         activityIndicator.stopAnimating()
     }
     
+    func configureApp() -> Void {
+        
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        beginLoading()
+        configureApp()
 
     }
 
