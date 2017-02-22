@@ -15,6 +15,7 @@
 		6E46DB3A1E5E231E007EC238 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E46DB391E5E231E007EC238 /* Firebase.swift */; };
 		6E46DB3C1E5E27B5007EC238 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E46DB3B1E5E27B5007EC238 /* InitialViewController.swift */; };
 		6E46DB3F1E5E27C3007EC238 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E46DB3D1E5E27C3007EC238 /* Initial.storyboard */; };
+		6E46DB411E5E296E007EC238 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E46DB401E5E296E007EC238 /* GoogleService-Info.plist */; };
 		BDDC80F8E1917265397515F4 /* Pods_Devnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9223220D56DD4D0AACB777 /* Pods_Devnet.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		6E46DB391E5E231E007EC238 /* Firebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		6E46DB3B1E5E27B5007EC238 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		6E46DB3E1E5E27C3007EC238 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Initial.storyboard; sourceTree = "<group>"; };
+		6E46DB401E5E296E007EC238 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7E9223220D56DD4D0AACB777 /* Pods_Devnet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Devnet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA56C080C859A4F580830256 /* Pods-Devnet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Devnet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Devnet/Pods-Devnet.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +78,7 @@
 				6E46DB3B1E5E27B5007EC238 /* InitialViewController.swift */,
 				6E46DB3D1E5E27C3007EC238 /* Initial.storyboard */,
 				6E46DB331E5E2250007EC238 /* Info.plist */,
+				6E46DB401E5E296E007EC238 /* GoogleService-Info.plist */,
 			);
 			path = Devnet;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E46DB411E5E296E007EC238 /* GoogleService-Info.plist in Resources */,
 				6E46DB321E5E2250007EC238 /* LaunchScreen.storyboard in Resources */,
 				6E46DB2F1E5E2250007EC238 /* Assets.xcassets in Resources */,
 				6E46DB2D1E5E2250007EC238 /* Main.storyboard in Resources */,

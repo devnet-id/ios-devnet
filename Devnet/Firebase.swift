@@ -11,7 +11,7 @@ import Firebase
 
 class Firebase: NSObject {
     
-    var databaseRef = FIRDatabase.database().reference(fromURL: "https://circle-e0489.firebaseio.com/")
+    var databaseRef = FIRDatabase.database().reference(fromURL: "https://devnet-12ce3.firebaseio.com/")
     var storageRef = FIRStorage.storage().reference()
     var uid = FIRAuth.auth()?.currentUser?.uid
     

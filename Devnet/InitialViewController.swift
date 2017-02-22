@@ -12,18 +12,48 @@ class InitialViewController: UIViewController {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    func isUserSignedIn() {
+    func beginLoading() {
+        activityIndicator.startAnimating()
+    }
+    
+    func endLoading() {
+        activityIndicator.stopAnimating()
+    }
+    
+    func isUserSignedIn(completion: @escaping (_ success: Bool, _ userID: String?) -> Void) {
         if let uid = Firebase.shared().uid {
-            print("User is signed in with uid: ", uid)
+            
+            completion(true, uid)
         } else {
-            print("User is not signed in")
+            
+            completion(false, nil)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        beginLoading()
+        
+        isUserSignedIn { (isSignIn, userID) in
+            
+            if isSignIn == true {
+                
+                guard let uid = userID else { return }
+                
+                print("User is signed in with uid: ", uid)
+                
+                self.endLoading()
+                
+            } else {
+                
+                print("User is not signed in")
+                
+                self.endLoading()
+                
+            }
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
