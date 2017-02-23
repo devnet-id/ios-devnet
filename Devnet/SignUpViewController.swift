@@ -177,6 +177,12 @@ class SignUpViewController: UIViewController {
         activityIndicator.stopAnimating()
         self.signUpButton.setTitle("Sign Up", for: .normal)
         showAlert(errorMessage: error)
+        
+    }
+    
+    func endLoadingWithoutAlert() {
+        activityIndicator.stopAnimating()
+        self.signUpButton.setTitle("Sign Up", for: .normal)
     }
     
     private func showAlert(errorMessage: String) -> Void {
