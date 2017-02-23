@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     var user = User()
     
@@ -43,13 +43,6 @@ class SignUpViewController: UIViewController {
                       self.endLoading(error: errorMessage!)
                         
                     } else {
-                        
-                        let uid = (FIRAuth.auth()?.currentUser?.uid)!
-                        
-                        print(uid)
-                        
-                        let storedUID = FIRAuth.auth()?.currentUser?.uid ?? "There is no uid stored"
-                        print(storedUID)
                         
                         self.endLoadingWithoutAlert()
                         
@@ -186,17 +179,35 @@ class SignUpViewController: UIViewController {
         self.signUpButton.setTitle("Sign Up", for: .normal)
     }
     
-    private func showAlert(errorMessage: String) -> Void {
+    func showAlert(errorMessage: String) -> Void {
         let alert = UIAlertController(title: "Error Signing Up", message: errorMessage, preferredStyle: UIAlertControllerStyle.alert)
         let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
     }
     
+    // Tells delegate to dismiss keyboard when return is tapped
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func configureTextFieldDelegate() {
+        
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        userNameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        repeatPasswordTextField.delegate = self
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureTextFieldDelegate()
 
         // Do any additional setup after loading the view.
     }

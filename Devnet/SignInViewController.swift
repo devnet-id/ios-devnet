@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -75,11 +75,23 @@ class SignInViewController: UIViewController {
         showAlert(errorMessage: error)
     }
     
-    private func showAlert(errorMessage: String) -> Void {
+    func showAlert(errorMessage: String) -> Void {
         let alert = UIAlertController(title: "Error Signing Up", message: errorMessage, preferredStyle: UIAlertControllerStyle.alert)
         let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func configureTextFieldDelegate() {
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
     }
 
     
@@ -87,6 +99,8 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         
         hideNavigationBar()
+        
+        configureTextFieldDelegate()
         
     }
 
