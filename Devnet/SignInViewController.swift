@@ -46,6 +46,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 self.dismiss(animated: true, completion: nil)
                 
             })
+        } else {
+            endLoading(error: "Email and Password is empty")
         }
         
         

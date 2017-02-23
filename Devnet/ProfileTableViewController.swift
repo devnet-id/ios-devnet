@@ -1,5 +1,5 @@
 //
-//  ProfileTableTableViewController.swift
+//  ProfileTableViewController.swift
 //  Devnet
 //
 //  Created by Zulwiyoza Putra on 2/23/17.
@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ProfileTableTableViewController: UITableViewController {
+class ProfileTableViewController: UITableViewController {
 
+    var user = Current.shared().user
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

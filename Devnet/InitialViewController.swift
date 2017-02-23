@@ -58,7 +58,7 @@ class InitialViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     self.endLoading()
-                    self.present(self.MainView(), animated: true, completion: nil)
+                    self.present(self.MainView(), animated: false, completion: nil)
                     
                 }
                 
