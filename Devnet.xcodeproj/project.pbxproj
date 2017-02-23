@@ -24,6 +24,7 @@
 		6E46DB531E5E5E44007EC238 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E46DB521E5E5E44007EC238 /* HomeTableViewController.swift */; };
 		6EAE037A1E5EEF6700F33E4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EAE03791E5EEF6700F33E4F /* Assets.xcassets */; };
 		6EAE037C1E5EF43300F33E4F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE037B1E5EF43300F33E4F /* ProfileTableViewCell.swift */; };
+		6EAE037E1E5F004200F33E4F /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE037D1E5F004200F33E4F /* PostTableViewCell.swift */; };
 		BDDC80F8E1917265397515F4 /* Pods_Devnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9223220D56DD4D0AACB777 /* Pods_Devnet.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		6E46DB521E5E5E44007EC238 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		6EAE03791E5EEF6700F33E4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EAE037B1E5EF43300F33E4F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		6EAE037D1E5F004200F33E4F /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		7E9223220D56DD4D0AACB777 /* Pods_Devnet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Devnet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA56C080C859A4F580830256 /* Pods-Devnet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Devnet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Devnet/Pods-Devnet.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +90,7 @@
 				6E46DB271E5E2250007EC238 /* AppDelegate.swift */,
 				6E46DB4E1E5E2DC0007EC238 /* User.swift */,
 				6EAE037B1E5EF43300F33E4F /* ProfileTableViewCell.swift */,
+				6EAE037D1E5F004200F33E4F /* PostTableViewCell.swift */,
 				6E46DB4C1E5E2DB8007EC238 /* Current.swift */,
 				6E46DB3B1E5E27B5007EC238 /* InitialViewController.swift */,
 				6E46DB291E5E2250007EC238 /* SignInViewController.swift */,
@@ -252,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EAE037E1E5F004200F33E4F /* PostTableViewCell.swift in Sources */,
 				6E46DB511E5E5E31007EC238 /* ProfileTableViewController.swift in Sources */,
 				6E46DB3A1E5E231E007EC238 /* Firebase.swift in Sources */,
 				6E46DB2A1E5E2250007EC238 /* SignInViewController.swift in Sources */,
