@@ -10,15 +10,40 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var signInButton: UIButton!
     
     @IBAction func signUpAction(_ sender: Any) {
         
         let signUpView = setupSignUpView()
         self.navigationController?.pushViewController(signUpView, animated: true)
 
+        
+    }
+    
+    @IBAction func signInAction(_ sender: Any) {
+        
+        beginLoading()
+        
+        if emailTextField.text != "" && passwordTextField.text != "" {
+            Firebase.firebaseSignIn(email: emailTextField.text!, password: passwordTextField.text!, completion: { (success, userID, errorMessage) in
+                
+                guard errorMessage == nil else {
+                    self.endLoading(error: errorMessage!)
+                    return
+                }
+                
+                Firebase.shared().uid = userID!
+                self.dismiss(animated: true, completion: nil)
+                
+            })
+        }
+        
         
     }
     
@@ -33,6 +58,26 @@ class SignInViewController: UIViewController {
         let signUpView = signUpStoryboard.instantiateViewController(withIdentifier: "SignUp") as! SignUpViewController
         return signUpView
     }
+    
+    func beginLoading() {
+        activityIndicator.startAnimating()
+        self.signInButton.setTitle("Signing In...", for: .normal)
+    }
+    
+    func endLoading(error: String) {
+        
+        activityIndicator.stopAnimating()
+        self.signInButton.setTitle("Sign In", for: .normal)
+        showAlert(errorMessage: error)
+    }
+    
+    private func showAlert(errorMessage: String) -> Void {
+        let alert = UIAlertController(title: "Error Signing Up", message: errorMessage, preferredStyle: UIAlertControllerStyle.alert)
+        let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

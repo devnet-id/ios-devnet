@@ -108,22 +108,33 @@
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInAction:" destination="KVU-RL-mRf" eventType="touchUpInside" id="jzI-CS-hu6"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="PMI-Aa-brs">
+                                <rect key="frame" x="169.5" y="315.5" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Wru-ZZ-EpV" secondAttribute="trailing" id="EKH-pu-s2u"/>
                             <constraint firstItem="Wru-ZZ-EpV" firstAttribute="centerY" secondItem="Zpg-CG-UFe" secondAttribute="centerY" id="L0G-Wz-Vmq"/>
                             <constraint firstItem="cia-7o-LeB" firstAttribute="top" secondItem="OPG-hC-Htl" secondAttribute="bottom" id="XNX-pb-Kdt"/>
+                            <constraint firstItem="PMI-Aa-brs" firstAttribute="centerY" secondItem="Zpg-CG-UFe" secondAttribute="centerY" id="YFa-25-fDg"/>
                             <constraint firstItem="Wru-ZZ-EpV" firstAttribute="leading" secondItem="Zpg-CG-UFe" secondAttribute="leadingMargin" id="gEK-qq-7G3"/>
                             <constraint firstAttribute="trailing" secondItem="OPG-hC-Htl" secondAttribute="trailing" id="ggT-hJ-1sR"/>
+                            <constraint firstItem="PMI-Aa-brs" firstAttribute="centerX" secondItem="Zpg-CG-UFe" secondAttribute="centerX" id="lJV-w8-m3Z"/>
                             <constraint firstItem="OPG-hC-Htl" firstAttribute="leading" secondItem="Zpg-CG-UFe" secondAttribute="leading" id="py3-mV-blD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign In" id="cfV-hB-8gG"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="PMI-Aa-brs" id="Fm1-Vq-YYt"/>
                         <outlet property="emailTextField" destination="oEr-IC-8qn" id="OLT-in-gWh"/>
                         <outlet property="passwordTextField" destination="qg7-aJ-SxA" id="hle-rv-5AU"/>
+                        <outlet property="signInButton" destination="OPG-hC-Htl" id="9AZ-YN-Csx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zzr-UI-8pT" userLabel="First Responder" sceneMemberID="firstResponder"/>

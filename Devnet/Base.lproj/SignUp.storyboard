@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZxN-Dj-cro">
-                                <rect key="frame" x="16" y="196.5" width="343" height="274.5"/>
+                                <rect key="frame" x="16" y="196" width="343" height="275"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4fH-g0-FrB" userLabel="Text Field Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="232"/>
@@ -85,7 +85,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing up, you agree to our terms of use, privacy policy, and cookie policy." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6y-LV-tNu">
-                                        <rect key="frame" x="2" y="248" width="339.5" height="26.5"/>
+                                        <rect key="frame" x="2" y="248" width="340" height="27"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
