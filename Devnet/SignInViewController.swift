@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignInViewController: UIViewController {
 
@@ -38,9 +39,9 @@ class SignInViewController: UIViewController {
                     return
                 }
                 
-                let uid = Firebase.shared().uid!
+                let uid = FIRAuth.auth()?.currentUser?.uid
                 
-                print(uid)
+                print("Successfully signing in with email and password under user ID: ",uid!)
                 
                 self.dismiss(animated: true, completion: nil)
                 

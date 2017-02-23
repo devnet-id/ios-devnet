@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class InitialViewController: UIViewController {
 
@@ -21,7 +22,7 @@ class InitialViewController: UIViewController {
     }
     
     func isUserSignedIn(completion: @escaping (_ success: Bool, _ userID: String?) -> Void) {
-        if let uid = Firebase.shared().uid {
+        if let uid = FIRAuth.auth()?.currentUser?.uid {
             print(uid)
             completion(true, uid)
             

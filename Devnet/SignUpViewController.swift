@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
 
@@ -44,6 +45,14 @@ class SignUpViewController: UIViewController {
                     } else {
                         
                         print("endedHere")
+                        self.dismiss(animated: true, completion: nil)
+                        let uid = (FIRAuth.auth()?.currentUser?.uid)!
+                        
+                        print(uid)
+                        
+                        let storedUID = FIRAuth.auth()?.currentUser?.uid ?? "There is no uid stored"
+                        print(storedUID)
+                        
                         
                     }
                 })
@@ -140,27 +149,12 @@ class SignUpViewController: UIViewController {
                     return
                 }
                 
-                guard let uid = userID else {
-                    completionForSignUp("There was no user ID returned")
-                    return
-                }
+//                guard userID != nil else {
+//                    completionForSignUp("There was no user ID returned")
+//                    return
+//                }
                 
-                Firebase.shared().uid = userID
-                
-                
-                
-                Firebase.postUser(uid: uid, dictionaryToPost: userToPost as [String : AnyObject], { (errorString) in
-                    
-                    guard errorString == nil else {
-                        completionForSignUp(errorString)
-                        return
-                    }
-                    
-                    print("User is scuccesfullly created into database")
-                    
-                    completionForSignUp(nil)
-                    
-                })
+                completionForSignUp(nil)
                 
             })
             

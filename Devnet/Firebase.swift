@@ -13,12 +13,11 @@ class Firebase: NSObject {
     
     let databaseRef = FIRDatabase.database().reference(fromURL: "https://devnet-12ce3.firebaseio.com/")
     let storageRef = FIRStorage.storage().reference()
-    var uid = FIRAuth.auth()?.currentUser?.uid
     
     class func firebaseSignOut() -> Void {
         do {
             try FIRAuth.auth()!.signOut()
-            print("Successfully logged out")
+            print("Successfully signed out")
         } catch let signOutError as NSError {
             print("Error signing out: ", signOutError)
         } catch {
@@ -46,6 +45,7 @@ class Firebase: NSObject {
     }
     
     class func firebaseSignUp(email: String, password: String,  dictionary: [String: AnyObject], completion: @escaping (_ userID: String?, _ error: String?) -> Void) {
+        
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (firebaseUser, firebaseError) in
             
             guard firebaseError == nil else {
@@ -65,16 +65,16 @@ class Firebase: NSObject {
                     return
                 }
                 
+                completion(firebaseUID, nil)
+                
             })
-            
-            completion(firebaseUID, nil)
         })
     }
     
     class func getUser(_ completion: @escaping (_ dictionary: [String: AnyObject]?,_ errorString: String?) -> Void) {
 
         let ref = Firebase.shared().databaseRef
-        let uid = Firebase.shared().uid
+        let uid = FIRAuth.auth()?.currentUser?.uid
         
         ref.child("users").child(uid!).observe(.value, with: { (dataSnapshot) in
             
