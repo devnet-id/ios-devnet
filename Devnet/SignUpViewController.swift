@@ -150,6 +150,10 @@ class SignUpViewController: UIViewController {
                         
                     }
                     
+                    if success {
+                        print("User is scuccesfullly created into database")
+                    }
+                    
                 })
                 
             })
