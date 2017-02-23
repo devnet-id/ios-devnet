@@ -31,14 +31,17 @@ class SignInViewController: UIViewController {
         beginLoading()
         
         if emailTextField.text != "" && passwordTextField.text != "" {
-            Firebase.firebaseSignIn(email: emailTextField.text!, password: passwordTextField.text!, completion: { (success, userID, errorMessage) in
+            Firebase.firebaseSignIn(email: emailTextField.text!, password: passwordTextField.text!, completion: { (userID, errorMessage) in
                 
                 guard errorMessage == nil else {
                     self.endLoading(error: errorMessage!)
                     return
                 }
                 
-                Firebase.shared().uid = userID!
+                let uid = Firebase.shared().uid!
+                
+                print(uid)
+                
                 self.dismiss(animated: true, completion: nil)
                 
             })

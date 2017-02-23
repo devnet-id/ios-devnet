@@ -13,7 +13,6 @@ class HomeTableViewController: UITableViewController {
     @IBAction func signOutAction(_ sender: Any) {
         
         Firebase.firebaseSignOut()
-        Firebase.shared().uid = nil
         self.dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {

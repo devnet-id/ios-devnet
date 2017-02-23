@@ -22,8 +22,9 @@ class InitialViewController: UIViewController {
     
     func isUserSignedIn(completion: @escaping (_ success: Bool, _ userID: String?) -> Void) {
         if let uid = Firebase.shared().uid {
-            
+            print(uid)
             completion(true, uid)
+            
         } else {
             
             completion(false, nil)

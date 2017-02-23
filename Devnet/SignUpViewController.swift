@@ -15,7 +15,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var firstNameTextField: UITextField!
-    
+
     @IBOutlet weak var lastNameTextField: UITextField!
     
     @IBOutlet weak var userNameTextField: UITextField!
@@ -127,32 +127,38 @@ class SignUpViewController: UIViewController {
             
             let password = dictionary["password"]!
             
-            Firebase.firebaseSignUp(email: email, password: password, completion: { (success, userID, errorMessage) in
+            var userToPost = [String: AnyObject]()
+            
+            userToPost["name"] = name as AnyObject?
+            userToPost["userName"] = userName as AnyObject?
+            userToPost["email"] = email as AnyObject?
+            
+            Firebase.firebaseSignUp(email: email, password: password, dictionary: userToPost, completion: { (userID, errorMessage) in
                 
                 guard errorMessage != nil else {
                     completionForSignUp(errorMessage)
                     return
                 }
                 
-                Firebase.shared().uid = userID!
+                guard let uid = userID else {
+                    completionForSignUp("There was no user ID returned")
+                    return
+                }
                 
-                var userToPost = [String: String]()
+                Firebase.shared().uid = userID
                 
-                userToPost["name"] = name
-                userToPost["userName"] = userName
-                userToPost["email"] = email
                 
-                Firebase.postUser(dictionary: userToPost as [String : AnyObject], { (success, errorString) in
+                
+                Firebase.postUser(uid: uid, dictionaryToPost: userToPost as [String : AnyObject], { (errorString) in
                     
-                    if errorMessage != nil {
-                        
+                    guard errorString == nil else {
                         completionForSignUp(errorString)
-                        
+                        return
                     }
                     
-                    if success {
-                        print("User is scuccesfullly created into database")
-                    }
+                    print("User is scuccesfullly created into database")
+                    
+                    completionForSignUp(nil)
                     
                 })
                 
