@@ -21,6 +21,8 @@
 		6E46DB4B1E5E2D26007EC238 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E46DB4A1E5E2D26007EC238 /* SignUpViewController.swift */; };
 		6E46DB4D1E5E2DB8007EC238 /* Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E46DB4C1E5E2DB8007EC238 /* Current.swift */; };
 		6E46DB4F1E5E2DC0007EC238 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E46DB4E1E5E2DC0007EC238 /* User.swift */; };
+		6E46DB511E5E5E31007EC238 /* ProfileTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E46DB501E5E5E31007EC238 /* ProfileTableTableViewController.swift */; };
+		6E46DB531E5E5E44007EC238 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E46DB521E5E5E44007EC238 /* HomeTableViewController.swift */; };
 		BDDC80F8E1917265397515F4 /* Pods_Devnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9223220D56DD4D0AACB777 /* Pods_Devnet.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		6E46DB4A1E5E2D26007EC238 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		6E46DB4C1E5E2DB8007EC238 /* Current.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Current.swift; sourceTree = "<group>"; };
 		6E46DB4E1E5E2DC0007EC238 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6E46DB501E5E5E31007EC238 /* ProfileTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableTableViewController.swift; sourceTree = "<group>"; };
+		6E46DB521E5E5E44007EC238 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		7E9223220D56DD4D0AACB777 /* Pods_Devnet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Devnet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA56C080C859A4F580830256 /* Pods-Devnet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Devnet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Devnet/Pods-Devnet.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +88,8 @@
 				6E46DB4C1E5E2DB8007EC238 /* Current.swift */,
 				6E46DB3B1E5E27B5007EC238 /* InitialViewController.swift */,
 				6E46DB291E5E2250007EC238 /* SignInViewController.swift */,
+				6E46DB501E5E5E31007EC238 /* ProfileTableTableViewController.swift */,
+				6E46DB521E5E5E44007EC238 /* HomeTableViewController.swift */,
 				6E46DB4A1E5E2D26007EC238 /* SignUpViewController.swift */,
 				6E46DB391E5E231E007EC238 /* Firebase.swift */,
 				6E46DB301E5E2250007EC238 /* LaunchScreen.storyboard */,
@@ -243,11 +249,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E46DB511E5E5E31007EC238 /* ProfileTableTableViewController.swift in Sources */,
 				6E46DB3A1E5E231E007EC238 /* Firebase.swift in Sources */,
 				6E46DB2A1E5E2250007EC238 /* SignInViewController.swift in Sources */,
 				6E46DB281E5E2250007EC238 /* AppDelegate.swift in Sources */,
 				6E46DB3C1E5E27B5007EC238 /* InitialViewController.swift in Sources */,
 				6E46DB4D1E5E2DB8007EC238 /* Current.swift in Sources */,
+				6E46DB531E5E5E44007EC238 /* HomeTableViewController.swift in Sources */,
 				6E46DB4B1E5E2D26007EC238 /* SignUpViewController.swift in Sources */,
 				6E46DB4F1E5E2DC0007EC238 /* User.swift in Sources */,
 			);

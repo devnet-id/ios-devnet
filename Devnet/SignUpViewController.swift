@@ -40,8 +40,10 @@ class SignUpViewController: UIViewController {
                     
                     if errorMessage != nil {
                       self.endLoading(error: errorMessage!)
+                        
                     } else {
-                        self.dismiss(animated: true, completion: nil)
+                        
+                        print("endedHere")
                         
                     }
                 })
