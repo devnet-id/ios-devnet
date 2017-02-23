@@ -44,8 +44,6 @@ class SignUpViewController: UIViewController {
                         
                     } else {
                         
-                        print("endedHere")
-                        self.dismiss(animated: true, completion: nil)
                         let uid = (FIRAuth.auth()?.currentUser?.uid)!
                         
                         print(uid)
@@ -53,6 +51,9 @@ class SignUpViewController: UIViewController {
                         let storedUID = FIRAuth.auth()?.currentUser?.uid ?? "There is no uid stored"
                         print(storedUID)
                         
+                        self.endLoadingWithoutAlert()
+                        
+                        self.dismiss(animated: true, completion: nil)
                         
                     }
                 })

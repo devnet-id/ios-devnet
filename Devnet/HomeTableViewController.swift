@@ -13,8 +13,10 @@ class HomeTableViewController: UITableViewController {
     @IBAction func signOutAction(_ sender: Any) {
         
         Firebase.firebaseSignOut()
+        
         self.dismiss(animated: true, completion: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
