@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileTableViewController: UITableViewController {
 
-    var user = Current.shared().user
+    var user = Current.shared().user!
     
     
     func setupProfile() {

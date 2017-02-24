@@ -10,10 +10,11 @@ import Foundation
 
 class Current: NSObject {
     
-    var user = User()
+    var user: User?
     
     override init() {
         super.init()
+        user = nil
     }
         
     class func shared() -> Current {

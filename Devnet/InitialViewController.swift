@@ -46,33 +46,26 @@ class InitialViewController: UIViewController {
     
     func getUser(uid: String, completion: @escaping (User?) -> Void) {
 
-        Firebase.shared().databaseRef.child("users").child(uid).observe(.value, with: { (dataSnapshot) in
-            
+        Firebase.shared().databaseRef.child("users").child(uid).observeSingleEvent(of: .value, with: { (dataSnapshot) in
             print(dataSnapshot)
             
             if let dictionary = dataSnapshot.value as? [String: AnyObject] {
                 
-                print("There was a dictionary returned: ", dictionary)
                 
                 let user = User(dictionary: dictionary)
                 
-                print(user.email!, user.userName!)
-                
                 Current.shared().user = user
-                
-                print(Current.shared().user)
-                
+
                 completion(user)
                 
             } else {
-                
-                print("There was no dictionary returned")
                 
                 completion(nil)
                 
             }
             
         })
+        
     }
     
     func handleView() {

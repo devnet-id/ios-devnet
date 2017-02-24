@@ -17,6 +17,7 @@ class Firebase: NSObject {
     class func firebaseSignOut() -> Void {
         do {
             try FIRAuth.auth()!.signOut()
+            Current.shared()
             print("Successfully signed out")
         } catch let signOutError as NSError {
             print("Error signing out: ", signOutError)
