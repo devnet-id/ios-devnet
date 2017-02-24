@@ -14,7 +14,7 @@ class ProfileTableViewController: UITableViewController {
     
     
     func setupProfile() {
-        self.navigationItem.title = user.name!
+        
     }
     
     override func viewDidLoad() {
@@ -50,10 +50,10 @@ class ProfileTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as UITableViewCell
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as! ProfileTableViewCell
         // Configure the cell...
-
+        cell.profileNameLabel.text = user.name!
+        
         return cell
     }
 
