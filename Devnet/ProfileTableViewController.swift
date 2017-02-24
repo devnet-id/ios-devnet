@@ -13,9 +13,15 @@ class ProfileTableViewController: UITableViewController {
     var user = Current.shared().user
     
     
+    func setupProfile() {
+        self.navigationItem.title = user.name!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setupProfile()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

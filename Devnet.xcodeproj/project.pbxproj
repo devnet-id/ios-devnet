@@ -89,9 +89,9 @@
 			children = (
 				6E46DB271E5E2250007EC238 /* AppDelegate.swift */,
 				6E46DB4E1E5E2DC0007EC238 /* User.swift */,
+				6E46DB4C1E5E2DB8007EC238 /* Current.swift */,
 				6EAE037B1E5EF43300F33E4F /* ProfileTableViewCell.swift */,
 				6EAE037D1E5F004200F33E4F /* PostTableViewCell.swift */,
-				6E46DB4C1E5E2DB8007EC238 /* Current.swift */,
 				6E46DB3B1E5E27B5007EC238 /* InitialViewController.swift */,
 				6E46DB291E5E2250007EC238 /* SignInViewController.swift */,
 				6E46DB501E5E5E31007EC238 /* ProfileTableViewController.swift */,

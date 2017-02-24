@@ -44,6 +44,37 @@ class InitialViewController: UIViewController {
         return mainView
     }
     
+    func getUser(uid: String, completion: @escaping (User?) -> Void) {
+
+        Firebase.shared().databaseRef.child("users").child(uid).observe(.value, with: { (dataSnapshot) in
+            
+            print(dataSnapshot)
+            
+            if let dictionary = dataSnapshot.value as? [String: AnyObject] {
+                
+                print("There was a dictionary returned: ", dictionary)
+                
+                let user = User(dictionary: dictionary)
+                
+                print(user.email!, user.userName!)
+                
+                Current.shared().user = user
+                
+                print(Current.shared().user)
+                
+                completion(user)
+                
+            } else {
+                
+                print("There was no dictionary returned")
+                
+                completion(nil)
+                
+            }
+            
+        })
+    }
+    
     func handleView() {
         
         beginLoading()
@@ -56,11 +87,15 @@ class InitialViewController: UIViewController {
                 
                 print("User is signed in with uid: ", uid)
                 
-                DispatchQueue.main.async {
+                self.getUser(uid: uid, completion: { (user) in
+                    print("welcome \(user?.name)")
+                    
+                    
                     self.endLoading()
                     self.present(self.MainView(), animated: true, completion: nil)
-                    
-                }
+
+                })
+                
                 
             } else {
                 

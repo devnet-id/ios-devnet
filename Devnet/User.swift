@@ -14,7 +14,7 @@ struct User {
     var firstName: String?
     var lastName: String?
     var name: String?
-    var username: String?
+    var userName: String?
     var email: String?
     var profileImageURL: String?
     var profileImage: UIImage?
@@ -28,9 +28,10 @@ struct User {
             let arrayFullName = name.components(separatedBy: " ")
             firstName = arrayFullName[0]
             lastName = arrayFullName[1]
+            self.name = name
         }
         
-        username = dictionary["username"] as? String
+        userName = dictionary["userName"] as? String
         
         email = dictionary["email"] as? String
         
@@ -60,7 +61,7 @@ struct User {
     
     // Initialized using email
     init(username: String, email: String) {
-        self.username = username
+        self.userName = username
         self.email = email
     }
     
@@ -68,7 +69,7 @@ struct User {
     init() {
         firstName = nil
         lastName = nil
-        username = nil
+        userName = nil
         email = nil
         profileImageURL = nil
         profileImage = nil

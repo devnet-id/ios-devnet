@@ -11,6 +11,10 @@ import Foundation
 class Current: NSObject {
     
     var user = User()
+    
+    override init() {
+        super.init()
+    }
         
     class func shared() -> Current {
         struct Singleton {
