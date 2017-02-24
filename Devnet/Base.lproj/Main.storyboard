@@ -54,20 +54,20 @@
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="dr3-uf-VAR">
-                                            <rect key="frame" x="8" y="97" width="359" height="269"/>
+                                            <rect key="frame" x="8" y="97" width="359" height="268"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bij-IL-dx2" userLabel="Image and Full Name Stack View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="169.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="169"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User Profile Image" translatesAutoresizingMaskIntoConstraints="NO" id="rMw-xa-B1k">
-                                                            <rect key="frame" x="115.5" y="0.0" width="128" height="128"/>
+                                                            <rect key="frame" x="116" y="0.0" width="128" height="128"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="128" id="EaI-so-GIe"/>
                                                                 <constraint firstAttribute="width" constant="128" id="uUB-Qc-xZ2"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bX5-Ac-IuI">
-                                                            <rect key="frame" x="104.5" y="144" width="150" height="25.5"/>
+                                                            <rect key="frame" x="105" y="144" width="150" height="25"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -75,14 +75,14 @@
                                                     </subviews>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ob7-TJ-7CK">
-                                                    <rect key="frame" x="16" y="178.5" width="327" height="52"/>
+                                                    <rect key="frame" x="16" y="178" width="327" height="52"/>
                                                     <string key="text">Lorem ipsum dolor sit amet, albucius neglegentur est ut, ius an dolorum mnesarchum. Suas antiopam iracundia in pri, vim at maiestatis dissentiet. Qui eu.</string>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2z-fq-ZvG">
-                                                    <rect key="frame" x="129.5" y="239.5" width="100" height="29.5"/>
+                                                    <rect key="frame" x="130" y="239" width="100" height="29"/>
                                                     <state key="normal" title="Expert in Swift"/>
                                                 </button>
                                             </subviews>
