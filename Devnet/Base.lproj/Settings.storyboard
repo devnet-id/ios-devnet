@@ -29,7 +29,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJj-uR-9UT">
                                                     <rect key="frame" x="0.0" y="6" width="375" height="30"/>
-                                                    <state key="normal" title="Sign Out"/>
+                                                    <state key="normal" title="Reset Password"/>
                                                     <connections>
                                                         <action selector="signOutButton:" destination="2UX-G0-XVV" eventType="touchUpInside" id="bWZ-tt-Lgs"/>
                                                     </connections>
@@ -39,6 +39,34 @@
                                                 <constraint firstAttribute="trailing" secondItem="ZJj-uR-9UT" secondAttribute="trailing" id="EF4-Ek-XaQ"/>
                                                 <constraint firstItem="ZJj-uR-9UT" firstAttribute="leading" secondItem="0Ox-pD-Las" secondAttribute="leading" id="bS9-DX-crh"/>
                                                 <constraint firstItem="ZJj-uR-9UT" firstAttribute="centerY" secondItem="0Ox-pD-Las" secondAttribute="centerY" id="fap-Py-rms"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="cBM-qA-E8a">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Xpx-We-m9q">
+                                        <rect key="frame" x="0.0" y="115" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xpx-We-m9q" id="La1-dG-jbu">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7st-wK-XWw">
+                                                    <rect key="frame" x="0.0" y="6" width="375" height="30"/>
+                                                    <state key="normal" title="Sign Out">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="signOutButton:" destination="2UX-G0-XVV" eventType="touchUpInside" id="3RS-8H-rYO"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7st-wK-XWw" firstAttribute="leading" secondItem="La1-dG-jbu" secondAttribute="leading" id="KH8-QG-6PA"/>
+                                                <constraint firstItem="7st-wK-XWw" firstAttribute="centerY" secondItem="La1-dG-jbu" secondAttribute="centerY" id="S2F-4r-RnP"/>
+                                                <constraint firstAttribute="trailing" secondItem="7st-wK-XWw" secondAttribute="trailing" id="yWn-oh-Dfo"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
