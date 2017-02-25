@@ -13,10 +13,30 @@ class SettingsTableViewController: UITableViewController {
     
     @IBAction func signOutButton(_ sender: Any) {
         
-        Firebase.firebaseSignOut()
         
-        self.dismiss(animated: true, completion: nil)
+        showSignOutAlert { (success) in
+            if success {
+                Firebase.firebaseSignOut()
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
         
+    }
+    
+    private func showSignOutAlert(completion: @escaping (_ success: Bool) -> Void) {
+        let alert = UIAlertController(title: "Sign Out", message: "Are you sure you want to sign out?", preferredStyle: UIAlertControllerStyle.alert)
+        let ok = UIAlertAction(title: "Ok", style: .default) { (alert: UIAlertAction!) in
+            completion(true)
+            
+        }
+
+        let cancel = UIAlertAction(title: "Cancel", style: .destructive) { (alert: UIAlertAction!) in
+            completion(false)
+        }
+        
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

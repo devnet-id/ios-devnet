@@ -15,6 +15,8 @@ class ProfileTableViewController: UITableViewController {
     
     func setupProfile() {
         
+        
+        
     }
     
     override func viewDidLoad() {
