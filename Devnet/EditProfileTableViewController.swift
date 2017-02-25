@@ -9,8 +9,26 @@
 import UIKit
 
 class EditProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
+    var user = Current.shared().user
+    
     @IBOutlet weak var profilePictureButton: UIButton!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    @IBOutlet weak var profileBioLabel: UILabel!
+    
+    @IBOutlet weak var genderLabel: UILabel!
+    
+    @IBOutlet weak var dateOfBirthLabel: UILabel!
+    
+    @IBOutlet weak var locationLabel: UILabel!
+    
+    @IBOutlet weak var emailLabel: UILabel!
+    
+    @IBOutlet weak var phoneNumberLabel: UILabel!
     
     @IBAction func profilePictureAction(_ sender: Any) {
         handleImportPicture()
@@ -94,10 +112,71 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
     func pickAnImageFromCamera() {
         setupImagePickerController(sourceType: .camera)
     }
+    
+    func setupProfileView() {
+        
+        if let name = user?.name {
+            nameLabel.text = name
+        }
+        
+        if let userName = user?.userName {
+            usernameLabel.text = "@" + userName
+        }
+        
+        if let gender = user?.gender {
+            genderLabel.text = gender.rawValue
+        }
+        
+        if let dateOfBirth = user?.dateOfBirth {
+            let arrayOfDateOfBirth = dateOfBirth.components(separatedBy: "/")
+            let month = arrayOfDateOfBirth[0]
+            let date = arrayOfDateOfBirth[1]
+            let year = arrayOfDateOfBirth[2]
+            
+            var monthName = String()
+            
+            switch month {
+            case "01":
+                monthName = "January"
+            case "02":
+                monthName = "February"
+            case "03":
+                monthName = "March"
+            case "04":
+                monthName = "April"
+            case "05":
+                monthName = "May"
+            case "06":
+                monthName = "June"
+            case "07":
+                monthName = "July"
+            case "08":
+                monthName = "August"
+            case "09":
+                monthName = "September"
+            case "10":
+                monthName = "October"
+            case "11":
+                monthName = "November"
+            case "12":
+                monthName = "December"
+            default:
+                monthName = "nil"
+            }
+            
+            dateOfBirthLabel.text = monthName + " " + date + " ," + year
+        } else {
+            dateOfBirthLabel.text = "January 01, 1900"
+        }
+        
+        
+    }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupProfileView()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

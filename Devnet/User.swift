@@ -19,6 +19,8 @@ struct User {
     var profileImageURL: String?
     var profileImage: UIImage?
     var profileBio: String?
+    var gender: Gender?
+    var dateOfBirth: String?
     
     private var session = URLSession.shared
     
