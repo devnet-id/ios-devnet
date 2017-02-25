@@ -245,7 +245,7 @@
             </objects>
             <point key="canvasLocation" x="1709.5999999999999" y="-935.08245877061472"/>
         </scene>
-        <!--Discover-->
+        <!--Explore-->
         <scene sceneID="Fla-bG-Blg">
             <objects>
                 <tableViewController id="5fX-Gh-8W7" customClass="ExploreTableViewController" customModule="Devnet" customModuleProvider="target" sceneMemberID="viewController">
@@ -284,7 +284,7 @@
                             <outlet property="delegate" destination="5fX-Gh-8W7" id="9Xy-FO-dRE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Discover" id="pvQ-ml-eIC"/>
+                    <navigationItem key="navigationItem" title="Explore" id="pvQ-ml-eIC"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9L-qo-vcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -357,11 +357,11 @@
             </objects>
             <point key="canvasLocation" x="772" y="1670"/>
         </scene>
-        <!--Discover-->
+        <!--Explore-->
         <scene sceneID="Cd6-iT-zSf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pgg-eU-yVv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Discover" image="discover" id="bSH-n0-RjQ"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="explore" id="bSH-n0-RjQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1s5-L8-rFw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -415,9 +415,9 @@
     <resources>
         <image name="Cover Image" width="420" height="180"/>
         <image name="User Profile Image" width="459" height="459"/>
-        <image name="discover" width="30" height="30"/>
-        <image name="home" width="30" height="30"/>
-        <image name="notification" width="30" height="30"/>
-        <image name="user" width="30" height="30"/>
+        <image name="explore" width="25" height="25"/>
+        <image name="home" width="22" height="22"/>
+        <image name="notification" width="22" height="22"/>
+        <image name="user" width="22" height="22"/>
     </resources>
 </document>

@@ -47,7 +47,7 @@ class InitialViewController: UIViewController {
     func getUser(uid: String, completion: @escaping (User?) -> Void) {
 
         Firebase.shared().databaseRef.child("users").child(uid).observeSingleEvent(of: .value, with: { (dataSnapshot) in
-            print(dataSnapshot)
+            
             
             if let dictionary = dataSnapshot.value as? [String: AnyObject] {
                 

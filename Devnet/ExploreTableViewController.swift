@@ -18,7 +18,6 @@ class ExploreTableViewController: UITableViewController {
         var users = [User]()
         
         FIRDatabase.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
-            print(snapshot)
             
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 
