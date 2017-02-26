@@ -9,10 +9,10 @@
 import Foundation
 import Firebase
 
-class Firebase: NSObject {
+class Firebase {
     
-    let databaseRef = FIRDatabase.database().reference(fromURL: "https://devnet-12ce3.firebaseio.com/")
-    let storageRef = FIRStorage.storage().reference()
+    static let databaseRef = FIRDatabase.database().reference(fromURL: "https://devnet-12ce3.firebaseio.com/")
+    static let storageRef = FIRStorage.storage().reference()
     
     class func firebaseSignOut() -> Void {
         do {
@@ -72,12 +72,9 @@ class Firebase: NSObject {
         })
     }
     
-    class func getUser(_ completion: @escaping (_ dictionary: [String: AnyObject]?,_ errorString: String?) -> Void) {
-
-        let ref = Firebase.shared().databaseRef
-        let uid = FIRAuth.auth()?.currentUser?.uid
+    class func getUser(uid: String,_ completion: @escaping (_ dictionary: [String: AnyObject]?,_ errorString: String?) -> Void) {
         
-        ref.child("users").child(uid!).observe(.value, with: { (dataSnapshot) in
+        databaseRef.child("users").child(uid).observe(.value, with: { (dataSnapshot) in
             
             guard let dictionary = dataSnapshot.value as? [String: AnyObject] else {
                 completion(nil, "There was no dictionary returned")
@@ -91,9 +88,7 @@ class Firebase: NSObject {
     
     class func postUser(uid: String, dictionaryToPost: [String: AnyObject], _ completion: @escaping (_ errorString: String?) -> Void) {
         
-        let ref = Firebase.shared().databaseRef
-        
-        ref.child("users").child(uid).updateChildValues(dictionaryToPost) { (firebaseDatabaseError, firebaseDatabaseRef) in
+        databaseRef.child("users").child(uid).updateChildValues(dictionaryToPost) { (firebaseDatabaseError, firebaseDatabaseRef) in
             
             guard firebaseDatabaseError != nil else {
                 completion(firebaseDatabaseError.debugDescription)
@@ -103,12 +98,5 @@ class Firebase: NSObject {
             completion(nil)
             
         }
-    }
-    
-    class func shared() -> Firebase {
-        struct Singleton {
-            static var sharedInstance = Firebase()
-        }
-        return Singleton.sharedInstance
     }
 }

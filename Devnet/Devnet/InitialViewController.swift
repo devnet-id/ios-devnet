@@ -23,49 +23,22 @@ class InitialViewController: UIViewController {
     
     func isUserSignedIn(completion: @escaping (_ success: Bool, _ userID: String?) -> Void) {
         if let uid = FIRAuth.auth()?.currentUser?.uid {
-            print(uid)
             completion(true, uid)
-            
         } else {
-            
             completion(false, nil)
         }
     }
     
-    func SignInView() -> UINavigationController {
+    func signInView() -> UINavigationController {
         let signInViewStoryboard = UIStoryboard(name: "SignIn", bundle: nil)
         let signInView = signInViewStoryboard.instantiateViewController(withIdentifier: "SignIn") as! UINavigationController
         return signInView
     }
     
-    func MainView() -> UITabBarController {
+    func mainView() -> UITabBarController {
         let mainViewStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let mainView = mainViewStoryboard.instantiateViewController(withIdentifier: "Main") as! UITabBarController
         return mainView
-    }
-    
-    func getUser(uid: String, completion: @escaping (User?) -> Void) {
-
-        Firebase.shared().databaseRef.child("users").child(uid).observeSingleEvent(of: .value, with: { (dataSnapshot) in
-            
-            
-            if let dictionary = dataSnapshot.value as? [String: AnyObject] {
-                
-                
-                let user = User(dictionary: dictionary)
-                
-                Current.shared().user = user
-
-                completion(user)
-                
-            } else {
-                
-                completion(nil)
-                
-            }
-            
-        })
-        
     }
     
     func handleView() {
@@ -80,13 +53,19 @@ class InitialViewController: UIViewController {
                 
                 print("User is signed in with uid: ", uid)
                 
-                self.getUser(uid: uid, completion: { (user) in
-                    print("welcome \(user?.name)")
+                Firebase.getUser(uid: uid, { (dictionary, errorString) in
+                    if errorString == nil {
+                        let user = User(dictionary: dictionary!)
+                        Current.shared().user = user
+                        self.endLoading()
+                        self.present(self.mainView(), animated: true, completion: nil)
+                    } else {
+                        print(errorString!)
+                        self.endLoading()
+                        Firebase.firebaseSignOut()
+                        self.present(self.signInView(), animated: true, completion: nil)
+                    }
                     
-                    
-                    self.endLoading()
-                    self.present(self.MainView(), animated: true, completion: nil)
-
                 })
                 
                 
@@ -96,7 +75,7 @@ class InitialViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     self.endLoading()
-                    self.present(self.SignInView(), animated: true, completion: nil)
+                    self.present(self.signInView(), animated: true, completion: nil)
                 }
                 
             }
