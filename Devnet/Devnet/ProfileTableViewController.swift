@@ -12,6 +12,7 @@ class ProfileTableViewController: UITableViewController {
 
     var user = Current.shared().user!
     
+    var profileImage = #imageLiteral(resourceName: "User Profile Image")
     
     func setupProfile() {
         
@@ -55,6 +56,7 @@ class ProfileTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as! ProfileTableViewCell
         // Configure the cell...
         cell.profileNameLabel.text = user.name!
+        cell.profileImageView.image = profileImage
         
         return cell
     }

@@ -271,7 +271,13 @@
                             <outlet property="delegate" destination="3Cp-ee-nHG" id="NqQ-af-mvd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Edit Profile" id="dyF-fX-Teq"/>
+                    <navigationItem key="navigationItem" title="Edit Profile" id="dyF-fX-Teq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="jxh-8v-vyM">
+                            <connections>
+                                <action selector="saveAction:" destination="3Cp-ee-nHG" id="dLm-Ev-2by"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

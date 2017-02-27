@@ -106,7 +106,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="profileBioLabel" destination="ob7-TJ-7CK" id="Jp6-vc-2rf"/>
-                                    <outlet property="profileImageView" destination="rMw-xa-B1k" id="n32-1h-IZe"/>
+                                    <outlet property="profileImageView" destination="rMw-xa-B1k" id="yEI-JV-d9z"/>
                                     <outlet property="profileNameLabel" destination="bX5-Ac-IuI" id="Miv-ie-6hm"/>
                                 </connections>
                             </tableViewCell>
