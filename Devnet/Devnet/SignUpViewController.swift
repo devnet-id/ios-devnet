@@ -92,19 +92,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                         
                         self.signUp(email: email, password: password, userToPost: userToPost, completion: { (error) in
                             if error == nil {
-                                
-                                print("errorMessage is nil")
-                                
                                 self.endLoadingWithoutAlert()
                                 self.dismiss(animated: true, completion: nil)
                             } else {
-                                
-                                print("errorMessage is not nil")
                                 self.endLoading(error: error!)
                             }
                         })
                     } else {
-                        
                         self.endLoading(error: errorMessage!)
                     }
                 })
@@ -157,10 +151,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 completion(errorMessage!)
                 return
             }
-            print(errorMessage!)
-            
             completion(nil)
-            
         })
     }
     

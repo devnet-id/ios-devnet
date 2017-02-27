@@ -83,10 +83,9 @@ class Firebase {
     }
     
     class func postUser(uid: String, dictionaryToPost: [String: AnyObject], _ completion: @escaping (_ errorString: String?) -> Void) {
-        
         databaseRef.child("users").child(uid).updateChildValues(dictionaryToPost) { (firebaseDatabaseError, firebaseDatabaseRef) in
             
-            guard firebaseDatabaseError != nil else {
+            guard firebaseDatabaseError == nil else {
                 completion(firebaseDatabaseError.debugDescription)
                 return
             }

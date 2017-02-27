@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class InitialViewController: UIViewController {
-
+    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     func beginLoading() {
@@ -42,57 +42,32 @@ class InitialViewController: UIViewController {
     }
     
     func handleView() {
-        
         beginLoading()
-        
         isUserSignedIn { (isSignIn, userID) in
-            
             if isSignIn == true {
-                
                 guard let uid = userID else { return }
-                
-                print("User is signed in with uid: ", uid)
-                
                 Firebase.getUser(uid: uid, { (dictionary, errorString) in
                     if errorString == nil {
-                        
-                        print("User is returned: ", dictionary!)
                         let user = User(dictionary: dictionary!)
                         Current.shared().user = user
-                        
                         DispatchQueue.main.async {
                             self.endLoading()
                             self.present(self.mainView(), animated: true, completion: nil)
-
                         }
-                        
                     } else {
-                        
-                        print("User dictionary was not returned: ", errorString!)
                         Firebase.firebaseSignOut()
-                        
                         DispatchQueue.main.async {
                             self.endLoading()
                             self.present(self.signInView(), animated: true, completion: nil)
                         }
-                        
-                        
                     }
-                    
                 })
-                
-                
             } else {
-                
-                print("User is not signed in")
-                
                 DispatchQueue.main.async {
                     self.endLoading()
                     self.present(self.signInView(), animated: true, completion: nil)
                 }
-                
             }
-            
         }
     }
     
@@ -103,7 +78,6 @@ class InitialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -111,7 +85,6 @@ class InitialViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
