@@ -39,23 +39,27 @@ class EditProfileTableViewController: UITableViewController {
     
     @IBOutlet weak var profileImageView: UIImageView!
     
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
     @IBAction func saveAction(_ sender: Any) {
         
         savingActivityIndicatorView(animating: true)
         
-        if isProfileEdited == true {
-            uploadImageToFirebaseStorage(image: profileImageView.image!, completionForUploadingImage: { (errorMessage) in
-                if errorMessage == nil {
-                    self.savingActivityIndicatorView(animating: false)
-                    let _ = self.navigationController?.popViewController(animated: true)
-                } else {
-                    print(errorMessage!)
-                }
-            })
-        }
+        
+        uploadImageToFirebaseStorage(image: profileImageView.image!, completionForUploadingImage: { (errorMessage) in
+            if errorMessage == nil {
+                self.savingActivityIndicatorView(animating: false)
+                let _ = self.navigationController?.popViewController(animated: true)
+            } else {
+                print(errorMessage!)
+            }
+        })
+
         
     }
     func configureProfileView() {
+        
+        saveButton.isEnabled = false
         
         addActionForTappingProfileImageView()
         

@@ -62,7 +62,7 @@ extension EditProfileTableViewController: UIImagePickerControllerDelegate, UINav
     
     func setImageToImageView(image: UIImage) -> Void {
         profileImageView.image = image
-        isProfileEdited = true
+        saveButton.isEnabled = true
     }
     
     //Tells the delegate that the user cancelled the pick operation.

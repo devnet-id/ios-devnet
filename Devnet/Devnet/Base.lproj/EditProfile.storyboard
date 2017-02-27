@@ -289,6 +289,7 @@
                         <outlet property="phoneNumberLabel" destination="2Dy-2b-j0P" id="kHW-q1-5mc"/>
                         <outlet property="profileBioLabel" destination="yDm-ej-xZl" id="bU4-MH-qdg"/>
                         <outlet property="profileImageView" destination="TKv-65-Lxx" id="zfB-kq-wVy"/>
+                        <outlet property="saveButton" destination="jxh-8v-vyM" id="ptS-Uo-7qJ"/>
                         <outlet property="usernameLabel" destination="159-sB-Ivb" id="3Et-Mj-XHg"/>
                     </connections>
                 </tableViewController>
