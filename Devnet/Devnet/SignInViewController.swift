@@ -20,31 +20,19 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signInButton: UIButton!
     
     @IBAction func signUpAction(_ sender: Any) {
-        
         let signUpView = setupSignUpView()
         self.navigationController?.pushViewController(signUpView, animated: true)
-
-        
     }
     
     @IBAction func signInAction(_ sender: Any) {
-        
         beginLoading()
-        
         if emailTextField.text != "" && passwordTextField.text != "" {
             Firebase.firebaseSignIn(email: emailTextField.text!, password: passwordTextField.text!, completion: { (userID, errorMessage) in
-                
                 guard errorMessage == nil else {
                     self.endLoading(error: errorMessage!)
                     return
                 }
-                
-                let uid = FIRAuth.auth()?.currentUser?.uid
-                
-                print("Successfully signing in with email and password under user ID: ",uid!)
-                
                 self.dismiss(animated: true, completion: nil)
-                
             })
         } else {
             endLoading(error: "Email and Password is empty")
@@ -90,20 +78,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     func configureTextFieldDelegate() {
-        
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        
     }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         hideNavigationBar()
-        
         configureTextFieldDelegate()
-        
     }
 
     override func didReceiveMemoryWarning() {

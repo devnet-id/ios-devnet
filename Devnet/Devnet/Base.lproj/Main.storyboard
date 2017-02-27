@@ -35,16 +35,16 @@
         <scene sceneID="Ozh-mv-bET">
             <objects>
                 <tableViewController id="NN7-Kh-Wtk" customClass="ProfileTableViewController" customModule="Devnet" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="400" sectionHeaderHeight="28" sectionFooterHeight="28" id="d41-Ym-L2H">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="402" sectionHeaderHeight="28" sectionFooterHeight="28" id="d41-Ym-L2H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="390" id="hCi-Dc-Bb6" customClass="ProfileTableViewCell" customModule="Devnet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="390"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="402" id="hCi-Dc-Bb6" customClass="ProfileTableViewCell" customModule="Devnet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="402"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hCi-Dc-Bb6" id="Dgz-Tp-XD9">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="389"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="401"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cover Image" translatesAutoresizingMaskIntoConstraints="NO" id="OEx-jr-fAN">
@@ -54,10 +54,10 @@
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="dr3-uf-VAR">
-                                            <rect key="frame" x="8" y="97" width="359" height="268"/>
+                                            <rect key="frame" x="8" y="97" width="359" height="280.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bij-IL-dx2" userLabel="Image and Full Name Stack View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="169"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="177"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User Profile Image" translatesAutoresizingMaskIntoConstraints="NO" id="rMw-xa-B1k">
                                                             <rect key="frame" x="115.5" y="0.0" width="128" height="128"/>
@@ -67,7 +67,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bX5-Ac-IuI">
-                                                            <rect key="frame" x="104.5" y="144" width="150" height="25"/>
+                                                            <rect key="frame" x="104.5" y="144" width="150" height="33"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -75,14 +75,14 @@
                                                     </subviews>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ob7-TJ-7CK">
-                                                    <rect key="frame" x="16" y="178" width="327" height="51.5"/>
+                                                    <rect key="frame" x="16" y="186" width="327" height="53.5"/>
                                                     <string key="text">Lorem ipsum dolor sit amet, albucius neglegentur est ut, ius an dolorum mnesarchum. Suas antiopam iracundia in pri, vim at maiestatis dissentiet. Qui eu.</string>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2z-fq-ZvG">
-                                                    <rect key="frame" x="129.5" y="238.5" width="100" height="29.5"/>
+                                                    <rect key="frame" x="129.5" y="248.5" width="100" height="32"/>
                                                     <state key="normal" title="Expert in Swift"/>
                                                 </button>
                                             </subviews>

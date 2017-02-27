@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E2CC9551E64A791001BF315 /* ImportImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2CC9541E64A791001BF315 /* ImportImageHandler.swift */; };
 		6E46DB281E5E2250007EC238 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E46DB271E5E2250007EC238 /* AppDelegate.swift */; };
 		6E46DB2A1E5E2250007EC238 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E46DB291E5E2250007EC238 /* SignInViewController.swift */; };
 		6E46DB321E5E2250007EC238 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E46DB301E5E2250007EC238 /* LaunchScreen.storyboard */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		37E7CCD5238C83A6BBE072C9 /* Pods-Devnet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Devnet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Devnet/Pods-Devnet.debug.xcconfig"; sourceTree = "<group>"; };
+		6E2CC9541E64A791001BF315 /* ImportImageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportImageHandler.swift; sourceTree = "<group>"; };
 		6E46DB241E5E2250007EC238 /* Devnet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Devnet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E46DB271E5E2250007EC238 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E46DB291E5E2250007EC238 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				6EEDC97A1E60541B00C5852A /* SettingsTableViewController.swift */,
 				6E46DB501E5E5E31007EC238 /* ProfileTableViewController.swift */,
 				6EEDC97C1E60661800C5852A /* EditProfileTableViewController.swift */,
+				6E2CC9541E64A791001BF315 /* ImportImageHandler.swift */,
 				6EEDC9781E604E4E00C5852A /* ExploreTableViewController.swift */,
 				6E46DB521E5E5E44007EC238 /* HomeTableViewController.swift */,
 				6E46DB4A1E5E2D26007EC238 /* SignUpViewController.swift */,
@@ -290,6 +293,7 @@
 				6E46DB531E5E5E44007EC238 /* HomeTableViewController.swift in Sources */,
 				6E46DB4B1E5E2D26007EC238 /* SignUpViewController.swift in Sources */,
 				6E46DB4F1E5E2DC0007EC238 /* User.swift in Sources */,
+				6E2CC9551E64A791001BF315 /* ImportImageHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
