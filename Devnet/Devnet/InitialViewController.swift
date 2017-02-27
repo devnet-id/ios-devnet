@@ -55,15 +55,28 @@ class InitialViewController: UIViewController {
                 
                 Firebase.getUser(uid: uid, { (dictionary, errorString) in
                     if errorString == nil {
+                        
+                        print("User is returned: ", dictionary!)
                         let user = User(dictionary: dictionary!)
                         Current.shared().user = user
-                        self.endLoading()
-                        self.present(self.mainView(), animated: true, completion: nil)
+                        
+                        DispatchQueue.main.async {
+                            self.endLoading()
+                            self.present(self.mainView(), animated: true, completion: nil)
+
+                        }
+                        
                     } else {
-                        print(errorString!)
-                        self.endLoading()
+                        
+                        print("User dictionary was not returned: ", errorString!)
                         Firebase.firebaseSignOut()
-                        self.present(self.signInView(), animated: true, completion: nil)
+                        
+                        DispatchQueue.main.async {
+                            self.endLoading()
+                            self.present(self.signInView(), animated: true, completion: nil)
+                        }
+                        
+                        
                     }
                     
                 })

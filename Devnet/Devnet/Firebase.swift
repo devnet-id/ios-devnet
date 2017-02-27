@@ -73,17 +73,13 @@ class Firebase {
     }
     
     class func getUser(uid: String,_ completion: @escaping (_ dictionary: [String: AnyObject]?,_ errorString: String?) -> Void) {
-        
         databaseRef.child("users").child(uid).observe(.value, with: { (dataSnapshot) in
-            
             guard let dictionary = dataSnapshot.value as? [String: AnyObject] else {
                 completion(nil, "There was no dictionary returned")
                 return
             }
-            
             completion(dictionary, nil)
         })
-
     }
     
     class func postUser(uid: String, dictionaryToPost: [String: AnyObject], _ completion: @escaping (_ errorString: String?) -> Void) {

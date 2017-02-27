@@ -30,42 +30,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signUpButton: UIButton!
     
     @IBAction func signUpAction(_ sender: Any) {
-        
-        beginLoading()
-        
-        isTextFieldsEmpty { (success, dictionary, errorTextFields) in
-            
-            if success == true {
-                
-                self.handleSignUp(dictionary, completionForSignUp: { (errorMessage) in
-                    
-                    if errorMessage != nil {
-                      self.endLoading(error: errorMessage!)
-                        
-                    } else {
-                        
-                        self.endLoadingWithoutAlert()
-                        
-                        self.dismiss(animated: true, completion: nil)
-                        
-                    }
-                })
-                
-            } else {
-                
-                if errorTextFields?.count == 1 {
-                    for x in errorTextFields! {
-                        self.endLoading(error: "Please fill your \(x)")
-                    }
-                } else {
-                    self.endLoading(error: "Please fill the blank text fields")
-                }
-                
-            }
-            
-        }
-        
-        
+        handleSignUp()
     }
     
     func isTextFieldsEmpty(completion: @escaping (_ success: Bool,_ dictionary: [String: String], _ errorTextFields: [String]?) -> Void) {
@@ -117,7 +82,47 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    func handleSignUp(_ dictionary: [String: String], completionForSignUp: @escaping (_ errorMessage: String?) -> Void) {
+    
+    func handleSignUp() {
+        beginLoading()
+        isTextFieldsEmpty { (success, dictionary, errorTextFields) in
+            if success == true {
+                self.getUserFromTextField(dictionary, completionForSignUp: { (email, password, userToPost, errorMessage) in
+                    if errorMessage == nil {
+                        
+                        self.signUp(email: email, password: password, userToPost: userToPost, completion: { (error) in
+                            if error == nil {
+                                
+                                print("errorMessage is nil")
+                                
+                                self.endLoadingWithoutAlert()
+                                self.dismiss(animated: true, completion: nil)
+                            } else {
+                                
+                                print("errorMessage is not nil")
+                                self.endLoading(error: error!)
+                            }
+                        })
+                    } else {
+                        
+                        self.endLoading(error: errorMessage!)
+                    }
+                })
+                
+            } else {
+                
+                if errorTextFields?.count == 1 {
+                    for x in errorTextFields! {
+                        self.endLoading(error: "Please fill your \(x)")
+                    }
+                } else {
+                    self.endLoading(error: "Please fill the blank text fields")
+                }
+            }
+        }
+    }
+    
+    func getUserFromTextField(_ dictionary: [String: String], completionForSignUp: (_ email: String, _ password: String, _ userToPost: [String: AnyObject], _ errorMessage: String?) -> Void) {
         if passwordTextField.text == repeatPasswordTextField.text {
             
             let firstName = dictionary["firstName"]!
@@ -136,22 +141,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             userToPost["userName"] = userName as AnyObject?
             userToPost["email"] = email as AnyObject?
             
-            Firebase.firebaseSignUp(email: email, password: password, dictionary: userToPost, completion: { (userID, errorMessage) in
-                
-                guard errorMessage != nil else {
-                    completionForSignUp(errorMessage)
-                    return
-                }
-                
-//                guard userID != nil else {
-//                    completionForSignUp("There was no user ID returned")
-//                    return
-//                }
-                
-                completionForSignUp(nil)
-                
-            })
-            
+            completionForSignUp(email, password, userToPost, nil)
             
             
         } else {
@@ -159,6 +149,19 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
         
         
+    }
+    
+    func signUp(email: String, password: String, userToPost: [String: AnyObject], completion: @escaping (_ errorMessage: String?) -> Void) {
+        Firebase.firebaseSignUp(email: email, password: password, dictionary: userToPost, completion: { (userID, errorMessage) in
+            guard errorMessage == nil else {
+                completion(errorMessage!)
+                return
+            }
+            print(errorMessage!)
+            
+            completion(nil)
+            
+        })
     }
     
     func beginLoading() {
