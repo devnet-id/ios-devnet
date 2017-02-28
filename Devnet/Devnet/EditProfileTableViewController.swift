@@ -15,7 +15,7 @@ class EditProfileTableViewController: UITableViewController {
     
     var isProfileEdited = false
     
-    let loadingIndicatorView = LoadingIndicatorView(text: "Loading")
+    let loadingIndicatorView = LoadingIndicatorView(text: "Saving Changes")
     
     let dimOverlayBackground = UIView()
     
