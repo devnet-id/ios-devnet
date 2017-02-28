@@ -15,11 +15,10 @@ class EditProfileTableViewController: UITableViewController {
     
     var isProfileEdited = false
     
-    var containerView = UIView()
+    let loadingIndicatorView = LoadingIndicatorView(text: "Loading")
     
     let overlayView = UIView()
     
-    let window = UIApplication.shared.keyWindow!
     
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -159,37 +158,48 @@ class EditProfileTableViewController: UITableViewController {
     private func savingActivityIndicatorView(animating: Bool) {
         
         if animating == true {
+            loadingIndicatorView.show()
             
-            overlayView.frame = window.frame
-            overlayView.center = window.center
+            overlayView.frame = (UIApplication.shared.keyWindow?.frame)!
+            overlayView.center = (UIApplication.shared.keyWindow?.center)!
             overlayView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
             
-            // You only need to adjust this frame to move it anywhere you want
-            containerView = UIView(frame: CGRect(x: view.frame.midX - 100, y: view.frame.midY - 30, width: 200, height: 60))
-            containerView.backgroundColor = UIColor.white
-            containerView.alpha = 0.8
-            containerView.layer.cornerRadius = 10
-            
-            //Here the spinnier is initialized
-            let activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
-            activityView.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
-            activityView.startAnimating()
-            
-            let textLabel = UILabel(frame: CGRect(x: 60, y: 0, width: 140, height: 60))
-            textLabel.textColor = UIColor.gray
-            textLabel.text = "Saving Changes"
-            
-            containerView.addSubview(activityView)
-            containerView.addSubview(textLabel)
-            
-            overlayView.addSubview(containerView)
-            
-            window.addSubview(overlayView)
-            self.view.isUserInteractionEnabled = false
+            overlayView.addSubview(loadingIndicatorView)
+            UIApplication.shared.keyWindow?.addSubview(overlayView)
+//
+//            // You only need to adjust this frame to move it anywhere you want
+//            
+//            containerView.frame = CGRect(x: view.frame.midX - 100, y: view.frame.midY - 30, width: 200, height: 60)
+//            
+//            
+//            containerView.backgroundColor = UIColor.white
+//            containerView.alpha = 1
+//            containerView.layer.cornerRadius = 10
+//            
+//            //Here the spinnier is initialized
+//            let activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+//            activityView.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+//            activityView.startAnimating()
+//            
+//            let textLabel = UILabel(frame: CGRect(x: 60, y: 0, width: 140, height: 60))
+//            textLabel.textColor = UIColor.gray
+//            textLabel.text = "Saving Changes"
+//            
+//            containerView.addSubview(blurredBackgroundView)
+//            containerView.addSubview(activityView)
+//            containerView.addSubview(textLabel)
+//            
+//            overlayView.addSubview(containerView)
+//            
+
 
         } else {
             overlayView.removeFromSuperview()
-            self.view.isUserInteractionEnabled = true
+//            self.view.isUserInteractionEnabled = true
+            
+            loadingIndicatorView.hide()
+            
+            
         }
     }
     
@@ -197,7 +207,15 @@ class EditProfileTableViewController: UITableViewController {
         super.viewDidLoad()
         
         configureProfileView()
-
+        
+//        overlayView.frame = window.frame
+//        overlayView.center = window.center
+//        overlayView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        
+//        overlayView.addSubview(loadingIndicatorView)
+        self.view.addSubview(loadingIndicatorView)
+        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
