@@ -16,10 +16,10 @@ class LoadingIndicatorView: UIVisualEffectView {
         }
     }
     let activityIndictor: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.white)
-    let label: UILabel = UILabel()
-    let blurEffect = UIBlurEffect(style: .light)
+    let label = UILabel()
+    let blurEffect = UIBlurEffect(style: .dark)
     let blurredBackgroundView: UIVisualEffectView
-    let applicationWindow = UIApplication.shared.keyWindow
+    let dimOverlayBackground = UIView()
     
     init(text: String) {
         self.text = text
@@ -57,6 +57,7 @@ class LoadingIndicatorView: UIVisualEffectView {
             let activityIndicatorSize: CGFloat = 40
             activityIndictor.frame = CGRect(x: 5, y: height / 2 - activityIndicatorSize / 2, width: activityIndicatorSize, height: activityIndicatorSize)
             
+            
             layer.cornerRadius = 8.0
             layer.masksToBounds = true
             
@@ -64,17 +65,18 @@ class LoadingIndicatorView: UIVisualEffectView {
             label.textAlignment = NSTextAlignment.center
             label.frame = CGRect(x: activityIndicatorSize + 5, y: 0, width: width - activityIndicatorSize - 15, height: height)
             label.textColor = UIColor.gray
+            label.alpha = 1
             label.font = UIFont.boldSystemFont(ofSize: 16)
         }
     }
     
     func show() {
         self.isHidden = false
-        self.applicationWindow?.isUserInteractionEnabled = false
+        UIApplication.shared.beginIgnoringInteractionEvents()
     }
     
     func hide() {
-        self.applicationWindow?.isUserInteractionEnabled = true
         self.isHidden = true
+        UIApplication.shared.endIgnoringInteractionEvents()
     }
 }
