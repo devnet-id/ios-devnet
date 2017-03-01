@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct User {
+class User {
     
     var firstName: String?
     var lastName: String?
@@ -42,9 +42,10 @@ struct User {
         
         if let url = profileImageURL {
             
+            print(url)
+            
             var imageToInit = UIImage()
             
-            self.profileImageURL = url
             getImage(imageURL: url, completion: { (success, image, errorString) in
                 
                 guard errorString == nil else {
@@ -54,10 +55,11 @@ struct User {
                 
                 if success == true {
                     imageToInit = image!
+                    
+                    self.profileImage = imageToInit
+
                 }
             })
-            
-            self.profileImage = imageToInit
             
         } else {
             profileImage = nil

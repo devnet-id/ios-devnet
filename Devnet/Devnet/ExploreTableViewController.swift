@@ -15,16 +15,16 @@ class ExploreTableViewController: UITableViewController {
     
     func fetchUser(completion: @escaping (_ user: [User]?) -> Void) {
         
-        var users = [User]()
+        var fetchedUsers = [User]()
         
         FIRDatabase.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
             
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 
                 let userToAppend = User(dictionary: dictionary)
-                users.append(userToAppend)
+                fetchedUsers.append(userToAppend)
                 
-                completion(users)
+                completion(fetchedUsers)
                 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
