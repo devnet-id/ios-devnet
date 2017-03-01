@@ -15,9 +15,9 @@ class LoadingIndicatorView: UIVisualEffectView {
             label.text = text
         }
     }
-    let activityIndictor: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.white)
+    let activityIndictor: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     let label = UILabel()
-    let blurEffect = UIBlurEffect(style: .dark)
+    let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
     let blurredBackgroundView: UIVisualEffectView
     let dimOverlayBackground = UIView()
     
@@ -65,7 +65,6 @@ class LoadingIndicatorView: UIVisualEffectView {
             label.textAlignment = NSTextAlignment.center
             label.frame = CGRect(x: activityIndicatorSize + 5, y: 0, width: width - activityIndicatorSize - 15, height: height)
             label.textColor = UIColor.gray
-            label.alpha = 1
             label.font = UIFont.boldSystemFont(ofSize: 16)
         }
     }

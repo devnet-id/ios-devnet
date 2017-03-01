@@ -17,9 +17,7 @@ class EditProfileTableViewController: UITableViewController {
     
     let loadingIndicatorView = LoadingIndicatorView(text: "Saving Changes")
     
-    let dimOverlayBackground = UIView()
-    
-    let applicationWindow = UIApplication.shared.keyWindow
+    let dimOverlayBackgroundView = UIView(frame: UIScreen.main.bounds)
     
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -174,10 +172,17 @@ class EditProfileTableViewController: UITableViewController {
         
         if animating == true {
             loadingIndicatorView.show()
-            self.view.addSubview(loadingIndicatorView)
+            
+            dimOverlayBackgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.66)
+            dimOverlayBackgroundView.addSubview(loadingIndicatorView)
+            UIApplication.shared.keyWindow?.addSubview(dimOverlayBackgroundView)
+            
+            
         } else {
             loadingIndicatorView.hide()
             loadingIndicatorView.removeFromSuperview()
+            dimOverlayBackgroundView.removeFromSuperview()
+            
         }
     }
     
