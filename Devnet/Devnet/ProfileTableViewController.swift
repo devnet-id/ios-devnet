@@ -15,6 +15,11 @@ class ProfileTableViewController: UITableViewController {
  
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,13 +58,15 @@ class ProfileTableViewController: UITableViewController {
         
         let user = Current.shared().user!
         
+        print(user)
+        
         cell.profileNameLabel.text = user.name!
         
         if let profileImageData = user.profileImage {
             print(user.profileImage!)
             print(profileImageData)
         }
-        let profileImage = user.profileImage ?? #imageLiteral(resourceName: "User Profile Image")
+        let profileImage = user.profileImage ?? #imageLiteral(resourceName: "profileImageDefault")
         
         cell.profileImageView.image = profileImage
         
