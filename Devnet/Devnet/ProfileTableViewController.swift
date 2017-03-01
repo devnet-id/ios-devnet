@@ -10,12 +10,9 @@ import UIKit
 
 class ProfileTableViewController: UITableViewController {
 
-    var user = Current.shared().user!
     
     func setupProfile() {
-        
-        
-        
+ 
     }
     
     override func viewDidLoad() {
@@ -53,6 +50,9 @@ class ProfileTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as! ProfileTableViewCell
         // Configure the cell...
+        
+        let user = Current.shared().user!
+        
         cell.profileNameLabel.text = user.name!
         
         if let profileImageData = user.profileImage {

@@ -57,6 +57,8 @@ class User {
                     imageToInit = image!
                     
                     self.profileImage = imageToInit
+                    
+                    print("photo is set to profileImage variable \(self.profileImage!)")
 
                 }
             })

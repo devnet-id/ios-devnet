@@ -59,7 +59,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bij-IL-dx2" userLabel="Image and Full Name Stack View">
                                                     <rect key="frame" x="0.0" y="0.0" width="359" height="177"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User Profile Image" translatesAutoresizingMaskIntoConstraints="NO" id="rMw-xa-B1k">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User Profile Image" translatesAutoresizingMaskIntoConstraints="NO" id="rMw-xa-B1k">
                                                             <rect key="frame" x="115.5" y="0.0" width="128" height="128"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="128" id="EaI-so-GIe"/>
