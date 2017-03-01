@@ -38,7 +38,9 @@ struct User {
         
         email = dictionary["email"] as? String
         
-        if let url = dictionary["profileImageURL"] as? String {
+        profileImageURL = dictionary["profileImageURL"] as? String
+        
+        if let url = profileImageURL {
             
             var imageToInit = UIImage()
             

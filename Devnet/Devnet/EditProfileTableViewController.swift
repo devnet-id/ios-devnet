@@ -251,9 +251,16 @@ class EditProfileTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let profileTableViewController = segue.destination as! ProfileTableViewController
-        profileTableViewController.profileImage = profileImageView.image!
-        profileTableViewController.tableView.reloadData()
+        
+        Firebase.getUser(uid: (FIRAuth.auth()?.currentUser?.uid)!) { (dictionary, errorMessage) in
+            if errorMessage == nil {
+                let user = User(dictionary: dictionary!)
+                Current.shared().user = user
+                let profileTableViewController = segue.destination as! ProfileTableViewController
+                profileTableViewController.tableView.reloadData()
+                
+            }
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
