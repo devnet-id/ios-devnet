@@ -72,8 +72,14 @@ class Firebase {
         })
     }
     
+    class func postFollow(uid: String, uidToFollow: String, dictionary: [String: AnyObject]) {
+        databaseRef.child("users").child(uid).child("following").child(uidToFollow).updateChildValues(dictionary)
+    }
+    
     class func getUser(uid: String,_ completion: @escaping (_ dictionary: [String: AnyObject]?,_ errorString: String?) -> Void) {
+        
         databaseRef.child("users").child(uid).child("user").observe(.value, with: { (dataSnapshot) in
+            
             guard let dictionary = dataSnapshot.value as? [String: AnyObject] else {
                 completion(nil, "There was no dictionary returned")
                 return

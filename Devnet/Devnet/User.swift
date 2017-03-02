@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class User: NSObject {
-    
+    var userID: String?
     var firstName: String?
     var lastName: String?
     var name: String?
@@ -20,6 +20,8 @@ class User: NSObject {
     var profileImage: UIImage?
     var profileBio: String?
     var gender: Gender?
+    var following: [User]?
+    var follower: [User]?
     var dateOfBirth: String?
     
     private var session = URLSession.shared
@@ -80,6 +82,7 @@ class User: NSObject {
         email = nil
         profileImageURL = nil
         profileImage = nil
+        
     }
     
     // Getting image from network

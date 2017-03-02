@@ -13,17 +13,26 @@ class ExploreTableViewController: UITableViewController {
 
     var users = [User]()
     
+    var followedStatus: Bool = false
+    
+    var following = [User]()
+    
+    var followers = [User]()
+    
     func fetchUser(completion: @escaping (_ user: [User]?) -> Void) {
         
         var fetchedUsers = [User]()
         
         FIRDatabase.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
             
+            let userID = snapshot.key
+            
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 
                 let userDictionary = dictionary["user"] as! [String: AnyObject]
                 
                 let userToAppend = User(dictionary: userDictionary)
+                userToAppend.userID = userID
                 fetchedUsers.append(userToAppend)
                 
                 completion(fetchedUsers)
@@ -36,10 +45,53 @@ class ExploreTableViewController: UITableViewController {
         })
     }
     
+    @IBAction func handleFollow(sender: UIButton) {
+        
+        let index = sender.tag
+        
+        let user = users[index]
+        
+        var dictionary = [String: AnyObject]()
+        let date = NSDate()
+        let timeStamp = date.description
+        dictionary["timeStamp"] = timeStamp as AnyObject?
+        
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        
+        Firebase.postFollow(uid: uid!, uidToFollow: user.userID!, dictionary: dictionary)
+        
+        if let currentUserFollowingArray = Current.shared().user?.following {
+            for followingUser in currentUserFollowingArray {
+                if followingUser.userID != user.userID {
+                    tableView.reloadData()
+                }
+            }
+        } else {
+            
+        }
+        
+        print(sender.tag)
+        
+        
+//        if followedStatus == false {
+//            
+//            
+//            followButton.setTitle("Following", for: .normal)
+//            followedStatus = true
+//            
+//        } else {
+//            followButton.setTitle("Follow", for: .normal)
+//            followedStatus = false
+//        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         fetchUser { (users) in
             self.users = users!
+            let followingUsers = [User]()
+                
+            Current.shared().user?.following
         }
     }
     
@@ -79,6 +131,20 @@ class ExploreTableViewController: UITableViewController {
         if let profileImage = user.profileImage {
             cell.profileImageView.image = profileImage
         }
+        
+        if let currentUserFollowingArray = Current.shared().user?.following {
+            for followingUser in currentUserFollowingArray {
+                if user.userID == followingUser.userID {
+                    cell.followButton.setTitle("Following", for: .normal)
+                } else {
+                    cell.followButton.setTitle("Follow", for: .normal)
+                }
+            }
+        }
+        
+        cell.followButton.tag = indexPath.row
+        
+        cell.followButton.addTarget(self, action: #selector(handleFollow), for: .touchUpInside)
         
         return cell
         
