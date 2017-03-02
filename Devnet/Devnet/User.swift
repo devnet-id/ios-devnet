@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class User {
+class User: NSObject {
     
     var firstName: String?
     var lastName: String?
@@ -26,6 +26,7 @@ class User {
     
     // Initialized using dictionary
     init(dictionary: [String: AnyObject]) {
+        super.init()
         
         if let name = dictionary["name"] as? String {
             let arrayFullName = name.components(separatedBy: " ")
@@ -42,11 +43,8 @@ class User {
         
         if let url = profileImageURL {
             
-            print(url)
-            
-            var imageToInit = UIImage()
-            
-            getImage(imageURL: url, completion: { (success, image, errorString) in
+            self.getImage(imageURL: url, completion: { (success, image, errorString) in
+                var imageToInit = UIImage()
                 
                 guard errorString == nil else {
                     print(errorString!)
@@ -75,7 +73,7 @@ class User {
     }
     
     // Initialized using nil properties
-    init() {
+    override init() {
         firstName = nil
         lastName = nil
         userName = nil

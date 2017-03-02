@@ -21,7 +21,9 @@ class ExploreTableViewController: UITableViewController {
             
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 
-                let userToAppend = User(dictionary: dictionary)
+                let userDictionary = dictionary["user"] as! [String: AnyObject]
+                
+                let userToAppend = User(dictionary: userDictionary)
                 fetchedUsers.append(userToAppend)
                 
                 completion(fetchedUsers)

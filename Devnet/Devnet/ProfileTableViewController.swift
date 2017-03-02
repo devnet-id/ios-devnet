@@ -60,7 +60,7 @@ class ProfileTableViewController: UITableViewController {
         
         print(user)
         
-        cell.profileNameLabel.text = user.name!
+        cell.profileNameLabel.text = user.name
         
         if let profileImageData = user.profileImage {
             print(user.profileImage!)

@@ -2,7 +2,7 @@
 //  HomeTableViewController.swift
 //  Devnet
 //
-//  Created by Zulwiyoza Putra on 2/23/17.
+//  Created by Zulwiyoza Putra on 3/2/17.
 //  Copyright © 2017 Kibar. All rights reserved.
 //
 
@@ -11,33 +11,35 @@ import Firebase
 
 class HomeTableViewController: UITableViewController {
     
-    var posts: [Post]? = nil
+    var posts: [Post] = []
     
     @IBAction func newPostAction(_ sender: Any) {
-        
         let newPostStoryboard = UIStoryboard(name: "NewPost", bundle: nil)
         let newPostView = newPostStoryboard.instantiateViewController(withIdentifier: "newPost") as! UINavigationController
         self.present(newPostView, animated: true, completion: nil)
-        
+    }
+    
+    func observePosts() {
+        Firebase.getPost(uid: (FIRAuth.auth()?.currentUser?.uid)!) { (posts) in
+            if posts != nil {
+                self.posts = posts!
+                print(self.posts)
+                self.tableView.reloadData()
+            } else {
+                print("posts is nil")
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-        
+        observePosts()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
@@ -48,44 +50,28 @@ class HomeTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    /*
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-    */
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        
-        print("Posts has \(posts?.count) item")
-        
-        if posts != nil {
-            return posts!.count
-        } else {
-            return 0
-        }
-        
+        return posts.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postListCell", for: indexPath) as! PostsListTableViewCell
+
+        // Configure the cell...
         
+        let post = posts[indexPath.row]
         
-        
-        if posts != nil {
-            let post = posts![indexPath.row]
-            
-            cell.nameLabel.text = post.name
-            cell.contentLabel.text = post.content
-            cell.timeStampLabel.text = post.timeStamp
-            
-            return cell
-        } else {
-            return cell
-        }
-        
+        print(post)
+
+        cell.nameLabel.text = post.user?.name
+        cell.contentLabel.text = post.content
+        cell.timeStampLabel.text = post.timeStamp
+        cell.profileImageView.image = #imageLiteral(resourceName: "profileImageDefault")
+        return cell
     }
+
 
     /*
     // Override to support conditional editing of the table view.

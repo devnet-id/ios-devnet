@@ -73,17 +73,20 @@ class Firebase {
     }
     
     class func getUser(uid: String,_ completion: @escaping (_ dictionary: [String: AnyObject]?,_ errorString: String?) -> Void) {
-        databaseRef.child("users").child(uid).observe(.value, with: { (dataSnapshot) in
+        databaseRef.child("users").child(uid).child("user").observe(.value, with: { (dataSnapshot) in
             guard let dictionary = dataSnapshot.value as? [String: AnyObject] else {
                 completion(nil, "There was no dictionary returned")
                 return
             }
+            
+            print(dictionary)
+            
             completion(dictionary, nil)
         })
     }
     
     class func postUser(uid: String, dictionaryToPost: [String: AnyObject], _ completion: @escaping (_ errorString: String?) -> Void) {
-        databaseRef.child("users").child(uid).updateChildValues(dictionaryToPost) { (firebaseDatabaseError, firebaseDatabaseRef) in
+        databaseRef.child("users").child(uid).child("user").updateChildValues(dictionaryToPost) { (firebaseDatabaseError, firebaseDatabaseRef) in
             
             guard firebaseDatabaseError == nil else {
                 completion(firebaseDatabaseError.debugDescription)
@@ -106,28 +109,31 @@ class Firebase {
     }
     
     class func getPost(uid: String, completion: @escaping (_ posts: [Post]?) -> Void) {
+        var fetchedPosts: [Post]? = []
+        
         databaseRef.child("posts").child(uid).observe(.childAdded, with: { (snapshot) in
-            var fetchedPosts: [Post]? = nil
-            
             if let postDictionary = snapshot.value as? [String: AnyObject] {
                 
-                let content = postDictionary["content"] as! String
-                let timeStamp = postDictionary["timeStamp"] as! String
+                let post = Post()
+                print(postDictionary)
                 
-                getUser(uid: uid, { (userDictionary, error) in
+                post.setValuesForKeys(postDictionary)
+                
+                getUser(uid: uid, { (dictionary, error) in
                     if error == nil {
-                        let name = userDictionary!["name"] as! String
-                        
-                        let fetchedPost = Post(content: content, timeStamp: timeStamp, uid: uid, name: name)
-                        fetchedPosts?.append(fetchedPost)
-                        
-                        completion(fetchedPosts)
+                        print("SUCCESSFULLY GET USER DICTIONARY")
+                        print(dictionary!)
+                        let user = User(dictionary: dictionary!)
+                        post.user = user
                     }
                 })
                 
+                fetchedPosts?.append(post)
+                completion(fetchedPosts)
                 
                 
             }
+            completion(nil)
         })
     }
 }

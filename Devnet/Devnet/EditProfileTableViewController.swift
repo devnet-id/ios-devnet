@@ -149,7 +149,7 @@ class EditProfileTableViewController: UITableViewController {
     }
     
     func postProfileImageDownloadURLWithUID(uid: String, profileImageURL: String, completion: @escaping (_ errorMessage: String?) -> Void) {
-        Firebase.databaseRef.child("users").child(uid).child("profileImageURL").setValue(profileImageURL, withCompletionBlock: { (firebaseDatabaseError, firebaseDatabaseRef) in
+        Firebase.databaseRef.child("users").child(uid).child("user").child("profileImageURL").setValue(profileImageURL, withCompletionBlock: { (firebaseDatabaseError, firebaseDatabaseRef) in
             guard firebaseDatabaseError == nil else {
                 completion(firebaseDatabaseError.debugDescription)
                 return

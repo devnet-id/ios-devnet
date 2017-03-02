@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Post {
-    var content: String
-    var timeStamp: String
-    var uid: String
-    var name: String
+class Post: NSObject {
+    var content: String?
+    var timeStamp: String?
+    var userID: String?
+    var user: User?
 }

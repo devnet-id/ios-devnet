@@ -42,6 +42,7 @@ class InitialViewController: UIViewController {
     }
     
     func handleView() {
+        
         beginLoading()
         isUserSignedIn { (isSignIn, userID) in
             if isSignIn == true {
