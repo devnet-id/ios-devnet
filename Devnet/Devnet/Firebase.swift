@@ -72,8 +72,14 @@ class Firebase {
         })
     }
     
-    class func postFollow(uid: String, uidToFollow: String, dictionary: [String: AnyObject]) {
+    class func postFollow(uid: String, uidToFollow: String, dictionary: [String: AnyObject], completion: @escaping () -> Void) {
         databaseRef.child("users").child(uid).child("following").child(uidToFollow).updateChildValues(dictionary)
+        completion()
+    }
+    
+    class func removeFollow(uid: String, uidToUnfollow: String, completion: @escaping () -> Void) {
+        databaseRef.child("users").child(uid).child("following").child(uidToUnfollow).parent?.removeValue()
+        completion()
     }
     
     class func getUser(uid: String,_ completion: @escaping (_ dictionary: [String: AnyObject]?,_ errorString: String?) -> Void) {

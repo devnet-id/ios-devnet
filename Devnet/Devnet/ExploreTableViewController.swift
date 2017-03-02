@@ -17,13 +17,13 @@ class ExploreTableViewController: UITableViewController {
     
     var following = [User]()
     
-    var followers = [User]()
+    var follower = [User]()
     
     func fetchUser(completion: @escaping (_ user: [User]?) -> Void) {
         
         var fetchedUsers = [User]()
         
-        FIRDatabase.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
+        Firebase.databaseRef.child("users").observe(.childAdded, with: { (snapshot) in
             
             let userID = snapshot.key
             
@@ -33,15 +33,30 @@ class ExploreTableViewController: UITableViewController {
                 
                 let userToAppend = User(dictionary: userDictionary)
                 userToAppend.userID = userID
-                fetchedUsers.append(userToAppend)
                 
-                completion(fetchedUsers)
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                if userToAppend.userID != FIRAuth.auth()?.currentUser?.uid {
+                    fetchedUsers.append(userToAppend)
+                    
+                    
+                    completion(fetchedUsers)
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+
                 }
-                
             }
+        })
+    }
+    
+    func getFollowing(uid: String, completion: @escaping (_ usersID: [String]) -> Void) {
+        
+        var usersID = [String]()
+        
+        Firebase.databaseRef.child("users").child(uid).child("following").observe(.childAdded, with: { (snapshot) in
+
+            usersID.append(snapshot.key)
+            completion(usersID)
         })
     }
     
@@ -51,26 +66,27 @@ class ExploreTableViewController: UITableViewController {
         
         let user = users[index]
         
-        var dictionary = [String: AnyObject]()
-        let date = NSDate()
-        let timeStamp = date.description
-        dictionary["timeStamp"] = timeStamp as AnyObject?
-        
         let uid = FIRAuth.auth()?.currentUser?.uid
         
-        Firebase.postFollow(uid: uid!, uidToFollow: user.userID!, dictionary: dictionary)
-        
-        if let currentUserFollowingArray = Current.shared().user?.following {
-            for followingUser in currentUserFollowingArray {
-                if followingUser.userID != user.userID {
-                    tableView.reloadData()
+        for followingUser in following {
+            if user.userID == followingUser.userID {
+                Firebase.removeFollow(uid: uid!, uidToUnfollow: user.userID!, completion: {
+                    self.tableView.reloadData()
+                })
+            } else {
+                var dictionary = [String: AnyObject]()
+                let date = NSDate()
+                let timeStamp = date.description
+                dictionary["timeStamp"] = timeStamp as AnyObject?
+                
+                
+                Firebase.postFollow(uid: uid!, uidToFollow: user.userID!, dictionary: dictionary) {
+                    self.tableView.reloadData()
                 }
+
             }
-        } else {
-            
         }
         
-        print(sender.tag)
         
         
 //        if followedStatus == false {
@@ -89,9 +105,21 @@ class ExploreTableViewController: UITableViewController {
         super.viewWillAppear(true)
         fetchUser { (users) in
             self.users = users!
-            let followingUsers = [User]()
-                
-            Current.shared().user?.following
+
+            self.getFollowing(uid: (FIRAuth.auth()?.currentUser?.uid)!, completion: { (usersID) in
+                print("GETTING USERSID", usersID)
+                for userID in usersID {
+                    Firebase.getUser(uid: userID, { (dictionary, error) in
+                        if error == nil {
+                            let user = User(dictionary: dictionary!)
+                            user.userID = userID
+                            self.following.append(user)
+                            self.tableView.reloadData()
+
+                        }
+                    })
+                }
+            })
         }
     }
     
@@ -132,13 +160,18 @@ class ExploreTableViewController: UITableViewController {
             cell.profileImageView.image = profileImage
         }
         
-        if let currentUserFollowingArray = Current.shared().user?.following {
-            for followingUser in currentUserFollowingArray {
-                if user.userID == followingUser.userID {
-                    cell.followButton.setTitle("Following", for: .normal)
-                } else {
-                    cell.followButton.setTitle("Follow", for: .normal)
-                }
+        print(following)
+        
+        for followingUser in following {
+            print(followingUser.description)
+            
+            let userIDInCell = user.userID
+            let followingUserID = followingUser.userID
+            print("USER ID IN CELL IS \(userIDInCell) AND FOLLOWING USER ID IS \(followingUserID)")
+            if user.userID == followingUser.userID {
+                cell.followButton.setTitle("Following", for: .normal)
+            } else {
+                cell.followButton.setTitle("Follow", for: .normal)
             }
         }
         
