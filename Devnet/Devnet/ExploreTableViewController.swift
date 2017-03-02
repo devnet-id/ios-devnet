@@ -73,8 +73,8 @@ class ExploreTableViewController: UITableViewController {
         
         let user = users[indexPath.row]
         
-        cell.nameLabel.text = user.name
-        cell.usernameLabel.text = user.userName
+        cell.nameLabel.text = user.name!
+        cell.usernameLabel.text = "@" + user.userName!
         
         if let profileImage = user.profileImage {
             cell.profileImageView.image = profileImage

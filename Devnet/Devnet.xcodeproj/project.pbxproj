@@ -111,26 +111,58 @@
 		6E46DB261E5E2250007EC238 /* Devnet */ = {
 			isa = PBXGroup;
 			children = (
-				6E46DB271E5E2250007EC238 /* AppDelegate.swift */,
+				6E712B221E68504E00F7A927 /* Supporting File */,
+				6E712B1E1E68500800F7A927 /* Model */,
+				6E712B1F1E68502200F7A927 /* View */,
+				6E712B201E68503500F7A927 /* Controller */,
+				6E712B211E68504200F7A927 /* Storyboard */,
+			);
+			path = Devnet;
+			sourceTree = "<group>";
+		};
+		6E712B1E1E68500800F7A927 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				6E46DB4E1E5E2DC0007EC238 /* User.swift */,
 				6EABC2A31E67E91000A0FE5A /* Post.swift */,
 				6EC8A31B1E61CA66008581CE /* Gender.swift */,
 				6E46DB4C1E5E2DB8007EC238 /* Current.swift */,
+				6E46DB391E5E231E007EC238 /* Firebase.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6E712B1F1E68502200F7A927 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				6E2CC9581E659181001BF315 /* LoadingIndicatorView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		6E712B201E68503500F7A927 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				6EAE037B1E5EF43300F33E4F /* ProfileTableViewCell.swift */,
 				6EABC2A51E68017100A0FE5A /* UserListTableViewCell.swift */,
+				6E904FCC1E6820F600EFE37A /* PostsListTableViewCell.swift */,
 				6E46DB3B1E5E27B5007EC238 /* InitialViewController.swift */,
 				6E46DB291E5E2250007EC238 /* SignInViewController.swift */,
 				6EEDC97A1E60541B00C5852A /* SettingsTableViewController.swift */,
 				6E46DB501E5E5E31007EC238 /* ProfileTableViewController.swift */,
 				6EEDC97C1E60661800C5852A /* EditProfileTableViewController.swift */,
 				6EABC2A71E681DA400A0FE5A /* HomeTableViewController.swift */,
-				6E904FCC1E6820F600EFE37A /* PostsListTableViewCell.swift */,
 				6E2CC9541E64A791001BF315 /* ImportImageHandler.swift */,
 				6EEDC9781E604E4E00C5852A /* ExploreTableViewController.swift */,
 				6E46DB4A1E5E2D26007EC238 /* SignUpViewController.swift */,
-				6E46DB391E5E231E007EC238 /* Firebase.swift */,
 				6EB162C91E67D89100F4AA7F /* NewPostViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		6E712B211E68504200F7A927 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
 				6E46DB301E5E2250007EC238 /* LaunchScreen.storyboard */,
 				6EEDC96F1E60496400C5852A /* Main.storyboard */,
 				6EEDC9751E6049EA00C5852A /* Settings.storyboard */,
@@ -139,11 +171,19 @@
 				6E46DB3D1E5E27C3007EC238 /* Initial.storyboard */,
 				6E46DB421E5E2C9F007EC238 /* SignIn.storyboard */,
 				6E46DB471E5E2CB8007EC238 /* SignUp.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		6E712B221E68504E00F7A927 /* Supporting File */ = {
+			isa = PBXGroup;
+			children = (
+				6E46DB271E5E2250007EC238 /* AppDelegate.swift */,
 				6EAE03791E5EEF6700F33E4F /* Assets.xcassets */,
 				6E46DB331E5E2250007EC238 /* Info.plist */,
 				6E46DB401E5E296E007EC238 /* GoogleService-Info.plist */,
 			);
-			path = Devnet;
+			name = "Supporting File";
 			sourceTree = "<group>";
 		};
 		7A26623D51AC5C27D91BCB43 /* Frameworks */ = {

@@ -125,13 +125,11 @@ class Firebase {
                         print(dictionary!)
                         let user = User(dictionary: dictionary!)
                         post.user = user
+                        fetchedPosts?.append(post)
+                        print("FETCH POSTS DONE")
+                        completion(fetchedPosts)
                     }
                 })
-                
-                fetchedPosts?.append(post)
-                completion(fetchedPosts)
-                
-                
             }
             completion(nil)
         })
