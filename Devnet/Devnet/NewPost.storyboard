@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="o7v-vc-cdB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--New Post-->
+        <scene sceneID="867-Qb-4uM">
+            <objects>
+                <viewController id="rRS-7K-Ke3" customClass="NewPostViewController" customModule="Devnet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mQu-B7-T5X"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hwd-b8-51d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JQL-yB-lLQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VNF-hE-gQI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VNF-hE-gQI" firstAttribute="top" secondItem="JQL-yB-lLQ" secondAttribute="top" id="N2N-HD-P6l"/>
+                            <constraint firstAttribute="trailing" secondItem="VNF-hE-gQI" secondAttribute="trailing" id="OQE-rj-hwf"/>
+                            <constraint firstItem="VNF-hE-gQI" firstAttribute="leading" secondItem="JQL-yB-lLQ" secondAttribute="leading" id="dfH-Wa-7cE"/>
+                            <constraint firstItem="Hwd-b8-51d" firstAttribute="top" secondItem="VNF-hE-gQI" secondAttribute="bottom" id="gQt-Bi-tJJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Post" id="mH9-xI-OAD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="JA1-fh-Gm8"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="VNF-hE-gQI" id="6em-xa-msG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rWB-KP-8rW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="936.79999999999995" y="134.48275862068968"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mP9-j9-bXy">
+            <objects>
+                <navigationController storyboardIdentifier="newPost" automaticallyAdjustsScrollViewInsets="NO" id="o7v-vc-cdB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iGh-S3-3pP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rRS-7K-Ke3" kind="relationship" relationship="rootViewController" id="oQZ-X1-aok"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0xz-jH-igK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2.3999999999999999" y="134.48275862068968"/>
+        </scene>
+    </scenes>
+</document>

@@ -19,7 +19,6 @@ class LoadingIndicatorView: UIVisualEffectView {
     let label = UILabel()
     let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
     let blurredBackgroundView: UIVisualEffectView
-    let dimOverlayBackground = UIView()
     
     init(text: String) {
         self.text = text

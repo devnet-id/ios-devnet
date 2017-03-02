@@ -168,14 +168,19 @@ class EditProfileTableViewController: UITableViewController {
         }
     }
     
+    
+    private func setupDimOverlayBackgroundView() {
+        dimOverlayBackgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.66)
+        dimOverlayBackgroundView.addSubview(loadingIndicatorView)
+        UIApplication.shared.keyWindow?.addSubview(dimOverlayBackgroundView)
+    }
+    
     private func savingActivityIndicatorView(animating: Bool) {
         
         if animating == true {
-            loadingIndicatorView.show()
             
-            dimOverlayBackgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.66)
-            dimOverlayBackgroundView.addSubview(loadingIndicatorView)
-            UIApplication.shared.keyWindow?.addSubview(dimOverlayBackgroundView)
+            loadingIndicatorView.show()
+            setupDimOverlayBackgroundView()
             
             
         } else {

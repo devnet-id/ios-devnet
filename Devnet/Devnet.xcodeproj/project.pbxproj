@@ -26,6 +26,8 @@
 		6EAE037A1E5EEF6700F33E4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EAE03791E5EEF6700F33E4F /* Assets.xcassets */; };
 		6EAE037C1E5EF43300F33E4F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE037B1E5EF43300F33E4F /* ProfileTableViewCell.swift */; };
 		6EAE037E1E5F004200F33E4F /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE037D1E5F004200F33E4F /* PostTableViewCell.swift */; };
+		6EB162C81E67D78E00F4AA7F /* NewPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB162C71E67D78E00F4AA7F /* NewPost.storyboard */; };
+		6EB162CA1E67D89100F4AA7F /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB162C91E67D89100F4AA7F /* NewPostViewController.swift */; };
 		6EC8A31C1E61CA66008581CE /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC8A31B1E61CA66008581CE /* Gender.swift */; };
 		6EEDC9711E60496400C5852A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EEDC96F1E60496400C5852A /* Main.storyboard */; };
 		6EEDC9741E6049D100C5852A /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EEDC9721E6049D100C5852A /* EditProfile.storyboard */; };
@@ -59,6 +61,8 @@
 		6EAE03791E5EEF6700F33E4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EAE037B1E5EF43300F33E4F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		6EAE037D1E5F004200F33E4F /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		6EB162C71E67D78E00F4AA7F /* NewPost.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewPost.storyboard; sourceTree = "<group>"; };
+		6EB162C91E67D89100F4AA7F /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		6EC8A31B1E61CA66008581CE /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		6EEDC9701E60496400C5852A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6EEDC9731E6049D100C5852A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EditProfile.storyboard; sourceTree = "<group>"; };
@@ -123,6 +127,8 @@
 				6E46DB301E5E2250007EC238 /* LaunchScreen.storyboard */,
 				6EEDC96F1E60496400C5852A /* Main.storyboard */,
 				6EEDC9751E6049EA00C5852A /* Settings.storyboard */,
+				6EB162C71E67D78E00F4AA7F /* NewPost.storyboard */,
+				6EB162C91E67D89100F4AA7F /* NewPostViewController.swift */,
 				6EEDC9721E6049D100C5852A /* EditProfile.storyboard */,
 				6E46DB3D1E5E27C3007EC238 /* Initial.storyboard */,
 				6E46DB421E5E2C9F007EC238 /* SignIn.storyboard */,
@@ -219,6 +225,7 @@
 				6E46DB321E5E2250007EC238 /* LaunchScreen.storyboard in Resources */,
 				6E46DB491E5E2CB8007EC238 /* SignUp.storyboard in Resources */,
 				6EEDC9741E6049D100C5852A /* EditProfile.storyboard in Resources */,
+				6EB162C81E67D78E00F4AA7F /* NewPost.storyboard in Resources */,
 				6EAE037A1E5EEF6700F33E4F /* Assets.xcassets in Resources */,
 				6EEDC9771E6049EA00C5852A /* Settings.storyboard in Resources */,
 				6E46DB441E5E2C9F007EC238 /* SignIn.storyboard in Resources */,
@@ -286,6 +293,7 @@
 				6EEDC97B1E60541B00C5852A /* SettingsTableViewController.swift in Sources */,
 				6E46DB511E5E5E31007EC238 /* ProfileTableViewController.swift in Sources */,
 				6E46DB3A1E5E231E007EC238 /* Firebase.swift in Sources */,
+				6EB162CA1E67D89100F4AA7F /* NewPostViewController.swift in Sources */,
 				6E2CC9591E659181001BF315 /* LoadingIndicatorView.swift in Sources */,
 				6E46DB2A1E5E2250007EC238 /* SignInViewController.swift in Sources */,
 				6EC8A31C1E61CA66008581CE /* Gender.swift in Sources */,

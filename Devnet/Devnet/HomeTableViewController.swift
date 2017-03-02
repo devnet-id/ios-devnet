@@ -10,6 +10,13 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
     
+    @IBAction func newPostAction(_ sender: Any) {
+        
+        let newPostStoryboard = UIStoryboard(name: "NewPost", bundle: nil)
+        let newPostView = newPostStoryboard.instantiateViewController(withIdentifier: "newPost") as! UINavigationController
+        self.present(newPostView, animated: true, completion: nil)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
