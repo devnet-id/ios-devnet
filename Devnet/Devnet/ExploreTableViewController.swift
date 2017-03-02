@@ -67,11 +67,16 @@ class ExploreTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "usersCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "usersCell", for: indexPath) as! UserListTableViewCell
         
         let user = users[indexPath.row]
-        cell.detailTextLabel?.text = user.email
-        cell.textLabel?.text = user.name
+        
+        cell.nameLabel.text = user.name
+        cell.usernameLabel.text = user.userName
+        
+        if let profileImage = user.profileImage {
+            cell.profileImageView.image = profileImage
+        }
         
         return cell
         

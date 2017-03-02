@@ -38,7 +38,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Post" id="mH9-xI-OAD">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="JA1-fh-Gm8"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Z6T-rE-xaI">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cancelButtonAction:" destination="rRS-7K-Ke3" id="jjp-8E-xJH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="JA1-fh-Gm8">
+                            <connections>
+                                <action selector="saveButtonAction:" destination="rRS-7K-Ke3" id="3Gd-nY-Fz0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="textView" destination="VNF-hE-gQI" id="6em-xa-msG"/>

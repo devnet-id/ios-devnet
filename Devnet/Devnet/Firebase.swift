@@ -89,9 +89,45 @@ class Firebase {
                 completion(firebaseDatabaseError.debugDescription)
                 return
             }
-            
             completion(nil)
             
         }
+    }
+    
+    class func postPost(uid: String, dictionaryToPost: [String: AnyObject], with completion: @escaping (_ errorMessage: Error?, _ databaseRef: FIRDatabaseReference?) -> Void) {
+        
+        databaseRef.child("posts").child(uid).childByAutoId().updateChildValues(dictionaryToPost) { (error, reference) in
+            if error == nil {
+                completion(nil, reference)
+            } else {
+                completion(error, nil)
+            }
+        }
+    }
+    
+    class func getPost(uid: String, completion: @escaping (_ posts: [Post]?) -> Void) {
+        databaseRef.child("posts").child(uid).observe(.childAdded, with: { (snapshot) in
+            var fetchedPosts: [Post]? = nil
+            
+            if let postDictionary = snapshot.value as? [String: AnyObject] {
+                
+                let content = postDictionary["content"] as! String
+                let timeStamp = postDictionary["timeStamp"] as! String
+                
+                getUser(uid: uid, { (userDictionary, error) in
+                    if error == nil {
+                        let name = userDictionary!["name"] as! String
+                        
+                        let fetchedPost = Post(content: content, timeStamp: timeStamp, uid: uid, name: name)
+                        fetchedPosts?.append(fetchedPost)
+                        
+                        completion(fetchedPosts)
+                    }
+                })
+                
+                
+                
+            }
+        })
     }
 }

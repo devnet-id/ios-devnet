@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeTableViewController: UITableViewController {
+    
+    var posts: [Post]? = nil
     
     @IBAction func newPostAction(_ sender: Any) {
         
@@ -17,8 +20,20 @@ class HomeTableViewController: UITableViewController {
         self.present(newPostView, animated: true, completion: nil)
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -42,15 +57,34 @@ class HomeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        
+        print("Posts has \(posts?.count) item")
+        
+        if posts != nil {
+            return posts!.count
+        } else {
+            return 0
+        }
+        
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
+        
+        
+        
+        if posts != nil {
+            let post = posts![indexPath.row]
+            
+            cell.nameLabel.text = post.name
+            cell.contentLabel.text = post.content
+            cell.timeStampLabel.text = post.timeStamp
+            
+            return cell
+        } else {
+            return cell
+        }
+        
     }
 
     /*
