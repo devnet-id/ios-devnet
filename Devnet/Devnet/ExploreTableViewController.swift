@@ -23,8 +23,7 @@ class ExploreTableViewController: UITableViewController {
         
         var fetchedUsers = [User]()
         
-        Firebase.databaseRef.child("users").observe(.childAdded, with: { (snapshot) in
-            
+        Firebase.databaseRef.child("users").observeSingleEvent(of: .childAdded, with: { (snapshot) in
             let userID = snapshot.key
             
             if let dictionary = snapshot.value as? [String: AnyObject] {
@@ -43,9 +42,10 @@ class ExploreTableViewController: UITableViewController {
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
-
+                    
                 }
             }
+            
         })
     }
     

@@ -20,7 +20,7 @@ class HomeTableViewController: UITableViewController {
     }
     
     func observePosts() {
-        Firebase.getPost(uid: (FIRAuth.auth()?.currentUser?.uid)!) { (posts) in
+        self.getPosts(uid: (FIRAuth.auth()?.currentUser?.uid)!) { (posts) in
             if posts != nil {
                 self.posts = posts!
                 print(self.posts)
@@ -29,6 +29,44 @@ class HomeTableViewController: UITableViewController {
                 print("posts is nil")
             }
         }
+    }
+    
+    private func getPosts(uid: String, completion: @escaping (_ posts: [Post]?) -> Void) {
+        
+        var fetchedPosts = [Post]()
+        
+        Firebase.databaseRef.child("posts").child(uid).observe(.childAdded, with: { (snapshot) in
+            if let postDictionary = snapshot.value as? [String: AnyObject] {
+                
+                let post = Post()
+                print(postDictionary)
+                
+                post.setValuesForKeys(postDictionary)
+                
+                self.getUser(uid: uid, { (dictionary, error) in
+                    if error == nil {
+                        print("SUCCESSFULLY GET USER DICTIONARY")
+                        print(dictionary!)
+                        let user = User(dictionary: dictionary!)
+                        post.user = user
+                        fetchedPosts.append(post)
+                        print("FETCH POSTS DONE")
+                        completion(fetchedPosts)
+                    }
+                })
+            }
+            completion(nil)
+        })
+    }
+    
+    private func getUser(uid: String,_ completion: @escaping (_ dictionary: [String: AnyObject]?,_ errorString: String?) -> Void) {
+        Firebase.databaseRef.child("users").child(uid).child("user").observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let dictionary = snapshot.value as? [String: AnyObject] else {
+                completion(nil, "There was no dictionary returned")
+                return
+            }
+            completion(dictionary, nil)
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {

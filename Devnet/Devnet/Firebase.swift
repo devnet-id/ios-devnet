@@ -84,15 +84,11 @@ class Firebase {
     
     class func getUser(uid: String,_ completion: @escaping (_ dictionary: [String: AnyObject]?,_ errorString: String?) -> Void) {
         
-        databaseRef.child("users").child(uid).child("user").observe(.value, with: { (dataSnapshot) in
-            
-            guard let dictionary = dataSnapshot.value as? [String: AnyObject] else {
+        databaseRef.child("users").child(uid).child("user").observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let dictionary = snapshot.value as? [String: AnyObject] else {
                 completion(nil, "There was no dictionary returned")
                 return
             }
-            
-            print(dictionary)
-            
             completion(dictionary, nil)
         })
     }
@@ -118,32 +114,5 @@ class Firebase {
                 completion(error, nil)
             }
         }
-    }
-    
-    class func getPost(uid: String, completion: @escaping (_ posts: [Post]?) -> Void) {
-        var fetchedPosts: [Post]? = []
-        
-        databaseRef.child("posts").child(uid).observe(.childAdded, with: { (snapshot) in
-            if let postDictionary = snapshot.value as? [String: AnyObject] {
-                
-                let post = Post()
-                print(postDictionary)
-                
-                post.setValuesForKeys(postDictionary)
-                
-                getUser(uid: uid, { (dictionary, error) in
-                    if error == nil {
-                        print("SUCCESSFULLY GET USER DICTIONARY")
-                        print(dictionary!)
-                        let user = User(dictionary: dictionary!)
-                        post.user = user
-                        fetchedPosts?.append(post)
-                        print("FETCH POSTS DONE")
-                        completion(fetchedPosts)
-                    }
-                })
-            }
-            completion(nil)
-        })
     }
 }
